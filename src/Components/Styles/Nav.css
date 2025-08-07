@@ -1,0 +1,145 @@
+.navbar {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 255);
+  color: #0a0a0a;
+  width: 100%;
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  padding: 0.7rem;
+  position: sticky;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  height: 50px;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 150px;
+}
+
+.navbar .menu {
+  position: relative;
+}
+
+.menu-nav {
+  position: absolute;
+  left: -0.7rem;
+  background-color: #ffffff;
+  color: #000000;
+  padding-top: 1.5rem;
+  display: none;
+  width: 200px;
+  border-bottom-right-radius: 10px;
+}
+
+.menu:hover .menu-nav,
+.open {
+  display: block;
+}
+
+.menu-nav li {
+  list-style-type: none;
+  padding: 1rem;
+  border-bottom: 2px solid #e9e6e6;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: 500;
+}
+
+.menu-nav li:hover {
+  background-color: #e4e4e4;
+}
+
+.menu-nav li:hover:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+.menu-nav li:last-child {
+  border-bottom: none;
+}
+
+.navbar .account {
+  display: flex;
+  gap: 0.2rem;
+  align-items: flex-end;
+}
+
+.select {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.account-action {
+  position: absolute;
+  top: 1.4rem;
+  left: -3rem;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  padding: 1.5rem 0 0;
+  background-color: #ffffff;
+  color: #000000;
+  width: 170px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.account-action button {
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  background-color: rgb(0, 0, 0);
+}
+.account-action button:hover {
+  background-color: #363434;
+}
+
+.account-action span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  font-weight: 450;
+}
+
+.account-action span:hover {
+  background-color: #e4e4e4;
+}
+
+.account-action span:hover:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.account:hover .account-action {
+  visibility: visible;
+}
+
+.display {
+  visibility: visible;
+}
+
+.navbar img {
+  display: block;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
