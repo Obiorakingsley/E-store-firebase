@@ -23,7 +23,11 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 150px;
+  max-width: 170px;
+}
+.logo {
+  display: flex;
+  align-items: center;
 }
 
 .navbar .menu {
@@ -82,7 +86,7 @@
 
 .account-action {
   position: absolute;
-  top: 1.4rem;
+  top: 1.2rem;
   left: -3rem;
   display: flex;
   flex-direction: column;
@@ -95,7 +99,7 @@
   border-bottom-right-radius: 5px;
 }
 
-.account-action button {
+.account-action .account-btn-signin {
   padding: 0.5rem 1rem;
   margin: 1rem;
   font-size: 1rem;
@@ -104,11 +108,11 @@
   color: #fff;
   background-color: rgb(0, 0, 0);
 }
-.account-action button:hover {
+.account-action .account-btn-signin:hover {
   background-color: #363434;
 }
 
-.account-action span {
+.account-action .account-btn {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -116,18 +120,26 @@
   font-weight: 450;
 }
 
-.account-action span:hover {
+.account-action .account-btn:hover {
   background-color: #e4e4e4;
 }
 
-.account-action span:hover:last-child {
+.account-action .account-btn:hover:last-child {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
-.account:hover .account-action {
-  visibility: visible;
+.account {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  display: flex;
+  align-items: center;
 }
+
+/* .account:hover .account-action {
+  visibility: visible;
+} */
 
 .display {
   visibility: visible;

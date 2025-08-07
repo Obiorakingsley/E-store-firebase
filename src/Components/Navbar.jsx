@@ -8,6 +8,7 @@ import {
   FaMobile,
   FaUser,
   FaUserPlus,
+  FaChevronUp,
 } from "react-icons/fa";
 import { FaTv } from "react-icons/fa6";
 import { GiLipstick } from "react-icons/gi";
@@ -99,28 +100,47 @@ const Navbar = () => {
             </ul>
           </nav>
         </div>
-        <h1 className="logo">Estore</h1>
+        <h1 className="logo">
+          Estore <img src="/estore.png" alt="" width={30} height={30} />
+        </h1>
       </div>
 
       <div className="navbar-right">
-        <div ref={select} onClick={handleSelectMenu} className="account">
+        <div
+          onMouseEnter={() => {
+            setSelectmenu(true);
+          }}
+          ref={select}
+          onClick={handleSelectMenu}
+          className="account"
+          onMouseLeave={() => {
+            setSelectmenu(false);
+          }}
+        >
           <img src="/user.png" alt="user icon" width={25} height={25} />
           <div className="select">
             Account
-            <FaChevronDown size={13} />
+            {selectMenu ? (
+              <FaChevronDown size={13} />
+            ) : (
+              <FaChevronUp size={13} />
+            )}
             <nav
+              onMouseLeave={() => {
+                setSelectmenu(false);
+              }}
               className={`account-action
                 ${selectMenu ? " display" : ""}`}
             >
-              <button>Sign In</button>
-              <span>
+              <button className="account-btn-signin">Sign In</button>
+              <div className="account-btn">
                 <FaUserPlus />
                 Sign Up
-              </span>
-              <span>
+              </div>
+              <div className="account-btn">
                 <FaUser />
                 My Account
-              </span>
+              </div>
             </nav>
           </div>
         </div>
