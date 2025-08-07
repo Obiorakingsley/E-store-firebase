@@ -9,6 +9,7 @@ import {
   FaUser,
   FaUserPlus,
   FaChevronUp,
+  FaSearch,
 } from "react-icons/fa";
 import { FaTv } from "react-icons/fa6";
 import { GiLipstick } from "react-icons/gi";
@@ -101,8 +102,22 @@ const Navbar = () => {
           </nav>
         </div>
         <h1 className="logo">
-          Estore <img src="/estore.png" alt="" width={30} height={30} />
+          Estore{" "}
+          <img
+            className="logo-img"
+            src="/estore.png"
+            alt=""
+            width={30}
+            height={20}
+          />
         </h1>
+      </div>
+
+      <div className="navbar-center">
+        <input className="input-search" type="text" placeholder="Search" />
+        <span className="search-icon">
+          <FaSearch size={20} />
+        </span>
       </div>
 
       <div className="navbar-right">
