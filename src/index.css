@@ -8,6 +8,7 @@ body {
   font-family: "Nunito", Arial, Helvetica, sans-serif;
   background-color: rgb(32, 31, 31);
   color: #fff;
+  font-size: 0.9rem;
   min-width: 320px;
   min-height: 100vh;
 }

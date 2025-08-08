@@ -72,7 +72,12 @@ const Navbar = () => {
             width={25}
             height={25}
           />
-          <nav className={`menu-nav ${menu ? "open" : ""}`}>
+          <nav
+            onMouseLeave={() => {
+              setMenu(false);
+            }}
+            className={`menu-nav ${menu ? "open" : ""}`}
+          >
             <ul>
               <li>
                 <FaMobile />
@@ -101,8 +106,8 @@ const Navbar = () => {
             </ul>
           </nav>
         </div>
-        <h1 className="logo">
-          Estore{" "}
+        <h2 className="logo">
+          Estore
           <img
             className="logo-img"
             src="/estore.png"
@@ -110,7 +115,7 @@ const Navbar = () => {
             width={30}
             height={20}
           />
-        </h1>
+        </h2>
       </div>
 
       <div className="navbar-center">
@@ -122,15 +127,15 @@ const Navbar = () => {
 
       <div className="navbar-right">
         <div
-          onMouseEnter={() => {
-            setSelectmenu(true);
-          }}
+          // onMouseEnter={() => {
+          //   setSelectmenu(true);
+          // }}
           ref={select}
           onClick={handleSelectMenu}
           className="account"
-          onMouseLeave={() => {
-            setSelectmenu(false);
-          }}
+          // onMouseLeave={() => {
+          //   setSelectmenu(false);
+          // }}
         >
           <img src="/user.png" alt="user icon" width={25} height={25} />
           <div className="select">
@@ -145,7 +150,7 @@ const Navbar = () => {
                 setSelectmenu(false);
               }}
               className={`account-action
-                ${selectMenu ? " display" : ""}`}
+                ${selectMenu ? "display" : ""}`}
             >
               <button className="account-btn-signin">Sign In</button>
               <div className="account-btn">
