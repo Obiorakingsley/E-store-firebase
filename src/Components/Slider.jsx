@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Pagination, Navigation, FreeMode } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -27,7 +27,7 @@ const Slider = () => {
       </div>
       <div className="slider">
         <Swiper
-          modules={[Autoplay, Pagination, Navigation]}
+          modules={[Autoplay, Pagination, Navigation, FreeMode]}
           spaceBetween={10}
           breakpoints={{
             320: {
@@ -44,9 +44,10 @@ const Slider = () => {
             },
           }}
           centeredSlides={true}
+          freeMode={true}
           grabCursor={true}
           loop={true}
-          autoplay={{ delay: 5000 }}
+          //autoplay={{ delay: 5000 }}
           pagination={{ clickable: true }}
         >
           {arrayImg.map((img, index) => {
