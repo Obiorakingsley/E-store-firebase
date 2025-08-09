@@ -3,6 +3,7 @@ import "./Styles/Hero.css";
 import { FaArrowCircleRight, FaChevronRight, FaTag } from "react-icons/fa";
 import { GiPriceTag } from "react-icons/gi";
 import { useState, useEffect } from "react";
+import Heroslide from "./Slider";
 
 function Hero() {
   // State to manage the countdown timer

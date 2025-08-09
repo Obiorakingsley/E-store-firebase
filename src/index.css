@@ -6,9 +6,44 @@
 
 body {
   font-family: "Nunito", Arial, Helvetica, sans-serif;
-  background-color: rgb(32, 31, 31);
-  color: #fff;
+  background-color: rgb(255, 255, 255);
+  color: #000000;
   font-size: 0.9rem;
   min-width: 320px;
   min-height: 100vh;
+}
+
+.product-deals {
+  width: 100%;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: rgba(245, 245, 245, 0.6);
+  border-radius: 10px;
+  margin: 1rem auto;
+  max-width: 90vw;
+}
+
+.slider img {
+  display: block;
+  border-radius: 5px;
+  margin: 0.5rem 1rem;
+}
+
+.product-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f0efef;
+  color: #000000;
+  padding: 0.5rem;
+}
+
+.product-nav p {
+  display: flex;
+  align-items: center;
 }

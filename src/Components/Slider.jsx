@@ -1,0 +1,65 @@
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import img1 from "../assets/images/popular/fassion.jpg";
+import img2 from "../assets/images/popular/cross-bag.jpg";
+import img3 from "../assets/images/popular/laptop2.jpg";
+import img4 from "../assets/images/popular/laptop.jpg";
+import img5 from "../assets/images/popular/powerbank.jpg";
+import img6 from "../assets/images/popular/shoes.jpg";
+import img7 from "../assets/images/popular/slipper1.jpg";
+import img8 from "../assets/images/popular/mouse.jpg";
+import img9 from "../assets/images/popular/suite.jpg";
+import { FaChevronRight } from "react-icons/fa";
+
+const Slider = () => {
+  const arrayImg = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
+  return (
+    <div className="product-deals">
+      <div className="product-nav">
+        <h2>Popular product</h2>
+        <p>
+          view all <FaChevronRight />
+        </p>
+      </div>
+      <div className="slider">
+        <Swiper
+          modules={[Autoplay, Pagination, Navigation]}
+          spaceBetween={10}
+          breakpoints={{
+            320: {
+              slidesPerView: 2,
+            },
+            640: {
+              slidesPerView: 3,
+            },
+            768: {
+              slidesPerView: 4,
+            },
+            1024: {
+              slidesPerView: 4,
+            },
+          }}
+          centeredSlides={true}
+          grabCursor={true}
+          loop={true}
+          autoplay={{ delay: 5000 }}
+          pagination={{ clickable: true }}
+        >
+          {arrayImg.map((img, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <img src={img} alt="" width={140} height={140} />
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
+    </div>
+  );
+};
+
+export default Slider;

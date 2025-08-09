@@ -10,6 +10,7 @@
   font-family: "Nunito", Arial, Helvetica, sans-serif;
   padding: 0.7rem;
   position: sticky;
+  top: 0;
 }
 
 .navbar-right {
