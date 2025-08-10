@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import "./Styles/Bestseller.css";
 import { FreeMode } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
 import { FaChevronRight } from "react-icons/fa6";
+import { FaMinus } from "react-icons/fa";
+import { FaNairaSign } from "react-icons/fa6";
 
 const Bestseller = () => {
   const [bestseller, setBestSeller] = useState([]);
@@ -15,13 +18,14 @@ const Bestseller = () => {
     }
     fetchProducts();
   }, []);
+
   return (
     <div className="best-seller-container">
       <div className="navbar-top">
         <h2>Top sellers</h2>
         <span className="flex">
-          More
-          <FaChevronRight size={10} />
+          See All
+          <FaChevronRight size={15} />
         </span>
       </div>
       <Swiper
@@ -32,37 +36,41 @@ const Bestseller = () => {
         className="swiper-product"
       >
         {bestseller.map((item, id) => {
-          <SwiperSlide key={id} className="best-seller-item">
-            <div className="flash-sales-item">
-              <img src={item.images} alt="" width={90} height={90} />
-              <span className=" flex discount">
-                <FaMinus size={5} />
-                {item.discountPercentage}%
-              </span>
-              <p className="name">{subName}</p>
-              <div className="price-container">
-                <p className="flex price">
-                  <FaNairaSign size={15} />
-                  {item.price}
-                </p>
-
-                <b>
-                  <span className="flex original-price">
+          let subName = item.name;
+          subName = subName.substring(0, 20) + "...";
+          return (
+            <SwiperSlide key={id} className="best-seller-item">
+              <div className="best-sales-item">
+                <img src={item.images} alt="" width={90} height={90} />
+                <span className=" flex discount">
+                  <FaMinus size={5} />
+                  {item.discountPercentage}%
+                </span>
+                <p className="name">{subName}</p>
+                <div className="price-container">
+                  <p className="flex price">
                     <FaNairaSign size={15} />
-                    {item.originalPrice}
-                  </span>
-                </b>
+                    {item.price}
+                  </p>
+
+                  {/* <b>
+                    <span className="flex original-price">
+                      <FaNairaSign size={15} />
+                      {item.originalPrice}
+                    </span>
+                  </b> */}
+                </div>
+                {/* <span className="stock">{item.stock} items left</span> */}
+                {/* <Line
+                  percent={item.stock}
+                  strokeWidth={4}
+                  trailWidth={4}
+                  strokeLinecap="round"
+                  strokeColor="orange"
+                /> */}
               </div>
-              <span className="stock">{item.stock} items left</span>
-              <Line
-                percent={item.stock}
-                strokeWidth={4}
-                trailWidth={4}
-                strokeLinecap="round"
-                strokeColor="orange"
-              />
-            </div>
-          </SwiperSlide>;
+            </SwiperSlide>
+          );
         })}
       </Swiper>
     </div>

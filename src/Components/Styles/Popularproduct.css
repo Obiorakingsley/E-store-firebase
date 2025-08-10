@@ -19,6 +19,10 @@
   margin: 0.5rem auto;
 }
 
+.swiper-item {
+  width: auto !important;
+}
+
 .product-nav {
   display: flex;
   align-items: center;

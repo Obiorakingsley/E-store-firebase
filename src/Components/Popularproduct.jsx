@@ -5,6 +5,8 @@ import { Autoplay, Pagination, Navigation, FreeMode } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css";
+import "swiper/css/free-mode";
 import img1 from "../assets/images/popular/fassion.jpg";
 import img2 from "../assets/images/popular/cross-bag.jpg";
 import img3 from "../assets/images/popular/laptop2.jpg";
@@ -30,30 +32,31 @@ const Popularproduct = () => {
         <Swiper
           modules={[Autoplay, Pagination, Navigation, FreeMode]}
           spaceBetween={10}
-          breakpoints={{
-            320: {
-              slidesPerView: 2,
-            },
-            640: {
-              slidesPerView: 3,
-            },
-            768: {
-              slidesPerView: 4,
-            },
-            1024: {
-              slidesPerView: 4,
-            },
-          }}
+          // breakpoints={{
+          //   320: {
+          //     slidesPerView: 2,
+          //   },
+          //   640: {
+          //     slidesPerView: 3,
+          //   },
+          //   768: {
+          //     slidesPerView: 4,
+          //   },
+          //   1024: {
+          //     slidesPerView: 4,
+          //   },
+          // }}
           centeredSlides={true}
           freeMode={true}
           grabCursor={true}
           loop={true}
-          //autoplay={{ delay: 5000 }}
+          slidesPerView="auto"
+          autoplay={{ delay: 5000 }}
           pagination={{ clickable: true }}
         >
           {arrayImg.map((img, index) => {
             return (
-              <SwiperSlide key={index}>
+              <SwiperSlide className="swiper-item" key={index}>
                 <img src={img} alt="" width={140} height={140} />
               </SwiperSlide>
             );

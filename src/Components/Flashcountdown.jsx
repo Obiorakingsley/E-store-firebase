@@ -30,7 +30,7 @@ const Flashcountdown = () => {
     <div className="flash-sales">
       <div className="tag-section">
         <GiPriceTag size={40} />
-        <h2>Flash Sales</h2>
+        <h3>Flash Sales</h3>
       </div>
 
       <div className="countdown-section">
