@@ -1,4 +1,5 @@
 import React from "react";
+import "./Styles/Popularproduct.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation, FreeMode } from "swiper/modules";
 import "swiper/css";
@@ -15,7 +16,7 @@ import img8 from "../assets/images/popular/mouse.jpg";
 import img9 from "../assets/images/popular/suite.jpg";
 import { FaChevronRight } from "react-icons/fa";
 
-const Slider = () => {
+const Popularproduct = () => {
   const arrayImg = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
   return (
     <div className="product-deals">
@@ -63,4 +64,4 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+export default Popularproduct;

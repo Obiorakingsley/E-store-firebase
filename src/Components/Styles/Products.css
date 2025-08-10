@@ -1,16 +1,27 @@
 .products-container {
   width: 100%;
   padding: 0.5rem;
-  background-color: rgb(230, 223, 223);
+  background-color: rgb(248, 244, 244);
 }
 
 .products-container h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+  font-size: 1.7rem;
+}
+
+.navbar-top {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.2rem;
+  justify-content: space-between;
+  background-color: #f0d9af;
+}
+
+.navbar-top span {
+  font-weight: bold;
 }
 
 .products-navbar {
-  margin: 0.5rem 0;
+  margin: 1rem 0 0.5rem 0;
 }
 
 .swiper-navbar {
@@ -30,6 +41,8 @@
   color: #eee8e8;
   white-space: nowrap;
   transition: all 0.3s;
+  box-shadow: 2px 2px 4px #3a373756;
+  margin: 0.2rem;
 }
 
 .nav-item button:hover {
@@ -39,14 +52,15 @@
 .product-grid {
   width: 100%;
   margin: 1rem 0;
-  /* display: grid;
-  align-items: center;
-  grid-template-columns: repeat(auto-fill, 170px);
-  padding: 0.2rem; */
 }
 
 .product-item {
   width: auto !important;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
 }
 
 @media screen and (max-width: 500px) {

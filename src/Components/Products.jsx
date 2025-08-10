@@ -5,6 +5,7 @@ import { FreeMode } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
 import Product from "./Product.jsx";
+import { FaChevronRight } from "react-icons/fa6";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -16,7 +17,6 @@ const Products = () => {
     }
     fetchProducts();
   }, []);
-  console.log(products);
   const navItems = [
     "All",
     "Phones & Tablets",
@@ -27,25 +27,15 @@ const Products = () => {
     " Beauty",
   ];
 
-  const items = products.map((item) => {
-    return (
-      <Product
-        name={item.name}
-        shortDescription={item.shortDescription}
-        price={item.price}
-        originalPrice={item.originalPrice}
-        discountPercentage={item.discountPercentage}
-        rating={item.rating}
-        key={item.id}
-        id={item.id}
-        images={item.images}
-      />
-    );
-  });
-
   return (
     <div className="products-container">
-      <h2>Browse by categories</h2>
+      <div className="navbar-top">
+        <h2>Browse by categories</h2>
+        <span className="flex">
+          More
+          <FaChevronRight size={10} />
+        </span>
+      </div>
       <div className="products-navbar">
         <nav>
           <Swiper
