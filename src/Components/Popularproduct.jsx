@@ -51,7 +51,7 @@ const Popularproduct = () => {
           grabCursor={true}
           loop={true}
           slidesPerView="auto"
-          autoplay={{ delay: 5000 }}
+          //autoplay={{ delay: 5000 }}
           pagination={{ clickable: true }}
         >
           {arrayImg.map((img, index) => {

@@ -5,6 +5,8 @@ import Popular from "./Components/Popularproduct.jsx";
 import Products from "./Components/Products.jsx";
 import Flashsales from "./Components/Flashsales.jsx";
 import Bestseller from "./Components/Bestseller.jsx";
+import Newcolection from "./Components/Newcolection.jsx";
+import Reviews from "./Components/Reviews.jsx";
 const App = () => {
   return (
     <>
@@ -14,6 +16,8 @@ const App = () => {
       <Products />
       <Flashsales />
       <Bestseller />
+      <Newcolection />
+      <Reviews />
     </>
   );
 };
