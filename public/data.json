@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "id": "prod_7890",
+      "id": "prod_7090",
       "name": "JBL Tune 760NC Wireless Noise Cancelling Headphones",
       "description": "<p>Experience crystal-clear sound with JBL's Pure Bass technology. 50mm drivers deliver powerful audio with adaptive noise cancellation. Up to <strong>35 hours</strong> battery life.</p>",
       "shortDescription": "Wireless over-ear headphones with ANC",
@@ -16,17 +16,13 @@
       "brand": "JBL",
       "tags": ["noise-cancelling", "bluetooth", "long-battery"],
 
-      "images": [
-        "../assets/images/popular/jbl-headphone",
-        "../assets/images/popular/jbl-headphone",
-        "../assets/images/popular/jbl-headphone"
-      ],
+      "images": "headphone.jpg",
 
       "colors": [
         {
           "name": "Black",
           "hex": "#000000",
-          "image": "../assets/images/popular/jbl-headphone"
+          "image": "headphone.jpg"
         },
         {
           "name": "Blue",
@@ -43,7 +39,7 @@
       "lowStockThreshold": 10,
       "isPreorder": false,
 
-      "rating": 4.7,
+      "rating": 4,
       "reviewCount": 215,
       "reviews": [
         {
@@ -72,7 +68,7 @@
       "purchases": 342
     },
     {
-      "id": "prod_7890",
+      "id": "prod_9890",
       "name": "JBL Tune 760NC Wireless Noise Cancelling Headphones",
       "description": "<p>Experience crystal-clear sound with JBL's Pure Bass technology. 50mm drivers deliver powerful audio with adaptive noise cancellation. Up to <strong>35 hours</strong> battery life.</p>",
       "shortDescription": "Wireless over-ear headphones with ANC",
@@ -87,11 +83,7 @@
       "brand": "JBL",
       "tags": ["noise-cancelling", "bluetooth", "long-battery"],
 
-      "images": [
-        "../assets/images/popular/jbl-headphone",
-        "../assets/images/popular/jbl-headphone",
-        "../assets/images/popular/jbl-headphone"
-      ],
+      "images": "headphone",
 
       "colors": [
         {
@@ -114,7 +106,7 @@
       "lowStockThreshold": 10,
       "isPreorder": false,
 
-      "rating": 4.7,
+      "rating": 3.5,
       "reviewCount": 215,
       "reviews": [
         {
@@ -143,7 +135,7 @@
       "purchases": 342
     },
     {
-      "id": "prod_7890",
+      "id": "prod_7460",
       "name": "JBL Tune 760NC Wireless Noise Cancelling Headphones",
       "description": "<p>Experience crystal-clear sound with JBL's Pure Bass technology. 50mm drivers deliver powerful audio with adaptive noise cancellation. Up to <strong>35 hours</strong> battery life.</p>",
       "shortDescription": "Wireless over-ear headphones with ANC",
@@ -158,17 +150,13 @@
       "brand": "JBL",
       "tags": ["noise-cancelling", "bluetooth", "long-battery"],
 
-      "images": [
-        "../assets/images/popular/jbl-headphone",
-        "../assets/images/popular/jbl-headphone",
-        "../assets/images/popular/jbl-headphone"
-      ],
+      "images": "headphone.jpg",
 
       "colors": [
         {
           "name": "Black",
           "hex": "#000000",
-          "image": "../assets/images/popular/jbl-headphone"
+          "image": "./assets/images/popular/headphone.jpg"
         },
         {
           "name": "Blue",

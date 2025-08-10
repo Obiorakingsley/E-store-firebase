@@ -24,7 +24,7 @@
 .nav-item button {
   padding: 8px 16px;
   border-radius: 20px;
-  background: rgb(24, 23, 23);
+  background: #000000;
   border: 1px solid #ddd;
   cursor: pointer;
   color: #eee8e8;
@@ -34,4 +34,23 @@
 
 .nav-item button:hover {
   background: #383737;
+}
+
+.product-grid {
+  width: 100%;
+  margin: 1rem 0;
+  /* display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, 170px);
+  padding: 0.2rem; */
+}
+
+.product-item {
+  width: auto !important;
+}
+
+@media screen and (max-width: 500px) {
+  .product-grid {
+    justify-content: center;
+  }
 }
