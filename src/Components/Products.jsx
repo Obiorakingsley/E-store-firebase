@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import Product from "./Product.jsx";
 import { FaChevronRight } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -31,10 +32,12 @@ const Products = () => {
     <div className="products-container">
       <div className="navbar-top">
         <h2>Browse by categories</h2>
-        <span className="flex">
-          More
-          <FaChevronRight size={10} />
-        </span>
+        <Link to={"/products"}>
+          <span className="flex">
+            More
+            <FaChevronRight size={10} />
+          </span>
+        </Link>
       </div>
       <div className="products-navbar">
         <nav>

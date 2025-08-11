@@ -35,7 +35,7 @@ const routes = createBrowserRouter(
       <Route path="account" element={<AccountPage />} />
       <Route path="cart" element={<CartPage />} />
       <Route path="flash-sales" element={<FlashsalesPage />} />
-      <Route path="product" element={<ProductsPage />} />
+      <Route path="products" element={<ProductsPage />} />
     </Route>
   )
 );

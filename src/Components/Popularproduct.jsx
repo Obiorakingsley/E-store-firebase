@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Styles/Popularproduct.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation, FreeMode } from "swiper/modules";
@@ -24,9 +25,11 @@ const Popularproduct = () => {
     <div className="product-deals">
       <div className="product-nav">
         <h2>Popular product</h2>
-        <p>
-          view all <FaChevronRight />
-        </p>
+        <Link to={"/products"}>
+          <p>
+            view all <FaChevronRight />
+          </p>
+        </Link>
       </div>
       <div className="slider">
         <Swiper

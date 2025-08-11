@@ -7,6 +7,7 @@ import "swiper/css/free-mode";
 import { FaChevronRight } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa";
 import { FaNairaSign } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Bestseller = () => {
   const [bestseller, setBestSeller] = useState([]);
@@ -23,10 +24,12 @@ const Bestseller = () => {
     <div className="best-seller-container">
       <div className="navbar-top">
         <h2>Top sellers</h2>
-        <span className="flex">
-          See All
-          <FaChevronRight size={15} />
-        </span>
+        <Link to={"/products"}>
+          <span className="flex">
+            See All
+            <FaChevronRight size={15} />
+          </span>
+        </Link>
       </div>
       <Swiper
         slidesPerView="auto"
