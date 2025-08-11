@@ -23,6 +23,10 @@
   width: auto !important;
 }
 
+.popular-swiper {
+  padding: 1.2rem 0 !important;
+}
+
 .product-nav {
   display: flex;
   align-items: center;

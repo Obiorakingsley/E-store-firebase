@@ -19,7 +19,7 @@
   margin: 0.2rem auto;
   border-radius: 10px;
   border: 1px solid #a8a5a531;
-  box-shadow: 1px 1px 4px #52515138;
+  box-shadow: 1px 1px 4px #52515118;
 }
 
 .reviews-card .rating {
@@ -28,7 +28,18 @@
   align-items: center;
 }
 
+.review-text {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0.5rem 0;
+}
+
+.center {
+  text-align: center;
+}
+
 .user-review {
+  margin: 1rem 0;
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -40,7 +51,7 @@
   margin: 0;
 }
 
-.user-review img {
+.reviews-card .user-review img {
   border-radius: 50%;
 }
 
@@ -113,7 +124,7 @@
   right: 10px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
   .reviews-card {
     position: relative;
     width: 100%;

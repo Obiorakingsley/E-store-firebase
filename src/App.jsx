@@ -7,6 +7,7 @@ import Flashsales from "./Components/Flashsales.jsx";
 import Bestseller from "./Components/Bestseller.jsx";
 import Newcolection from "./Components/Newcolection.jsx";
 import Reviews from "./Components/Reviews.jsx";
+import Footer from "./Components/Footer.jsx";
 const App = () => {
   return (
     <>
@@ -18,6 +19,7 @@ const App = () => {
       <Bestseller />
       <Newcolection />
       <Reviews />
+      <Footer />
     </>
   );
 };

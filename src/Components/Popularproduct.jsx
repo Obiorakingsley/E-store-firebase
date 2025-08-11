@@ -47,12 +47,13 @@ const Popularproduct = () => {
           //   },
           // }}
           centeredSlides={true}
-          freeMode={true}
+          //freeMode={true}
           grabCursor={true}
-          loop={true}
+          //loop={true}
           slidesPerView="auto"
           //autoplay={{ delay: 5000 }}
           pagination={{ clickable: true }}
+          className="popular-swiper"
         >
           {arrayImg.map((img, index) => {
             return (

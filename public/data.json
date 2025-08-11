@@ -43,7 +43,7 @@
       "reviewCount": 215,
       "reviews": {
         "id": "rev_3021",
-        "user": { "name": "Alex", "image": "headphone.jpg", "verified": true },
+        "user": { "name": "Alex", "image": "user.webp", "verified": true },
         "rating": 5,
         "date": "2024-03-15",
         "title": "Best headphones under $200!",
@@ -107,7 +107,7 @@
       "reviewCount": 215,
       "reviews": {
         "id": "rev_3021",
-        "user": { "name": "Alex", "image": "headphone.jpg", "verified": true },
+        "user": { "name": "Alex", "image": "user.webp", "verified": true },
         "rating": 5,
         "date": "2024-03-15",
         "title": "Best headphones under $200!",
@@ -171,7 +171,7 @@
       "reviewCount": 215,
       "reviews": {
         "id": "rev_3021",
-        "user": { "name": "Alex", "image": "headphone.jpg", "verified": true },
+        "user": { "name": "Alex", "image": "user.webp", "verified": true },
         "rating": 5,
         "date": "2024-03-15",
         "title": "Best headphones under $200!",

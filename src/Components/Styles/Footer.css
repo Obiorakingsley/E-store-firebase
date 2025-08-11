@@ -1,0 +1,108 @@
+.footer {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1.5rem 0 0;
+  font-size: 0.8rem;
+  font-weight: 300;
+  position: relative;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 1rem;
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: space-around;
+  min-height: 300px;
+}
+
+.footer-action {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  color: #c5c2c2;
+}
+
+.footer .footer-head {
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.footer-categories,
+.footer-company,
+.footer-help {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  height: 250px;
+}
+
+.footer-subscribe {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  margin: 2rem auto;
+  background-color: #534f4f86;
+  max-width: 300px;
+  border-radius: 5px;
+}
+
+.input-container input {
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 0.8rem 0.5rem;
+  font-size: inherit;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #fff;
+}
+
+.input-container button {
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  padding: 0.7rem;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 1rem;
+  background-color: rgb(65, 62, 62);
+  width: 100%;
+  bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer-bottom {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

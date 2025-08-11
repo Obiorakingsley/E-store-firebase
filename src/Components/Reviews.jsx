@@ -68,11 +68,11 @@ const Reviews = () => {
                   <p className="name">{item.reviews.user.name}</p>
                   <p>{item.reviews.date}</p>
                 </div>
-                <p>{item.reviews.title}</p>
-                <p>{item.reviews.body}</p>
+                <p className="center">{item.reviews.title}</p>
+                <p className="review-text center">{item.reviews.body}</p>
                 <div className="reviews-images">
-                  {item.reviews.images.map((img) => {
-                    return <img src={img} width={70} height={70} />;
+                  {item.reviews.images.map((img, index) => {
+                    return <img key={index} src={img} width={70} height={70} />;
                   })}
                 </div>
               </div>
