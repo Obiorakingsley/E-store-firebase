@@ -75,6 +75,8 @@
   outline: none;
   font-weight: bold;
   padding: 0.7rem;
+  background-color: #ff8914;
+  color: #fff;
 }
 
 .footer-social {

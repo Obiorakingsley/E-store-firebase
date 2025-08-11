@@ -60,6 +60,8 @@
 
 .logo {
   font-size: 2rem;
+  color: #ff8914;
+  text-shadow: 2px 2px 4px #0000004b;
 }
 
 .logo .logo-img {
@@ -117,6 +119,9 @@
   display: flex;
   gap: 0.2rem;
   align-items: flex-end;
+  background-color: #ff89142c;
+  border-radius: 7px;
+  padding: 0.4rem;
 }
 
 .select {
@@ -127,7 +132,7 @@
 
 .account-action {
   position: absolute;
-  top: 1rem;
+  top: 1.4rem;
   right: -2.5rem;
   display: flex;
   flex-direction: column;
@@ -147,10 +152,10 @@
   border-radius: 5px;
   border: none;
   color: #fff;
-  background-color: #ff8914;
+  background-color: #f58618;
 }
 .account-action .account-btn-signin:hover {
-  background-color: #363434;
+  background-color: #ff8000;
 }
 
 .account-action .account-btn {
