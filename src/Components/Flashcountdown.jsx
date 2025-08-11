@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaArrowCircleRight, FaChevronRight, FaTag } from "react-icons/fa";
 import { GiPriceTag } from "react-icons/gi";
+import { Link } from "react-router-dom";
 
 const Flashcountdown = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -40,9 +41,11 @@ const Flashcountdown = () => {
       </div>
 
       <div className="nav-section">
-        <p>
-          See all <FaChevronRight />
-        </p>
+        <Link to={"/flash-sales"}>
+          <p>
+            See all <FaChevronRight />
+          </p>
+        </Link>
       </div>
     </div>
   );

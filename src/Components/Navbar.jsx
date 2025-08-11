@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Styles/Nav.css";
 import {
   FaChevronDown,
@@ -106,22 +107,26 @@ const Navbar = () => {
             </ul>
           </nav>
         </div>
-        <h2 className="logo">
-          Estore
-          <img
-            className="logo-img"
-            src="/estore.png"
-            alt=""
-            width={30}
-            height={20}
-          />
-        </h2>
+        <Link to={"/"}>
+          <h2 className="logo">
+            Estore
+            <img
+              className="logo-img"
+              src="/estore.png"
+              alt=""
+              width={30}
+              height={20}
+            />
+          </h2>
+        </Link>
       </div>
 
       <div className="navbar-center">
         <input className="input-search" type="text" placeholder="Search" />
         <span className="search-icon">
-          <FaSearch size={20} />
+          <Link to={"/search"}>
+            <FaSearch size={20} />
+          </Link>
         </span>
       </div>
 
@@ -142,21 +147,30 @@ const Navbar = () => {
               className={`account-action
                 ${selectMenu ? "display" : ""}`}
             >
-              <button className="account-btn-signin">Sign In</button>
-              <div className="account-btn">
-                <FaUserPlus />
-                Sign Up
-              </div>
-              <div className="account-btn">
-                <FaUser />
-                My Account
-              </div>
+              <button className="account-btn-login">
+                <Link to={"/login"}>Sign In </Link>
+              </button>
+
+              <Link to={"/signup"}>
+                <div className="account-btn">
+                  <FaUserPlus />
+                  Sign Up
+                </div>
+              </Link>
+              <Link to={"/account"}>
+                <div className="account-btn">
+                  <FaUser />
+                  My Account
+                </div>
+              </Link>
             </nav>
           </div>
         </div>
         <div className="cart">
-          <img src="/cart.png" alt="cart icon" width={25} height={25} />
-          <span className="hidden">Cart</span>
+          <Link to={"/cart"}>
+            <img src="/cart.png" alt="cart icon" width={25} height={25} />
+            <span className="hidden">Cart</span>
+          </Link>
         </div>
       </div>
     </div>

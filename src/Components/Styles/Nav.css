@@ -122,11 +122,13 @@
   background-color: #ff89142c;
   border-radius: 7px;
   padding: 0.4rem;
+  cursor: pointer;
 }
 
 .select {
   display: flex;
   align-items: center;
+  gap: 0.2rem;
   position: relative;
 }
 
@@ -145,7 +147,7 @@
   border-bottom-right-radius: 5px;
 }
 
-.account-action .account-btn-signin {
+.account-action .account-btn-login {
   padding: 0.5rem 1rem;
   margin: 1rem;
   font-size: 1rem;
@@ -154,7 +156,12 @@
   color: #fff;
   background-color: #f58618;
 }
-.account-action .account-btn-signin:hover {
+
+.account-btn-login a {
+  color: #fff;
+}
+
+.account-action .account-btn-login:hover {
   background-color: #ff8000;
 }
 

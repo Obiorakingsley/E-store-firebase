@@ -1,6 +1,14 @@
 import React from "react";
 import Homelayout from "./Layout/Homelayout.jsx";
 import HomePage from "./pages/HomePage.jsx";
+import SearchPage from "./pages/SearchPage.jsx";
+import LoginPage from "./pages/LoginPage.jsx";
+import SignupPage from "./pages/SignupPage.jsx";
+import AccountPage from "./pages/AccountPage.jsx";
+import CartPage from "./pages/CartPage.jsx";
+import FlashsalesPage from "./pages/FlashsalesPage.jsx";
+import ProductsPage from "./pages/ProductsPage.jsx";
+
 import Navbar from "./Components/Navbar.jsx";
 import Hero from "./Components/Hero.jsx";
 import Popular from "./Components/Popularproduct.jsx";
@@ -21,6 +29,13 @@ const routes = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Homelayout />}>
       <Route index element={<HomePage />} />
+      <Route path="search" element={<SearchPage />} />
+      <Route path="login" element={<LoginPage />} />
+      <Route path="signup" element={<SignupPage />} />
+      <Route path="account" element={<AccountPage />} />
+      <Route path="cart" element={<CartPage />} />
+      <Route path="flash-sales" element={<FlashsalesPage />} />
+      <Route path="product" element={<ProductsPage />} />
     </Route>
   )
 );

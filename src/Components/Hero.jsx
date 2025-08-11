@@ -1,6 +1,7 @@
 import React from "react";
 import "./Styles/Hero.css";
 import { FaArrowCircleRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 import Flashcountdown from "./Flashcountdown";
 
@@ -17,9 +18,12 @@ function Hero() {
           <span className="cta-highlight">1M+</span> happy customers
         </h2>
         <div>
-          <button className="cta-btn">
-            Explore Products <FaArrowCircleRight size={25} />
-          </button>
+          <Link to={"/products"}>
+            <button className="cta-btn">
+              Explore Products
+              <FaArrowCircleRight size={25} />
+            </button>
+          </Link>
         </div>
       </div>
     </section>

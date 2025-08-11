@@ -10,7 +10,6 @@
   justify-content: center;
   color: rgb(255, 255, 255);
   position: relative;
-  z-index: -5;
 }
 
 .cta-container {
@@ -40,6 +39,7 @@ h2 {
 
 .cta-btn {
   padding: 0.5rem 1rem;
+  cursor: pointer;
   font-weight: 500;
   border-radius: 30px;
   font-size: inherit;
