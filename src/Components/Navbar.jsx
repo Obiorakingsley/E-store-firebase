@@ -126,17 +126,7 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-right">
-        <div
-          // onMouseEnter={() => {
-          //   setSelectmenu(true);
-          // }}
-          ref={select}
-          onClick={handleSelectMenu}
-          className="account"
-          // onMouseLeave={() => {
-          //   setSelectmenu(false);
-          // }}
-        >
+        <div ref={select} onClick={handleSelectMenu} className="account">
           <img src="/user.png" alt="user icon" width={25} height={25} />
           <div className="select">
             Account
