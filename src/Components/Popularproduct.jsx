@@ -8,15 +8,15 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css";
 import "swiper/css/free-mode";
-import img1 from "../assets/images/popular/fassion.jpg";
-import img2 from "../assets/images/popular/cross-bag.jpg";
-import img3 from "../assets/images/popular/laptop2.jpg";
-import img4 from "../assets/images/popular/laptop.jpg";
-import img5 from "../assets/images/popular/powerbank.jpg";
-import img6 from "../assets/images/popular/shoes.jpg";
-import img7 from "../assets/images/popular/slipper1.jpg";
-import img8 from "../assets/images/popular/mouse.jpg";
-import img9 from "../assets/images/popular/suite.jpg";
+import img1 from "/fashion.jpg";
+import img2 from "/cross-bag.jpg";
+import img3 from "/laptop2.jpg";
+import img4 from "/laptop.jpg";
+import img5 from "/powerbank.jpg";
+import img6 from "/shoes.jpg";
+import img7 from "/slipper1.jpg";
+import img8 from "/mouse.jpg";
+import img9 from "/suite.jpg";
 import { FaChevronRight } from "react-icons/fa";
 
 const Popularproduct = () => {

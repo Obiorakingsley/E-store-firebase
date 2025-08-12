@@ -22,7 +22,13 @@ const Product = (props) => {
 
   return (
     <div className="item">
-      <img src="../headphone.jpg" alt="" height={100} width={100} />
+      <img
+        className="image"
+        src={`/${images[0]}`}
+        alt=""
+        height={100}
+        width={100}
+      />
       <span className=" flex discount">
         <FaMinus size={5} />
         {discountPercentage}%

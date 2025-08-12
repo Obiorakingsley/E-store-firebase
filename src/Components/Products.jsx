@@ -12,7 +12,7 @@ const Products = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     async function fetchProducts() {
-      const res = await fetch("/data.json");
+      const res = await fetch("/items.json");
       const data = await res.json();
       setProducts(data.products);
     }
