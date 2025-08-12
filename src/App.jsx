@@ -8,6 +8,7 @@ import AccountPage from "./pages/AccountPage.jsx";
 import CartPage from "./pages/CartPage.jsx";
 import FlashsalesPage from "./pages/FlashsalesPage.jsx";
 import ProductsPage from "./pages/ProductsPage.jsx";
+import HomeSearchPage from "./pages/HomeSearchPage.jsx";
 
 import Navbar from "./Components/Navbar.jsx";
 import Hero from "./Components/Hero.jsx";
@@ -27,16 +28,20 @@ import {
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Homelayout />}>
-      <Route index element={<HomePage />} />
+    <>
+      <Route path="/" element={<Homelayout />}>
+        <Route index element={<HomePage />} />
+
+        <Route path="login" element={<LoginPage />} />
+        <Route path="signup" element={<SignupPage />} />
+        <Route path="account" element={<AccountPage />} />
+        <Route path="cart" element={<CartPage />} />
+        <Route path="flash-sales" element={<FlashsalesPage />} />
+        <Route path="products" element={<ProductsPage />} />
+        <Route path="search-product" element={<HomeSearchPage />} />
+      </Route>
       <Route path="search" element={<SearchPage />} />
-      <Route path="login" element={<LoginPage />} />
-      <Route path="signup" element={<SignupPage />} />
-      <Route path="account" element={<AccountPage />} />
-      <Route path="cart" element={<CartPage />} />
-      <Route path="flash-sales" element={<FlashsalesPage />} />
-      <Route path="products" element={<ProductsPage />} />
-    </Route>
+    </>
   )
 );
 const App = () => {

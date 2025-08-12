@@ -16,7 +16,7 @@ import img5 from "/powerbank.jpg";
 import img6 from "/shoes.jpg";
 import img7 from "/slipper1.jpg";
 import img8 from "/mouse.jpg";
-import img9 from "/suite.jpg";
+import img9 from "/suit.jpg";
 import { FaChevronRight } from "react-icons/fa";
 
 const Popularproduct = () => {

@@ -123,7 +123,12 @@ const Navbar = () => {
 
       <div className="navbar-center">
         <input className="input-search" type="text" placeholder="Search" />
-        <span className="search-icon">
+        <Link to={"/search-product"}>
+          <span className="search-icon search-product">
+            <FaSearch size={20} />
+          </span>
+        </Link>
+        <span className="search-icon search-page">
           <Link to={"/search"}>
             <FaSearch size={20} />
           </Link>
