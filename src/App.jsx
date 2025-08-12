@@ -9,7 +9,7 @@ import CartPage from "./pages/CartPage.jsx";
 import FlashsalesPage from "./pages/FlashsalesPage.jsx";
 import ProductsPage from "./pages/ProductsPage.jsx";
 import HomeSearchPage from "./pages/HomeSearchPage.jsx";
-
+import { loader } from "./Components/Products.jsx";
 import Navbar from "./Components/Navbar.jsx";
 import Hero from "./Components/Hero.jsx";
 import Popular from "./Components/Popularproduct.jsx";
@@ -25,21 +25,27 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
+import NotFoundPage from "./pages/NotFoundPage.jsx";
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/" element={<Homelayout />}>
-        <Route index element={<HomePage />} />
+      <Route path="/" element={<Homelayout />} loader={loader}>
+        <Route index element={<HomePage />} loader={loader} />
 
         <Route path="login" element={<LoginPage />} />
         <Route path="signup" element={<SignupPage />} />
         <Route path="account" element={<AccountPage />} />
         <Route path="cart" element={<CartPage />} />
         <Route path="flash-sales" element={<FlashsalesPage />} />
-        <Route path="products" element={<ProductsPage />} />
-        <Route path="search-product" element={<HomeSearchPage />} />
+        <Route path="products" element={<ProductsPage />} loader={loader} />
+        <Route
+          path="search-product"
+          element={<HomeSearchPage />}
+          loader={loader}
+        />
       </Route>
+      <Route path="*" element={<NotFoundPage />} />
       <Route path="search" element={<SearchPage />} />
     </>
   )
@@ -49,17 +55,3 @@ const App = () => {
 };
 
 export default App;
-
-{
-  /* <>
-      <Navbar />
-      <Hero />
-      <Popular />
-      <Products />
-      <Flashsales />
-      <Bestseller />
-      <Newcolection />
-      <Reviews />
-      <Footer />
-    </> */
-}

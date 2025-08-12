@@ -190,10 +190,6 @@
   align-items: center;
 }
 
-/* .account:hover .account-action {
-  visibility: visible;
-} */
-
 .display {
   visibility: visible;
 }
@@ -217,9 +213,6 @@
 
   .search-product {
     display: none;
-  }
-
-  .search-page {
   }
 
   .logo .logo-img {
