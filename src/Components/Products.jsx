@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense } from "react";
 import "./Styles/Products.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper/modules";
@@ -10,8 +10,10 @@ import { Await, Link, defer, useLoaderData } from "react-router-dom";
 
 export async function loader() {
   try {
-    const res = await fetch("/items.json");
-    if (!res.ok) throw new Error("Faild to fetch data");
+    const res = await fetch("./items.json");
+    if (!res.ok) {
+      throw new Error("Network response was not ok");
+    }
     const data = res.json();
     return defer({ promise: data });
   } catch (err) {
@@ -94,7 +96,12 @@ const Products = () => {
 
   return (
     <Suspense fallback={<h2>Loading...</h2>}>
-      <Await resolve={products.promise}>{renderData}</Await>
+      <Await
+        resolve={products.promise}
+        errorElement={<h1>Error Loading Product</h1>}
+      >
+        {renderData}
+      </Await>
     </Suspense>
   );
 };

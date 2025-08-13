@@ -548,7 +548,7 @@
       "subCategory": "Athletic",
       "brand": "Nike",
       "tags": ["running", "comfort", "lightweight"],
-      "images": ["shoe1.jpg", "shoe2.jpg", "shoe3.jpg"],
+      "images": ["shoe1.jpg", "shoe2.jpg"],
       "colors": [
         {
           "name": "White/Pink",

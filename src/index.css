@@ -13,6 +13,8 @@ body {
   min-height: 100vh;
 }
 
+/*Not found page*/
+
 .not-found {
   display: flex;
   justify-content: center;
@@ -85,6 +87,7 @@ a {
 }
 
 @media screen and (max-width: 500px) {
+  /*Flash sales navbar*/
   .flash-sales {
     display: flex;
     flex-wrap: wrap;
