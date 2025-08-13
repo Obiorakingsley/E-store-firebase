@@ -1,9 +1,12 @@
 .best-seller-container {
   margin: 0.5rem 0 1rem 0;
 }
+/*Best sales-card*/
+
 .best-sales-item {
   position: relative;
   width: 150px;
+  height: 200px;
   background-color: #ffffff;
   display: grid;
   align-items: center;

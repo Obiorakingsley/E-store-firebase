@@ -21,7 +21,7 @@ export async function loader() {
   }
 }
 
-const Products = () => {
+const Products = ({ isHome = false }) => {
   const products = useLoaderData();
 
   const navItems = [
@@ -35,6 +35,9 @@ const Products = () => {
   ];
 
   function renderData(data) {
+    const dataItems = data.products.map((item, index) => item);
+    const items = isHome ? dataItems : dataItems.slice(0, 8);
+
     return (
       <div className="products-container">
         <div className="navbar-top">
@@ -63,7 +66,24 @@ const Products = () => {
             </Swiper>
           </nav>
         </div>
-        <div className="product-grid">
+
+        {isHome ? (
+          <div className="display-grid">
+            {items.map((item) => (
+              <Product
+                name={item.name}
+                shortDescription={item.shortDescription}
+                price={item.price}
+                originalPrice={item.originalPrice}
+                discountPercentage={item.discountPercentage}
+                rating={item.rating}
+                key={item.id}
+                id={item.id}
+                images={item.images}
+              />
+            ))}
+          </div>
+        ) : (
           <Swiper
             slidesPerView="auto"
             spaceBetween={15}
@@ -71,25 +91,23 @@ const Products = () => {
             modules={[FreeMode]}
             className="swiper-product"
           >
-            {data.products.map((item, index) => {
-              return (
-                <SwiperSlide key={index} className="product-item">
-                  <Product
-                    name={item.name}
-                    shortDescription={item.shortDescription}
-                    price={item.price}
-                    originalPrice={item.originalPrice}
-                    discountPercentage={item.discountPercentage}
-                    rating={item.rating}
-                    key={item.id}
-                    id={item.id}
-                    images={item.images}
-                  />
-                </SwiperSlide>
-              );
-            })}
+            {items.map((item, index) => (
+              <SwiperSlide key={index} className="product-item">
+                <Product
+                  name={item.name}
+                  shortDescription={item.shortDescription}
+                  price={item.price}
+                  originalPrice={item.originalPrice}
+                  discountPercentage={item.discountPercentage}
+                  rating={item.rating}
+                  key={item.id}
+                  id={item.id}
+                  images={item.images}
+                />
+              </SwiperSlide>
+            ))}
           </Swiper>
-        </div>
+        )}
       </div>
     );
   }

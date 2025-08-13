@@ -10,10 +10,12 @@ import { FaMinus } from "react-icons/fa";
 import { FaNairaSign } from "react-icons/fa6";
 import { Link, useLoaderData, Await } from "react-router-dom";
 
-const Bestseller = () => {
+const Bestseller = ({ isHome = false }) => {
   const products = useLoaderData();
 
   function renderData(bestseller) {
+    const dataItems = bestseller.products.map((item, id) => item);
+    const bestSellerItem = isHome ? dataItems : dataItems.slice(8, 17);
     return (
       <div className="best-seller-container">
         <div className="navbar-top">
@@ -32,7 +34,7 @@ const Bestseller = () => {
           modules={[FreeMode]}
           className="swiper-product"
         >
-          {bestseller.products.map((item, id) => {
+          {bestSellerItem.map((item, id) => {
             let subName = item.name;
             subName = subName.substring(0, 20) + "...";
             return (

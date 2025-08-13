@@ -6,15 +6,17 @@ import { FaNairaSign } from "react-icons/fa6";
 import "./Styles/Flashsales.css";
 import { Await, useLoaderData } from "react-router-dom";
 
-const Flashsales = () => {
+const Flashsales = ({ isHome = false }) => {
   const products = useLoaderData();
 
   function renderData(data) {
+    const dataItems = data.products.map((item) => item);
+    const items = isHome ? dataItems : dataItems.slice(12, 20);
     return (
       <>
         <Flashcountdown />
         <div className="flash-sales-container">
-          {data.products.map((item) => {
+          {items.map((item) => {
             let subName = item.name;
 
             subName = subName.substring(0, 35) + "...";
