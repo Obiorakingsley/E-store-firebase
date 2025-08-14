@@ -39,35 +39,37 @@ const Bestseller = ({ isHome = false }) => {
             subName = subName.substring(0, 20) + "...";
             return (
               <SwiperSlide key={id} className="best-seller-item">
-                <div className="best-sales-item">
-                  <img src={item.images[0]} alt="" width={90} height={90} />
-                  <span className=" flex discount">
-                    <FaMinus size={5} />
-                    {item.discountPercentage}%
-                  </span>
-                  <p className="name">{subName}</p>
-                  <div className="price-container">
-                    <p className="flex price">
-                      <FaNairaSign size={15} />
-                      {item.price}
-                    </p>
+                <Link to={`products/${item.id}`}>
+                  <div className="best-sales-item">
+                    <img src={item.images[0]} alt="" width={90} height={90} />
+                    <span className=" flex discount">
+                      <FaMinus size={5} />
+                      {item.discountPercentage}%
+                    </span>
+                    <p className="name">{subName}</p>
+                    <div className="price-container">
+                      <p className="flex price">
+                        <FaNairaSign size={15} />
+                        {item.price}
+                      </p>
 
-                    {/* <b>
+                      {/* <b>
                     <span className="flex original-price">
                       <FaNairaSign size={15} />
                       {item.originalPrice}
                     </span>
                   </b> */}
-                  </div>
-                  {/* <span className="stock">{item.stock} items left</span> */}
-                  {/* <Line
+                    </div>
+                    {/* <span className="stock">{item.stock} items left</span> */}
+                    {/* <Line
                   percent={item.stock}
                   strokeWidth={4}
                   trailWidth={4}
                   strokeLinecap="round"
                   strokeColor="orange"
                 /> */}
-                </div>
+                  </div>
+                </Link>
               </SwiperSlide>
             );
           })}

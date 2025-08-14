@@ -8,6 +8,7 @@ import AccountPage from "./pages/AccountPage.jsx";
 import CartPage from "./pages/CartPage.jsx";
 import FlashsalesPage from "./pages/FlashsalesPage.jsx";
 import ProductsPage from "./pages/ProductsPage.jsx";
+import ProductDetailsPage from "./pages/ProductDetailsPage.jsx";
 import HomeSearchPage from "./pages/HomeSearchPage.jsx";
 import { loader } from "./Components/Products.jsx";
 
@@ -32,6 +33,11 @@ const routes = createBrowserRouter(
           loader={loader}
         />
         <Route path="products" element={<ProductsPage />} loader={loader} />
+        <Route
+          path="products/:id"
+          element={<ProductDetailsPage />}
+          loader={loader}
+        />
         <Route
           path="search-product"
           element={<HomeSearchPage />}

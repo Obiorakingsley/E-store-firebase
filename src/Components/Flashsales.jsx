@@ -4,7 +4,7 @@ import { Line } from "rc-progress";
 import { FaMinus } from "react-icons/fa";
 import { FaNairaSign } from "react-icons/fa6";
 import "./Styles/Flashsales.css";
-import { Await, useLoaderData } from "react-router-dom";
+import { Await, Link, useLoaderData } from "react-router-dom";
 
 const Flashsales = ({ isHome = false }) => {
   const products = useLoaderData();
@@ -23,27 +23,29 @@ const Flashsales = ({ isHome = false }) => {
 
             subName = subName.substring(0, 35) + "...";
             return (
-              <div key={item.id} className="flash-sales-item">
-                <img src={item.images[0]} alt="" width={90} height={90} />
-                <span className=" flex discount">
-                  <FaMinus size={5} />
-                  {item.discountPercentage}%
-                </span>
-                <p className="name">{subName}</p>
-                <div className="price-container">
-                  <p className="flex price">
-                    <FaNairaSign size={15} />
-                    {item.price}
-                  </p>
-
-                  <b>
-                    <span className="flex original-price">
+              <Link to={`/products/${item.id}`}>
+                <div key={item.id} className="flash-sales-item">
+                  <img src={item.images[0]} alt="" width={90} height={90} />
+                  <span className=" flex discount">
+                    <FaMinus size={5} />
+                    {item.discountPercentage}%
+                  </span>
+                  <p className="name">{subName}</p>
+                  <div className="price-container">
+                    <p className="flex price">
                       <FaNairaSign size={15} />
-                      {item.originalPrice}
-                    </span>
-                  </b>
+                      {item.price}
+                    </p>
+
+                    <b>
+                      <span className="flex original-price">
+                        <FaNairaSign size={15} />
+                        {item.originalPrice}
+                      </span>
+                    </b>
+                  </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

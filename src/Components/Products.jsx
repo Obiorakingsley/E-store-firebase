@@ -70,17 +70,19 @@ const Products = ({ isHome = false }) => {
         {isHome ? (
           <div className="display-grid">
             {items.map((item) => (
-              <Product
-                name={item.name}
-                shortDescription={item.shortDescription}
-                price={item.price}
-                originalPrice={item.originalPrice}
-                discountPercentage={item.discountPercentage}
-                rating={item.rating}
-                key={item.id}
-                id={item.id}
-                images={item.images}
-              />
+              <Link to={`${item.id}`}>
+                <Product
+                  name={item.name}
+                  shortDescription={item.shortDescription}
+                  price={item.price}
+                  originalPrice={item.originalPrice}
+                  discountPercentage={item.discountPercentage}
+                  rating={item.rating}
+                  key={item.id}
+                  id={item.id}
+                  images={item.images}
+                />
+              </Link>
             ))}
           </div>
         ) : (
@@ -93,17 +95,19 @@ const Products = ({ isHome = false }) => {
           >
             {items.map((item, index) => (
               <SwiperSlide key={index} className="product-item">
-                <Product
-                  name={item.name}
-                  shortDescription={item.shortDescription}
-                  price={item.price}
-                  originalPrice={item.originalPrice}
-                  discountPercentage={item.discountPercentage}
-                  rating={item.rating}
-                  key={item.id}
-                  id={item.id}
-                  images={item.images}
-                />
+                <Link to={`products/${item.id}`}>
+                  <Product
+                    name={item.name}
+                    shortDescription={item.shortDescription}
+                    price={item.price}
+                    originalPrice={item.originalPrice}
+                    discountPercentage={item.discountPercentage}
+                    rating={item.rating}
+                    key={item.id}
+                    id={item.id}
+                    images={item.images}
+                  />
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>

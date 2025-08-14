@@ -11,7 +11,7 @@
 .reviews-card {
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
   background-color: #ffffff;
   display: grid;
   padding: 1rem;
