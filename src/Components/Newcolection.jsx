@@ -15,6 +15,8 @@ const Newcolection = () => {
   const products = useLoaderData();
 
   function renderData(newColection) {
+    const dataItems = newColection.products.map((item, id) => item);
+    const items = dataItems.slice(11, 20);
     return (
       <div className="new-collection-container">
         <div className="navbar-top">
@@ -33,7 +35,7 @@ const Newcolection = () => {
           modules={[FreeMode]}
           className="swiper-product"
         >
-          {newColection.products.map((item, id) => {
+          {items.map((item, id) => {
             let subName = item.name;
             subName = subName.substring(0, 20) + "...";
             return (

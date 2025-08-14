@@ -1,0 +1,104 @@
+.login-form {
+  background-color: rgba(255, 168, 69, 0.219);
+  min-height: 100vh;
+  width: 100%;
+}
+
+.login-background {
+  background-image: linear-gradient(#ff891423, #ff891477, #ff8914);
+  min-height: 40vh;
+  padding: 10vh 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+.login-icon {
+  background-color: #fff;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.login {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.login .form {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  min-width: 335px;
+  max-width: 400px;
+  margin: 0 auto;
+  position: absolute;
+  top: 25vh;
+}
+
+.form h1 {
+  text-align: center;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.login-container .input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 0.5rem;
+  border-bottom: 2px solid #ff8914;
+}
+
+.input input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  padding: 0.3rem 0;
+}
+.input label {
+  margin-bottom: 0.5rem;
+  color: #080808;
+}
+
+.form button {
+  background-color: #ff8914;
+  padding: 0.7rem 1rem;
+  width: 200px;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  position: absolute;
+  bottom: -1.2rem;
+}
+
+.alt-login {
+  position: absolute;
+  bottom: -110px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  gap: 1rem;
+}
+.alt-link {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}

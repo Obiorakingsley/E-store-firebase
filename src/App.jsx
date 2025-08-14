@@ -24,9 +24,6 @@ const routes = createBrowserRouter(
     <>
       <Route path="/" element={<Homelayout />}>
         <Route index element={<HomePage />} loader={loader} />
-
-        <Route path="login" element={<LoginPage />} />
-
         <Route path="account" element={<AccountPage />} />
         <Route path="cart" element={<CartPage />} loader={loader} />
         <Route
@@ -44,6 +41,7 @@ const routes = createBrowserRouter(
       <Route path="*" element={<NotFoundPage />} />
       <Route path="search" element={<SearchPage loader={loader} />} />
       <Route path="signup" element={<SignupPage />} />
+      <Route path="login" element={<LoginPage />} />
     </>
   )
 );

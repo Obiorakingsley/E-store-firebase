@@ -17,19 +17,19 @@ const Signup = () => {
           <div className="signup-container">
             <div className="input">
               <label htmlFor="name">Name</label>
-              <input type="text" />
+              <input id="name" type="text" />
             </div>
             <div className="input">
-              <label htmlFor="name">Email</label>
-              <input type="email" />
+              <label htmlFor="email">Email</label>
+              <input id="email" type="email" />
             </div>
             <div className="input">
-              <label htmlFor="name">Password</label>
-              <input type="password" />
+              <label htmlFor="password">Password</label>
+              <input id="password" type="password" />
             </div>
             <div className="input">
-              <label htmlFor="name">Confirm Password</label>
-              <input type="password" />
+              <label htmlFor="confirm password">Confirm Password</label>
+              <input id="confirm password" type="password" />
             </div>
 
             <button>Sign Up</button>
