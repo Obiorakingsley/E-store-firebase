@@ -148,16 +148,18 @@
 }
 
 .account-action .account-btn-login {
-  padding: 0.5rem 1rem;
-  margin: 1rem;
+  padding: 0.5rem;
   font-size: 1rem;
   border-radius: 5px;
   border: none;
   color: #fff;
   background-color: #f58618;
+  margin: 1rem;
+  width: 80%;
+  cursor: pointer;
 }
 
-.account-btn-login a {
+.account-action .account-btn-login a {
   color: #fff;
 }
 

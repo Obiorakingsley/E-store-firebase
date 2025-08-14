@@ -35,12 +35,12 @@ const Products = ({ isHome = false }) => {
   ];
 
   function renderData(data) {
-    const dataItems = data.products.map((item, index) => item);
+    const dataItems = data.products.map((item) => item);
     const items = isHome ? dataItems : dataItems.slice(0, 8);
 
     return (
-      <div className="products-container">
-        <div className="navbar-top">
+      <div className={`products-container ${isHome ? "min-height" : null}`}>
+        <div className={` ${isHome ? "hidden" : "navbar-top"}`}>
           <h2>Browse by categories</h2>
           <Link to={"/products"}>
             <span className="flex">

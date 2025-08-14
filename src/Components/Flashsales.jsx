@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense } from "react";
+import React, { Suspense } from "react";
 import Flashcountdown from "./Flashcountdown";
 import { Line } from "rc-progress";
 import { FaMinus } from "react-icons/fa";
@@ -15,7 +15,9 @@ const Flashsales = ({ isHome = false }) => {
     return (
       <>
         <Flashcountdown />
-        <div className="flash-sales-container">
+        <div
+          className={`flash-sales-container ${isHome ? "min-height" : null}`}
+        >
           {items.map((item) => {
             let subName = item.name;
 

@@ -152,9 +152,9 @@ const Navbar = () => {
               className={`account-action
                 ${selectMenu ? "display" : ""}`}
             >
-              <button className="account-btn-login">
-                <Link to={"/login"}>Sign In </Link>
-              </button>
+              <Link to={"/login"}>
+                <button className="account-btn-login">Login</button>
+              </Link>
 
               <Link to={"/signup"}>
                 <div className="account-btn">

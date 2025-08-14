@@ -4,6 +4,10 @@
   background-color: rgb(248, 244, 244);
 }
 
+.min-height {
+  min-height: 90vh;
+}
+
 .products-container .display-grid {
   width: 100%;
   display: grid;
@@ -43,6 +47,10 @@
 
 .swiper-navbar {
   padding: 0 0.2rem;
+}
+
+.hidden {
+  display: none;
 }
 
 .nav-item {
