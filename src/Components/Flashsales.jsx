@@ -23,8 +23,8 @@ const Flashsales = ({ isHome = false }) => {
 
             subName = subName.substring(0, 35) + "...";
             return (
-              <Link to={`/products/${item.id}`}>
-                <div key={item.id} className="flash-sales-item">
+              <Link key={item.id} to={`/products/${item.id}`}>
+                <div className="flash-sales-item">
                   <img src={item.images[0]} alt="" width={90} height={90} />
                   <span className=" flex discount">
                     <FaMinus size={5} />

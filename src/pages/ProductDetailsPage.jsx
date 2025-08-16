@@ -1,7 +1,7 @@
 import ProductDetails from "../Components/ProductDetails";
 
-const ProductPage = () => {
+const ProductDetailsPage = () => {
   return <ProductDetails />;
 };
 
-export default ProductPage;
+export default ProductDetailsPage;

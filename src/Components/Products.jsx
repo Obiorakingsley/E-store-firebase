@@ -6,20 +6,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import Product from "./Product.jsx";
 import { FaChevronRight } from "react-icons/fa6";
-import { Await, Link, defer, useLoaderData } from "react-router-dom";
-
-export async function loader() {
-  try {
-    const res = await fetch("./items.json");
-    if (!res.ok) {
-      throw new Error("Network response was not ok");
-    }
-    const data = res.json();
-    return defer({ promise: data });
-  } catch (err) {
-    return new Promise("Error fetching data");
-  }
-}
+import { Await, Link, useLoaderData } from "react-router-dom";
 
 const Products = ({ isHome = false }) => {
   const products = useLoaderData();

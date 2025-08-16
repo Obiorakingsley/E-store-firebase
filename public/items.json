@@ -3,7 +3,7 @@
     {
       "id": "prod_7090",
       "name": "JBL Tune 760NC Wireless Noise Cancelling Headphones",
-      "description": "<p>Experience crystal-clear sound with JBL's Pure Bass technology. 50mm drivers deliver powerful audio with adaptive noise cancellation. Up to <strong>35 hours</strong> battery life.</p>",
+      "description": "Experience crystal-clear sound with JBL's Pure Bass technology. 50mm drivers deliver powerful audio with adaptive noise cancellation. Up to 35 hours battery life.",
       "shortDescription": "Wireless over-ear headphones with ANC",
       "price": 129.99,
       "originalPrice": 179.99,
@@ -59,7 +59,7 @@
     {
       "id": "prod_7091",
       "name": "Samsung Galaxy S23 Ultra",
-      "description": "<p>Professional-grade camera with <strong>200MP</strong> sensor. S Pen included. Snapdragon 8 Gen 2 processor with 12GB RAM.</p>",
+      "description": "Professional-grade camera with 200MP sensor. S Pen included. Snapdragon 8 Gen 2 processor with 12GB RAM.",
       "shortDescription": "Flagship smartphone with S Pen",
       "price": 1199.99,
       "originalPrice": 1299.99,
@@ -115,7 +115,7 @@
     {
       "id": "prod_7092",
       "name": "Apple iPad Air (5th Gen)",
-      "description": "<p>M1 chip delivers <strong>60% faster</strong> performance. 10.9\" Liquid Retina display. Supports Apple Pencil 2nd gen.</p>",
+      "description": "M1 chip delivers 60% faster performance. 10.9\" Liquid Retina display. Supports Apple Pencil 2nd gen.",
       "shortDescription": "Powerful tablet with M1 chip",
       "price": 599.0,
       "originalPrice": 599.0,
@@ -171,7 +171,7 @@
     {
       "id": "prod_7093",
       "name": "Ergonomic Office Chair",
-      "description": "<p>Breathable mesh back with <strong>adjustable lumbar support</strong>. 360° swivel with smooth-rolling casters. Weight capacity: 300lbs.</p>",
+      "description": "Breathable mesh back with adjustable lumbar support. 360° swivel with smooth-rolling casters. Weight capacity: 300lbs.",
       "shortDescription": "Comfortable chair for long work sessions",
       "price": 199.99,
       "originalPrice": 249.99,
@@ -227,7 +227,7 @@
     {
       "id": "prod_7094",
       "name": "Stainless Steel Refrigerator",
-      "description": "<p><strong>French door</strong> design with 25 cu. ft. capacity. Dual cooling system and smart connectivity. Energy Star certified.</p>",
+      "description": "French door design with 25 cu. ft. capacity. Dual cooling system and smart connectivity. Energy Star certified.",
       "shortDescription": "Smart refrigerator with French doors",
       "price": 2199.0,
       "originalPrice": 2599.0,
@@ -278,7 +278,7 @@
     {
       "id": "prod_7095",
       "name": "Men's Slim-Fit Suit",
-      "description": "<p><strong>Wool blend</strong> fabric with stretch for comfort. Includes jacket and pants. Available in regular, short, and long sizes.</p>",
+      "description": "Wool blend fabric with stretch for comfort. Includes jacket and pants. Available in regular, short, and long sizes.",
       "shortDescription": "Modern slim-fit suit for professional occasions",
       "price": 249.99,
       "originalPrice": 349.99,
@@ -334,7 +334,7 @@
     {
       "id": "prod_7096",
       "name": "4K Smart TV 65",
-      "description": "<p><strong>OLED display</strong> with Dolby Vision. Smart platform with voice control. 120Hz refresh rate for gaming.</p>",
+      "description": "OLED display with Dolby Vision. Smart platform with voice control. 120Hz refresh rate for gaming.",
       "shortDescription": "Premium 4K OLED smart television",
       "price": 1799.99,
       "originalPrice": 2199.99,
@@ -385,7 +385,7 @@
     {
       "id": "prod_7097",
       "name": "Anti-Aging Serum",
-      "description": "<p>With <strong>hyaluronic acid</strong> and vitamin C. Reduces wrinkles and brightens skin. Dermatologist tested.</p>",
+      "description": "With hyaluronic acid and vitamin C. Reduces wrinkles and brightens skin. Dermatologist tested.",
       "shortDescription": "Advanced skincare serum for youthful glow",
       "price": 49.99,
       "originalPrice": 59.99,
@@ -430,7 +430,7 @@
     {
       "id": "prod_7098",
       "name": "Wireless Charging Stand",
-      "description": "<p><strong>15W fast charging</strong> compatible with Qi-enabled devices. Adjustable viewing angle for FaceTime.</p>",
+      "description": "15W fast charging compatible with Qi-enabled devices. Adjustable viewing angle for FaceTime.",
       "shortDescription": "Dual-purpose charging stand",
       "price": 29.99,
       "originalPrice": 39.99,
@@ -486,7 +486,7 @@
     {
       "id": "prod_7099",
       "name": "Robot Vacuum Cleaner",
-      "description": "<p><strong>LIDAR navigation</strong> with smart mapping. 2000Pa suction power. Works with Alexa and Google Assistant.</p>",
+      "description": "LIDAR navigation with smart mapping. 2000Pa suction power. Works with Alexa and Google Assistant.",
       "shortDescription": "Smart robot vacuum with app control",
       "price": 349.99,
       "originalPrice": 449.99,
@@ -537,7 +537,7 @@
     {
       "id": "prod_7100",
       "name": "Women's Running Shoes",
-      "description": "<p><strong>Lightweight</strong> cushioning with breathable mesh. Responsive foam for energy return. Slip-resistant outsole.</p>",
+      "description": "Lightweight cushioning with breathable mesh. Responsive foam for energy return. Slip-resistant outsole.",
       "shortDescription": "Performance running shoes for women",
       "price": 89.99,
       "originalPrice": 119.99,
@@ -593,7 +593,7 @@
     {
       "id": "prod_7111",
       "name": "Black Cotton Top & Short Set",
-      "description": "<p><strong>Breathable cotton</strong> workout set with moisture-wicking technology. Relaxed fit for maximum comfort during exercise. Set includes matching top and shorts.</p>",
+      "description": "Breathable cotton workout set with moisture-wicking technology. Relaxed fit for maximum comfort during exercise. Set includes matching top and shorts.",
       "shortDescription": "Comfortable black workout set",
       "price": 34.99,
       "originalPrice": 49.99,
@@ -644,7 +644,7 @@
     {
       "id": "prod_7112",
       "name": "Crossbody Blue Shoulder Bag",
-      "description": "<p><strong>Water-resistant</strong> nylon bag with multiple compartments. Adjustable strap (22\"-32\"). RFID-blocking pocket for security.</p>",
+      "description": "Water-resistant nylon bag with multiple compartments. Adjustable strap (22\"-32\"). RFID-blocking pocket for security.",
       "shortDescription": "Stylish blue crossbody bag",
       "price": 39.99,
       "originalPrice": 59.99,
@@ -695,7 +695,7 @@
     {
       "id": "prod_7113",
       "name": "HP Pavilion 15 Laptop",
-      "description": "<p><strong>Intel Core i7</strong> processor, 16GB RAM, 512GB SSD. 15.6\" Full HD IPS display. Backlit keyboard with numeric pad.</p>",
+      "description": "Intel Core i7 processor, 16GB RAM, 512GB SSD. 15.6\" Full HD IPS display. Backlit keyboard with numeric pad.",
       "shortDescription": "Powerful HP laptop for work and play",
       "price": 799.99,
       "originalPrice": 899.99,
@@ -746,7 +746,7 @@
     {
       "id": "prod_7114",
       "name": "Ace Ultrabook Pro",
-      "description": "<p><strong>Ultra-thin</strong> design with AMD Ryzen 7, 16GB RAM, 1TB SSD. 14\" 2K touchscreen display. Fingerprint reader for security.</p>",
+      "description": "Ultra-thin design with AMD Ryzen 7, 16GB RAM, 1TB SSD. 14\" 2K touchscreen display. Fingerprint reader for security.",
       "shortDescription": "Premium lightweight laptop",
       "price": 1099.99,
       "originalPrice": 1299.99,
@@ -797,7 +797,7 @@
     {
       "id": "prod_7115",
       "name": "Ace Elec 2000mAh Power Bank",
-      "description": "<p><strong>Dual USB ports</strong> with 2.4A fast charging. LED power indicator. Compact and lightweight design.</p>",
+      "description": "Dual USB ports with 2.4A fast charging. LED power indicator. Compact and lightweight design.",
       "shortDescription": "Portable high-capacity power bank",
       "price": 19.99,
       "originalPrice": 29.99,
@@ -853,7 +853,7 @@
     {
       "id": "prod_7116",
       "name": "Black Training Shoes",
-      "description": "<p><strong>Shock-absorbing</strong> midsoles with breathable mesh upper. Non-marking rubber outsole. Perfect for gym and cross-training.</p>",
+      "description": "Shock-absorbing midsoles with breathable mesh upper. Non-marking rubber outsole. Perfect for gym and cross-training.",
       "shortDescription": "Versatile black training shoes",
       "price": 79.99,
       "originalPrice": 99.99,
@@ -904,7 +904,7 @@
     {
       "id": "prod_7117",
       "name": "Brown Leather High Heel Slippers",
-      "description": "<p><strong>Genuine leather</strong> with 3.5\" block heel. Padded insole for all-day comfort. Slip-on design with open toe.</p>",
+      "description": "Genuine leather with 3.5\" block heel. Padded insole for all-day comfort. Slip-on design with open toe.",
       "shortDescription": "Elegant brown heeled slippers",
       "price": 59.99,
       "originalPrice": 79.99,
@@ -955,7 +955,7 @@
     {
       "id": "prod_7118",
       "name": "Wireless Black Mouse",
-      "description": "<p><strong>Ergonomic design</strong> with silent click technology. 2.4GHz wireless connection with USB receiver. 12-month battery life.</p>",
+      "description": "Ergonomic design with silent click technology. 2.4GHz wireless connection with USB receiver. 12-month battery life.",
       "shortDescription": "Comfortable wireless computer mouse",
       "price": 24.99,
       "originalPrice": 34.99,
@@ -1006,7 +1006,7 @@
     {
       "id": "prod_7119",
       "name": "Men's Classic Fit Suit",
-      "description": "<p><strong>Wool-polyester blend</strong> with slight stretch. Notch lapel jacket with flat front pants. Available in multiple sizes.</p>",
+      "description": "Wool-polyester blend with slight stretch. Notch lapel jacket with flat front pants. Available in multiple sizes.",
       "shortDescription": "Timeless classic fit suit",
       "price": 279.99,
       "originalPrice": 399.99,

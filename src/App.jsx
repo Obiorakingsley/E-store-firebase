@@ -10,7 +10,8 @@ import FlashsalesPage from "./pages/FlashsalesPage.jsx";
 import ProductsPage from "./pages/ProductsPage.jsx";
 import ProductDetailsPage from "./pages/ProductDetailsPage.jsx";
 import HomeSearchPage from "./pages/HomeSearchPage.jsx";
-import { loader } from "./Components/Products.jsx";
+
+import loaders from "./Components/Loader.jsx";
 
 import {
   Route,
@@ -19,40 +20,41 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
+import { ProductContextProvider } from "./Components/ProductContext.jsx";
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<Homelayout />}>
-        <Route index element={<HomePage />} loader={loader} />
+        <Route index element={<HomePage />} loader={loaders} />
         <Route path="account" element={<AccountPage />} />
-        <Route path="cart" element={<CartPage />} loader={loader} />
+        <Route path="cart" element={<CartPage />} loader={loaders} />
         <Route
           path="flash-sales"
           element={<FlashsalesPage />}
-          loader={loader}
+          loader={loaders}
         />
-        <Route path="products" element={<ProductsPage />} loader={loader} />
-        <Route
-          path="products/:id"
-          element={<ProductDetailsPage />}
-          loader={loader}
-        />
+        <Route path="products" element={<ProductsPage />} loader={loaders} />
+        <Route path="/products/:id" element={<ProductDetailsPage />} />
         <Route
           path="search-product"
           element={<HomeSearchPage />}
-          loader={loader}
+          loader={loaders}
         />
       </Route>
       <Route path="*" element={<NotFoundPage />} />
-      <Route path="search" element={<SearchPage loader={loader} />} />
+      <Route path="search" element={<SearchPage loader={loaders} />} />
       <Route path="signup" element={<SignupPage />} />
       <Route path="login" element={<LoginPage />} />
     </>
   )
 );
 const App = () => {
-  return <RouterProvider router={routes} />;
+  return (
+    <ProductContextProvider>
+      <RouterProvider router={routes} />
+    </ProductContextProvider>
+  );
 };
 
 export default App;
