@@ -20,7 +20,6 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
-import { ProductContextProvider } from "./Components/ProductContext.jsx";
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
@@ -50,11 +49,7 @@ const routes = createBrowserRouter(
   )
 );
 const App = () => {
-  return (
-    <ProductContextProvider>
-      <RouterProvider router={routes} />
-    </ProductContextProvider>
-  );
+  return <RouterProvider router={routes} />;
 };
 
 export default App;

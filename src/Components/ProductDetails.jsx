@@ -9,12 +9,15 @@ import "swiper/css/pagination";
 import StarRatings from "react-star-ratings";
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
-import { ProductContext } from "./ProductContext";
+import { cartContext } from "./cartContext";
+
 import { FaMinus, FaPlus } from "react-icons/fa";
 
 const ProductDetails = () => {
   const { id } = useParams();
-  const [items, setProduct] = useState([]);
+  const [product, setProduct] = useState([]);
+  const { cart, addToCart } = useContext(cartContext);
+  console.log(cart);
   const [selectedColor, setSelectedColor] = useState({
     hex: "#000000",
     name: "Black",
@@ -35,7 +38,6 @@ const ProductDetails = () => {
     }
     fetchProduct();
   }, []);
-  console.log(items);
 
   return (
     <div className="product-details-container">
@@ -52,8 +54,8 @@ const ProductDetails = () => {
             modules={[Autoplay, Pagination, Navigation]}
             className="swiper-review"
           >
-            {items.images &&
-              items.images.map((img, index) => {
+            {product.images &&
+              product.images.map((img, index) => {
                 return (
                   <SwiperSlide key={index} className="details-item">
                     <div className="reviews-card">
@@ -74,25 +76,25 @@ const ProductDetails = () => {
           </Swiper>
         </div>
         <div className="product-info">
-          <p>{items.subCategory}</p>
-          <p className="info-name">{items.name}</p>
+          <p>{product.subCategory}</p>
+          <p className="info-name">{product.name}</p>
           <div className="item-rating">
             <StarRatings
               starRatedColor="#ffba52ff"
               starDimension="18px"
-              rating={items.rating}
+              rating={product.rating}
               numberOfStars={5}
               starSpacing="2px"
               name="rating"
             />
-            <p>{items.rating}</p>
-            <p>({items.reviewCount} Reviews)</p>
+            <p>{product.rating}</p>
+            <p>({product.reviewCount} Reviews)</p>
           </div>
           <div className="item-price">
-            <p className="info-price">${items.price}</p>
-            <p className="info-original-price">${items.originalPrice}</p>
+            <p className="info-price">${product.price}</p>
+            <p className="info-original-price">${product.originalPrice}</p>
           </div>
-          <p className="info-description">{items.description}</p>
+          <p className="info-description">{product.description}</p>
           <div className="info-color">
             <span>
               <b>Color:</b> {selectedColor.name}
@@ -131,7 +133,14 @@ const ProductDetails = () => {
             <button className="increase-quantity-btn">
               <FaPlus />
             </button>
-            <button className="add-item-cart">Add To Cart</button>
+            <button
+              onClick={() => {
+                addToCart(product);
+              }}
+              className="add-item-cart"
+            >
+              Add To Cart
+            </button>
             <button className="checkout-item">Buy Now</button>
           </div>
         </div>
