@@ -26,12 +26,12 @@
 
 .details-item {
   width: auto !important;
-  margin: 0 auto !important;
 }
 
 .swiper-details {
   padding: 1rem 0.5rem !important;
   width: 300px !important;
+  margin: 0 auto !important;
 }
 
 .info-name {

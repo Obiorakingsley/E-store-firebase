@@ -11,7 +11,7 @@
 .reviews-card {
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 350px;
   background-color: #ffffff;
   display: grid;
   padding: 1rem;
@@ -38,11 +38,17 @@
   text-align: center;
 }
 
+.user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .user-review {
   margin: 1rem 0;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  justify-content: space-between;
 }
 
 .user-review .name {
@@ -91,10 +97,12 @@
 .reviews-card img {
   display: block;
   border-radius: 5px;
+  margin: 0 auto !important;
 }
 
 .swiper-review {
   padding: 2rem 0.5rem !important;
+  margin: 0 auto !important;
 }
 
 .flex {

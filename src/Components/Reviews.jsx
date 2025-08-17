@@ -57,13 +57,15 @@ const Reviews = () => {
                     <span className="ratint-count">{item.rating}</span>
                   </div>
                   <div className="user-review">
-                    <img
-                      src={item.reviews.user.image}
-                      alt=""
-                      width={40}
-                      height={40}
-                    />
-                    <p className="name">{item.reviews.user.name}</p>
+                    <div className="user">
+                      <img
+                        src={item.reviews.user.image}
+                        alt=""
+                        width={40}
+                        height={40}
+                      />
+                      <p className="name">{item.reviews.user.name}</p>
+                    </div>
                     <p>{item.reviews.date}</p>
                   </div>
                   <p className="center">{item.reviews.title}</p>

@@ -9,15 +9,17 @@ import "swiper/css/pagination";
 import StarRatings from "react-star-ratings";
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
-import { cartContext } from "./cartContext";
+import { cartContext } from "./Cartcontext";
 
 import { FaMinus, FaPlus } from "react-icons/fa";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
-  const { cart, addToCart } = useContext(cartContext);
-  console.log(cart);
+
+  const { cart, addToCart, increaseItemQuantity, decreaseItemQuantity } =
+    useContext(cartContext);
+
   const [selectedColor, setSelectedColor] = useState({
     hex: "#000000",
     name: "Black",
@@ -126,11 +128,21 @@ const ProductDetails = () => {
             </label>
           </div>
           <div className="add-remove-cart">
-            <button className="decrease-quantity-btn">
+            <button
+              onClick={() => {
+                decreaseItemQuantity(product);
+              }}
+              className="decrease-quantity-btn"
+            >
               <FaMinus />
             </button>
-            <p style={{ fontSize: "1.2rem" }}>4</p>
-            <button className="increase-quantity-btn">
+            <p style={{ fontSize: "1.2rem" }}>1</p>
+            <button
+              onClick={() => {
+                increaseItemQuantity(product);
+              }}
+              className="increase-quantity-btn"
+            >
               <FaPlus />
             </button>
             <button
