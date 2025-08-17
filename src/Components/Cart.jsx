@@ -13,6 +13,30 @@ const Cart = () => {
   const { cart, removeFromCart, increaseItemQuantity, decreaseItemQuantity } =
     useContext(cartContext);
 
+  const totalQuantity = cart
+    ? cart.reduce((sum, item) => sum + item.quantity, 0)
+    : null;
+
+  const totalPrice = cart
+    ? cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
+    : null;
+
+  const originalPrice = cart
+    ? cart.reduce((sum, item) => sum + item.originalPrice * item.quantity, 0)
+    : null;
+
+  const discountPrice = cart
+    ? cart.reduce(
+        (sum, item) =>
+          sum +
+          Math.floor(
+            item.discountPercentage * item.originalPrice * item.quantity
+          ) /
+            100,
+        0
+      )
+    : null;
+
   return (
     <div className="cart-container">
       <div className="cart-summary">
@@ -62,7 +86,7 @@ const Cart = () => {
                   >
                     <FaMinus size={10} />
                   </button>
-                  <p style={{ fontSize: "1rem" }}>1</p>
+                  <p style={{ fontSize: "1rem" }}>{item.quantity}</p>
                   <button
                     onClick={() => {
                       increaseItemQuantity(item);
@@ -78,21 +102,40 @@ const Cart = () => {
       </div>
       <div className="order-summary">
         <h2>Order Summary</h2>
+        <h3>cart: ({totalQuantity})</h3>
         <div className="order">
           <div className="total">
             <p>Item (s) total</p>
-            <p>$54</p>
+            <p
+              style={{
+                color: "#0000006b",
+                fontWeight: "bold",
+                textDecoration: "line-through",
+              }}
+            >
+              ${originalPrice.toFixed(2)}
+            </p>
           </div>
           <div className="item-discount">
             <p>item (s) discount</p>
-            <p>$52</p>
+            <p
+              style={{
+                fontWeight: "bold",
+                fontSize: "1rem",
+                color: "#ff4800ff",
+              }}
+            >
+              -{Math.floor(discountPrice)}
+            </p>
           </div>
         </div>
         <div className="order-total">
           <h2>Order total</h2>
-          <h3>$57</h3>
+          <h3>${totalPrice.toFixed(2)}</h3>
         </div>
-        <button className="checkout-btn">Checkout</button>
+        <button className="checkout-btn">
+          Checkout ($ {totalPrice.toFixed(2)})
+        </button>
       </div>
     </div>
   );

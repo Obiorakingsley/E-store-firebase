@@ -11,7 +11,7 @@ export const CartContextProvider = ({ children }) => {
   // set Item to LocalStorage
 
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart ? cart : []));
   }, [cart]);
 
   // Add To Cart
@@ -60,14 +60,10 @@ export const CartContextProvider = ({ children }) => {
   //decrease cart quantity
   function decreaseItemQuantity(product) {
     setCart((prevProduct) => {
-      if (product.quantity < 2) {
-        return prevProduct.map((item) =>
-          item.id === product.id ? { ...item, quantity: 1 } : item
-        );
-      }
-
       return prevProduct.map((item) =>
-        item.id === product.id ? { ...item, quantity: item.quantity - 1 } : item
+        item.id === product.id
+          ? { ...item, quantity: item.quantity > 1 ? item.quantity - 1 : 1 }
+          : item
       );
     });
   }

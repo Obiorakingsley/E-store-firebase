@@ -57,20 +57,19 @@ const Products = ({ isHome = false }) => {
         {isHome ? (
           <div className="display-grid">
             {items.map((item) => (
-              <Link to={`${item.id}`}>
-                <Product
-                  name={item.name}
-                  item={item}
-                  shortDescription={item.shortDescription}
-                  price={item.price}
-                  originalPrice={item.originalPrice}
-                  discountPercentage={item.discountPercentage}
-                  rating={item.rating}
-                  key={item.id}
-                  id={item.id}
-                  images={item.images}
-                />
-              </Link>
+              <Product
+                name={item.name}
+                isHome={isHome}
+                item={item}
+                shortDescription={item.shortDescription}
+                price={item.price}
+                originalPrice={item.originalPrice}
+                discountPercentage={item.discountPercentage}
+                rating={item.rating}
+                key={item.id}
+                id={item.id}
+                images={item.images}
+              />
             ))}
           </div>
         ) : (

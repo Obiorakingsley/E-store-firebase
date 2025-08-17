@@ -75,12 +75,13 @@
 
 .increase-quantity-btn,
 .decrease-quantity-btn {
-  background-color: transparent;
+  background-color: #f58618;
   padding: 0.5rem;
   outline: none;
-  border: 1px solid #333;
-  color: #333;
+  border: none;
+  color: #ffffff;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .add-item-cart,

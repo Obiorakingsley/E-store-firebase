@@ -15,8 +15,7 @@ const Product = (props) => {
     name,
     images,
     item,
-    id,
-    shortDescription,
+    isHome,
     price,
     originalPrice,
     discountPercentage,
@@ -24,12 +23,11 @@ const Product = (props) => {
   } = props;
 
   let subName = name;
-
   subName = subName.substring(0, 35) + "...";
 
   return (
     <div className="item">
-      <Link to={`products/${item.id}`}>
+      <Link to={isHome ? `${item.id}` : `products/${item.id}`}>
         <img
           className="image"
           src={`/${images[0]}`}

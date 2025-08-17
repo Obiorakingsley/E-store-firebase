@@ -14,10 +14,15 @@ import {
 } from "react-icons/fa";
 import { FaTv } from "react-icons/fa6";
 import { GiLipstick } from "react-icons/gi";
+import { useContext } from "react";
+import { cartContext } from "./Cartcontext";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const [selectMenu, setSelectmenu] = useState(false);
+  const { cart } = useContext(cartContext);
+
+  const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   // Main Menu
 
@@ -173,8 +178,8 @@ const Navbar = () => {
         </div>
         <div className="cart">
           <Link to={"/cart"}>
+            <div className="total-cart-quantity">{totalQuantity}</div>
             <img src="/cart.png" alt="cart icon" width={25} height={25} />
-            <span className="hidden">Cart</span>
           </Link>
         </div>
       </div>
