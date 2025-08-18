@@ -1,4 +1,3 @@
-import React from "react";
 import Hero from "../Components/Hero";
 import Popular from "../Components/Popularproduct";
 import Products from "../Components/Products";
@@ -13,7 +12,7 @@ const HomePage = () => {
       <Hero />
       <Popular />
       <Products />
-      <Flashsales />
+      <Flashsales isHome={true} />
       <Bestseller />
       <Newcolection />
       <Reviews />

@@ -7,6 +7,7 @@ import { Line } from "rc-progress";
 import { useContext } from "react";
 import { cartContext } from "./Cartcontext";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Product = (props) => {
   const { cart, addToCart } = useContext(cartContext);
@@ -74,6 +75,7 @@ const Product = (props) => {
         <button
           onClick={() => {
             addToCart(item);
+            toast.success("Added to cart");
           }}
           className="add-btn"
         >

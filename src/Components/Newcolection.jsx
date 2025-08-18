@@ -10,6 +10,7 @@ import { FaNairaSign } from "react-icons/fa6";
 import { Link, useLoaderData, Await } from "react-router-dom";
 import { Line } from "rc-progress";
 import { Suspense } from "react";
+import Spinners from "./Spinners";
 
 const Newcolection = () => {
   const products = useLoaderData();
@@ -80,7 +81,7 @@ const Newcolection = () => {
   }
 
   return (
-    <Suspense fallback={<h2>Loading...</h2>}>
+    <Suspense>
       <Await
         resolve={products.promise}
         errorElement={<h1>Error Loading Product</h1>}

@@ -10,6 +10,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import { FaChevronRight } from "react-icons/fa";
 import { Suspense } from "react";
+import Spinners from "./Spinners";
 
 const Popularproduct = () => {
   const products = useLoaderData();
@@ -61,7 +62,7 @@ const Popularproduct = () => {
     );
   }
   return (
-    <Suspense fallback={<h2>Loading...</h2>}>
+    <Suspense fallback={<Spinners />}>
       <Await
         resolve={products.promise}
         errorElement={<h1>Error Loading Product</h1>}

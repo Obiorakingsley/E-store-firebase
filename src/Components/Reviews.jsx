@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 import StarRatings from "react-star-ratings";
 import { useLoaderData, Await } from "react-router-dom";
 import { Suspense } from "react";
+import Spinners from "./Spinners";
 
 const Reviews = () => {
   const products = useLoaderData();
@@ -87,7 +88,7 @@ const Reviews = () => {
   }
 
   return (
-    <Suspense fallback={<h2>Loading...</h2>}>
+    <Suspense>
       <Await
         resolve={products.promise}
         errorElement={<h1>Error Loading Product</h1>}

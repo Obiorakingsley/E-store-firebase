@@ -9,6 +9,7 @@ import { FaChevronRight } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa";
 import { FaNairaSign } from "react-icons/fa6";
 import { Link, useLoaderData, Await } from "react-router-dom";
+import Spinners from "./Spinners";
 
 const Bestseller = ({ isHome = false }) => {
   const products = useLoaderData();
@@ -79,7 +80,7 @@ const Bestseller = ({ isHome = false }) => {
   }
 
   return (
-    <Suspense fallback={<h2>Loading...</h2>}>
+    <Suspense>
       <Await
         resolve={products.promise}
         errorElement={<h1>Error Loading Product</h1>}

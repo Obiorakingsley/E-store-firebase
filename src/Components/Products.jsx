@@ -1,4 +1,5 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "./Styles/Products.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper/modules";
@@ -8,8 +9,16 @@ import Product from "./Product.jsx";
 import { FaChevronRight } from "react-icons/fa6";
 import { Await, Link, useLoaderData } from "react-router-dom";
 
+import Spinners from "./Spinners.jsx";
+
 const Products = ({ isHome = false }) => {
   const products = useLoaderData();
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   const navItems = [
     "All",
@@ -103,7 +112,7 @@ const Products = ({ isHome = false }) => {
   }
 
   return (
-    <Suspense fallback={<h2>Loading...</h2>}>
+    <Suspense fallback={<Spinners />}>
       <Await
         resolve={products.promise}
         errorElement={<h1>Error Loading Product</h1>}
