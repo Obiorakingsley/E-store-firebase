@@ -20,7 +20,10 @@ const ProductDetails = () => {
   const { cart, addToCart, increaseItemQuantity, decreaseItemQuantity } =
     useContext(cartContext);
 
-  const currentItem = cart.filter((item) => item.id === id);
+  const currentItem = cart.find((item) => item.id === id);
+  const itemQuantity = currentItem
+    ? cart.filter((item) => item.id === id)[0].quantity
+    : 1;
 
   const [selectedColor, setSelectedColor] = useState({
     hex: "#000000",
@@ -138,9 +141,7 @@ const ProductDetails = () => {
             >
               <FaMinus />
             </button>
-            <p style={{ fontSize: "1.2rem", color: "#000" }}>
-              {currentItem[0].quantity}
-            </p>
+            <p style={{ fontSize: "1.2rem", color: "#000" }}>{itemQuantity}</p>
             <button
               onClick={() => {
                 increaseItemQuantity(product);

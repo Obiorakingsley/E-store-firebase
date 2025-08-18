@@ -178,7 +178,9 @@ const Navbar = () => {
         </div>
         <div className="cart">
           <Link to={"/cart"}>
-            <div className="total-cart-quantity">{totalQuantity}</div>
+            {totalQuantity > 0 && (
+              <div className="total-cart-quantity">{totalQuantity}</div>
+            )}
             <img src="/cart.png" alt="cart icon" width={25} height={25} />
           </Link>
         </div>
