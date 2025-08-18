@@ -85,30 +85,42 @@ const Navbar = () => {
             className={`menu-nav ${menu ? "open" : ""}`}
           >
             <ul>
-              <li>
-                <FaMobile />
-                Phones & Tablets
-              </li>
-              <li>
-                <FaHome />
-                Home & Office
-              </li>
-              <li>
-                <FaBlender />
-                Appliances
-              </li>
-              <li>
-                <FaTshirt />
-                Fassion
-              </li>
-              <li>
-                <FaTv />
-                Eletronics
-              </li>
-              <li>
-                <GiLipstick />
-                Beauty
-              </li>
+              <Link to="products?type=phones">
+                <li>
+                  <FaMobile />
+                  Phones & Tablets
+                </li>
+              </Link>
+              <Link to="products?type=office">
+                <li>
+                  <FaHome />
+                  Home & Office
+                </li>
+              </Link>
+              <Link to="products?type=appliances">
+                <li>
+                  <FaBlender />
+                  Appliances
+                </li>
+              </Link>
+              <Link to="products?type=fashion">
+                <li>
+                  <FaTshirt />
+                  Fassion
+                </li>
+              </Link>
+              <Link to="products?type=electronics">
+                <li>
+                  <FaTv />
+                  Eletronics
+                </li>
+              </Link>
+              <Link to="products?type=beauty">
+                <li>
+                  <GiLipstick />
+                  Beauty
+                </li>
+              </Link>
             </ul>
           </nav>
         </div>

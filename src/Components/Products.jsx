@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import Product from "./Product.jsx";
 import { FaChevronRight } from "react-icons/fa6";
-import { Await, Link, useLoaderData } from "react-router-dom";
+import { Await, Link, useLoaderData, useSearchParams } from "react-router-dom";
 
 import Spinners from "./Spinners.jsx";
 
@@ -21,18 +21,29 @@ const Products = ({ isHome = false }) => {
   }, [pathname]);
 
   const navItems = [
-    "All",
-    "Phones & Tablets",
-    "Home & Office",
-    "Appliances",
-    "Fassion",
-    "Eletronics",
-    " Beauty",
+    {
+      key: "All",
+      value: "",
+    },
+    { key: "Phones & Tablets", value: "phones" },
+    { key: "Home & Office", value: "office" },
+    { key: "Appliances", value: "appliances" },
+    { key: "Fassion", value: "fashion" },
+    { key: "Eletronics", value: "electronics" },
+    { key: "Beauty", value: "beauty" },
   ];
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const type = searchParams.get("type");
+  console.log(type);
 
   function renderData(data) {
     const dataItems = data.products.map((item) => item);
-    const items = isHome ? dataItems : dataItems.slice(0, 8);
+    let itemFilter = type
+      ? dataItems.filter((item) => item.category.includes(type))
+      : dataItems;
+
+    const items = isHome ? itemFilter : itemFilter.slice(0, 8);
 
     return (
       <div className={`products-container ${isHome ? "min-height" : null}`}>
@@ -56,7 +67,13 @@ const Products = ({ isHome = false }) => {
             >
               {navItems.map((item, index) => (
                 <SwiperSlide key={index} className="nav-item">
-                  <button>{item}</button>
+                  <button
+                    onClick={() => {
+                      setSearchParams({ type: item.value });
+                    }}
+                  >
+                    {item.key}
+                  </button>
                 </SwiperSlide>
               ))}
             </Swiper>

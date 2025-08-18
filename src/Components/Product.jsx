@@ -33,8 +33,8 @@ const Product = (props) => {
           className="image"
           src={`/${images[0]}`}
           alt=""
-          height={100}
-          width={100}
+          height={80}
+          width={80}
         />
         <span className=" flex discount">
           <FaMinus size={5} />
@@ -54,14 +54,17 @@ const Product = (props) => {
               {originalPrice}
             </span>
           </b>
-          <StarRatings
-            starRatedColor="gold"
-            starDimension="18px"
-            rating={rating}
-            numberOfStars={5}
-            starSpacing="2px"
-            name="rating"
-          />
+          <div className="rating-container">
+            <StarRatings
+              starRatedColor="gold"
+              starDimension="18px"
+              rating={rating}
+              numberOfStars={5}
+              starSpacing="2px"
+              name="rating"
+            />
+            {item.rating}
+          </div>
           <Line
             percent={76}
             strokeWidth={4}

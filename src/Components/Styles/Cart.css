@@ -178,3 +178,16 @@
     align-items: flex-start;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .cart-item-name {
+    font-size: 1rem;
+  }
+
+  .cart-item-price {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
