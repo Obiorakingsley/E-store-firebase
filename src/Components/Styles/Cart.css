@@ -1,7 +1,7 @@
 .cart-container {
   min-height: 90vh;
   display: grid;
-  padding: 1rem;
+  padding: 0.7rem;
   gap: 1rem;
   grid-template-columns: 2fr 1fr;
   justify-content: space-between;
@@ -155,6 +155,24 @@
   width: 100%;
 
   min-height: 95vh;
+}
+
+.clear-cart {
+  width: 80px;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  font-size: 1rem;
+}
+
+.cart-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
 }
 
 .empty-cart button {

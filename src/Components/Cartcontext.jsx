@@ -69,7 +69,10 @@ export const CartContextProvider = ({ children }) => {
   }
 
   // Clear Cart
-  function clearCart() {}
+  function clearCart() {
+    setCart([]);
+  }
+
   useEffect(() => {
     async function fetchProduct() {
       const res = await fetch("/items.json");
@@ -87,6 +90,7 @@ export const CartContextProvider = ({ children }) => {
         removeFromCart,
         increaseItemQuantity,
         decreaseItemQuantity,
+        clearCart,
       }}
     >
       {children}
