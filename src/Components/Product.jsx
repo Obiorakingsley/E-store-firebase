@@ -1,7 +1,7 @@
 import React from "react";
 import "./Styles/Product.css";
 import { FaNairaSign } from "react-icons/fa6";
-import { FaMinus } from "react-icons/fa";
+import { FaMinus, FaPlus } from "react-icons/fa";
 import StarRatings from "react-star-ratings";
 import { Line } from "rc-progress";
 import { useContext } from "react";
@@ -10,7 +10,8 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Product = (props) => {
-  const { cart, addToCart } = useContext(cartContext);
+  const { cart, addToCart, increaseItemQuantity, decreaseItemQuantity } =
+    useContext(cartContext);
 
   const {
     name,
@@ -22,6 +23,13 @@ const Product = (props) => {
     discountPercentage,
     rating,
   } = props;
+
+  const currentItem = cart.find((product) => product.id === item.id);
+  const itemQuantity = currentItem
+    ? cart.filter((product) => product.id === item.id)[0].quantity
+    : 1;
+
+  const found = cart.find((product) => product.id === item.id);
 
   let subName = name;
   subName = subName.substring(0, 35) + "...";
@@ -74,17 +82,39 @@ const Product = (props) => {
           />
         </div>
       </Link>
-      <div className="btn-container">
-        <button
-          onClick={() => {
-            addToCart(item);
-            toast.success("Added to cart");
-          }}
-          className="add-btn"
-        >
-          Add To Cart
-        </button>
-      </div>
+      {!found ? (
+        <div className="btn-container">
+          <button
+            onClick={() => {
+              addToCart(item);
+              toast.success("Added to cart");
+            }}
+            className="add-btn"
+          >
+            Add To Cart
+          </button>
+        </div>
+      ) : (
+        <div className="add-remove-cart">
+          <button
+            onClick={() => {
+              decreaseItemQuantity(item);
+            }}
+            className="decrease-quantity-btn"
+          >
+            <FaMinus />
+          </button>
+          <p style={{ fontSize: "1.2rem", color: "#000" }}>{itemQuantity}</p>
+          <button
+            onClick={() => {
+              increaseItemQuantity(item);
+            }}
+            className="increase-quantity-btn"
+          >
+            <FaPlus />
+          </button>
+        </div>
+      )}
     </div>
   );
 };

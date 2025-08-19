@@ -7,10 +7,10 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation, FreeMode } from "swiper/modules";
 import "swiper/css/pagination";
 import StarRatings from "react-star-ratings";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { cartContext } from "./Cartcontext";
-
+import { toast } from "react-toastify";
 import { FaMinus, FaPlus } from "react-icons/fa";
 
 const ProductDetails = () => {
@@ -19,6 +19,12 @@ const ProductDetails = () => {
 
   const { cart, addToCart, increaseItemQuantity, decreaseItemQuantity } =
     useContext(cartContext);
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   const currentItem = cart.find((item) => item.id === id);
   const itemQuantity = currentItem
@@ -153,6 +159,7 @@ const ProductDetails = () => {
             <button
               onClick={() => {
                 addToCart(product);
+                toast.success("Added to cart");
               }}
               className="add-item-cart"
             >

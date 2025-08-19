@@ -35,7 +35,6 @@ const Products = ({ isHome = false }) => {
 
   const [searchParams, setSearchParams] = useSearchParams();
   const type = searchParams.get("type");
-  console.log(type);
 
   function renderData(data) {
     const dataItems = data.products.map((item) => item);
