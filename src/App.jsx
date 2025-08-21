@@ -10,6 +10,7 @@ import FlashsalesPage from "./pages/FlashsalesPage.jsx";
 import ProductsPage from "./pages/ProductsPage.jsx";
 import ProductDetailsPage from "./pages/ProductDetailsPage.jsx";
 import HomeSearchPage from "./pages/HomeSearchPage.jsx";
+import ScrollIntoView from "./Components/ScrollIntoView.jsx";
 
 import loaders from "./Components/Loader.jsx";
 
@@ -24,6 +25,7 @@ import NotFoundPage from "./pages/NotFoundPage.jsx";
 const routes = createBrowserRouter(
   createRoutesFromElements(
     <>
+      <ScrollIntoView />
       <Route path="/" element={<Homelayout />}>
         <Route index element={<HomePage />} loader={loaders} />
         <Route path="account" element={<AccountPage />} />

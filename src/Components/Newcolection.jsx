@@ -22,12 +22,12 @@ const Newcolection = ({ isHome }) => {
       <div className="new-collection-container">
         <div className="navbar-top">
           <h2>New Collections</h2>
-          <Link to={"/products"}>
+          <HashLink smooth to={"/products#newcollection"}>
             <span className="flex">
               See All
               <FaChevronRight size={15} />
             </span>
-          </Link>
+          </HashLink>
         </div>
         <Swiper
           slidesPerView="auto"
