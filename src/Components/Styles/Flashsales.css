@@ -1,10 +1,13 @@
 .flash-sales-container {
+  margin-bottom: 1rem;
+}
+
+.flash-sales-grid {
   display: grid;
-  align-items: center;
-  justify-content: space-around;
   gap: 0.3rem;
   grid-template-columns: repeat(auto-fill, 140px);
   padding: 0.2rem;
+  justify-content: space-around;
   margin-top: 0.5rem;
 }
 /*product card*/
@@ -17,7 +20,6 @@
   align-items: center;
 
   padding: 0.5rem;
-
   margin: 0.2rem;
   border-radius: 10px;
   border: 1px solid #a8a5a531;
@@ -72,10 +74,4 @@
 
 .stock {
   font-size: 0.7rem;
-}
-
-@media screen and (max-width: 500px) {
-  .flash-sales-container {
-    justify-content: space-around;
-  }
 }

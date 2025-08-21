@@ -7,7 +7,7 @@ import "./Styles/Flashsales.css";
 import { Await, Link, useLoaderData, useLocation } from "react-router-dom";
 import Spinners from "./Spinners";
 
-const Flashsales = ({ isHome = false }) => {
+const Flashsales = ({ isHome }) => {
   const products = useLoaderData();
 
   const { pathname } = useLocation();
@@ -17,44 +17,43 @@ const Flashsales = ({ isHome = false }) => {
   }, [pathname]);
 
   function renderData(data) {
-    const dataItems = data.products.map((item) => item);
-    const items = isHome ? dataItems : dataItems.slice(12, 20);
+    const dataItems = data.products.filter((item) => item.purchases > 500);
+    const items = dataItems;
     return (
       <>
         <Flashcountdown />
         <div
-          className={`flash-sales-container ${isHome ? "min-height" : null}`}
+          className="flash-sales-container"
+          style={isHome ? { minHeight: "85vh" } : null}
         >
-          {items.map((item) => {
-            let subName = item.name;
+          <div className="flash-sales-grid">
+            {items.map((item) => {
+              let subName = item.name;
 
-            subName = subName.substring(0, 35) + "...";
-            return (
-              <Link key={item.id} to={`/products/${item.id}`}>
-                <div className="flash-sales-item">
-                  <img src={item.images[0]} alt="" width={90} height={90} />
-                  <span className=" flex discount">
-                    <FaMinus size={5} />
-                    {item.discountPercentage}%
-                  </span>
-                  <p className="name">{subName}</p>
-                  <div className="price-container">
-                    <p className="flex price">
-                      <FaNairaSign size={15} />
-                      {item.price}
-                    </p>
+              subName = subName.substring(0, 35) + "...";
+              return (
+                <Link key={item.id} to={`/products/${item.id}`}>
+                  <div className="flash-sales-item">
+                    <img src={item.images[0]} alt="" width={90} height={90} />
+                    <span className=" flex discount">
+                      <FaMinus size={5} />
+                      {item.discountPercentage}%
+                    </span>
+                    <p className="name">{subName}</p>
+                    <div className="price-container">
+                      <p className="flex price">$ {item.price}</p>
 
-                    <b>
-                      <span className="flex original-price">
-                        <FaNairaSign size={15} />
-                        {item.originalPrice}
-                      </span>
-                    </b>
+                      <b>
+                        <span className="flex original-price">
+                          $ {item.originalPrice}
+                        </span>
+                      </b>
+                    </div>
                   </div>
-                </div>
-              </Link>
-            );
-          })}
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </>
     );

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Styles/Product.css";
 import { FaNairaSign } from "react-icons/fa6";
-import { FaMinus, FaPlus } from "react-icons/fa";
+import { FaDollarSign, FaMinus, FaPlus } from "react-icons/fa";
 import StarRatings from "react-star-ratings";
 import { Line } from "rc-progress";
 import { useContext } from "react";
@@ -55,13 +55,13 @@ const Product = (props) => {
 
         <div className="price-container">
           <p className="flex price">
-            <FaNairaSign size={15} />
+            <FaDollarSign size={15} />
             {price}
           </p>
 
           <b>
             <span className="flex original-price">
-              <FaNairaSign size={15} />
+              <FaDollarSign size={15} />
               {originalPrice}
             </span>
           </b>
@@ -90,7 +90,7 @@ const Product = (props) => {
           <button
             onClick={() => {
               addToCart(item);
-              toast.success("Added to cart");
+              toast.success("Successfully added to cart");
             }}
             className="add-btn"
           >

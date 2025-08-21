@@ -7,11 +7,11 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation, FreeMode } from "swiper/modules";
 import "swiper/css/pagination";
 import StarRatings from "react-star-ratings";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { cartContext } from "./Cartcontext";
 import { toast } from "react-toastify";
-import { FaMinus, FaPlus } from "react-icons/fa";
+import { FaMinus, FaPlus, FaArrowLeft } from "react-icons/fa";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -36,6 +36,8 @@ const ProductDetails = () => {
     name: "Black",
   });
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     async function fetchProduct() {
       const res = await fetch("/items.json");
@@ -54,6 +56,19 @@ const ProductDetails = () => {
 
   return (
     <div className="product-details-container">
+      <button
+        onClick={() => {
+          navigate(-1) || navigate("/");
+        }}
+        style={{
+          border: "none",
+          backgroundColor: "transparent",
+          cursor: "pointer",
+          marginLeft: ".8rem",
+        }}
+      >
+        <FaArrowLeft size={25} />
+      </button>
       <div className="product-details">
         <div className="product-images">
           <Swiper
@@ -138,6 +153,11 @@ const ProductDetails = () => {
               />
             </label>
           </div>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <b>Tags:</b>&nbsp;
+            {product.tags && product.tags.map((tag) => <p> {tag} &nbsp;</p>)}
+          </div>
+          <h3>Subcategory: {product.subCategory}</h3>
           <div className="add-remove-cart">
             <button
               onClick={() => {

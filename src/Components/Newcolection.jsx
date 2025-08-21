@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import { FaChevronRight } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa";
-import { FaNairaSign } from "react-icons/fa6";
+import { FaDollarSign } from "react-icons/fa6";
 import { Link, useLoaderData, Await } from "react-router-dom";
 import { Line } from "rc-progress";
 import { Suspense } from "react";
@@ -16,8 +16,10 @@ const Newcolection = ({ isHome = false }) => {
   const products = useLoaderData();
 
   function renderData(newColection) {
-    const dataItems = newColection.products.map((item, id) => item);
-    const items = isHome ? dataItems : dataItems.slice(11, 20);
+    const dataItems = newColection.products.filter(
+      (item, id) => item.isNew === true
+    );
+    const items = isHome ? dataItems : dataItems.slice(0, 5);
     return (
       <div className="new-collection-container">
         {!isHome ? (
@@ -55,7 +57,12 @@ const Newcolection = ({ isHome = false }) => {
               <SwiperSlide key={id} className="collection-item">
                 <Link to={isHome ? `${item.id}` : `products/${item.id}`}>
                   <div className="collection-card">
-                    <img src={item.images[0]} alt="" width={90} height={90} />
+                    <img
+                      src={`/${item.images[0]}`}
+                      alt=""
+                      width={90}
+                      height={90}
+                    />
                     <span className=" flex discount">
                       <FaMinus size={5} />
                       {item.discountPercentage}%
@@ -63,13 +70,13 @@ const Newcolection = ({ isHome = false }) => {
                     <p className="name">{subName}</p>
                     <div className="price-container">
                       <p className="flex price">
-                        <FaNairaSign size={15} />
+                        <FaDollarSign size={15} />
                         {item.price}
                       </p>
 
                       <b>
                         <span className="flex original-price">
-                          <FaNairaSign size={15} />
+                          <FaDollarSign size={15} />
                           {item.originalPrice}
                         </span>
                       </b>

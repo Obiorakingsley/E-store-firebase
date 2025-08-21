@@ -15,8 +15,8 @@ import Spinners from "./Spinners";
 const Popularproduct = () => {
   const products = useLoaderData();
   function renderData(items) {
-    const dataItem = items.products.map((item) => item);
-    const popularProduct = dataItem.slice(4, 18);
+    const dataItem = items.products.filter((item) => item.views > 1300);
+    const popularProduct = dataItem;
     return (
       <>
         <div className="product-deals">
@@ -39,9 +39,9 @@ const Popularproduct = () => {
               {popularProduct.map((item) => {
                 return (
                   <SwiperSlide className="swiper-item" key={item.id}>
-                    <Link to={`products/${item.id}`}>
+                    <Link key={item.id} to={`products/${item.id}`}>
                       <img
-                        src={item.images[0]}
+                        src={`/${item.images[0]}`}
                         alt=""
                         width={140}
                         height={140}

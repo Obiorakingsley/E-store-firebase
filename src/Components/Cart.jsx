@@ -2,9 +2,10 @@ import React, { useContext, useEffect } from "react";
 import { cartContext } from "./Cartcontext";
 import "./Styles/Cart.css";
 import { FaMinus, FaPlus, FaTrashAlt, FaArrowLeft } from "react-icons/fa";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Cart = () => {
+  const navigate = useNavigate();
   const {
     cart,
     removeFromCart,
@@ -48,9 +49,18 @@ const Cart = () => {
       {totalQuantity > 0 ? (
         <>
           <div className="cart-nav">
-            <Link to={".."} relative="path">
+            <button
+              onClick={() => {
+                navigate(-1) || navigate("/");
+              }}
+              style={{
+                border: "none",
+                backgroundColor: "transparent",
+                cursor: "pointer",
+              }}
+            >
               <FaArrowLeft size={25} />
-            </Link>
+            </button>
 
             <button
               onClick={() => {

@@ -11,13 +11,16 @@ import { FaNairaSign } from "react-icons/fa6";
 import { Link, useLoaderData, Await } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import Spinners from "./Spinners";
+import Product from "./Product";
 
 const Bestseller = ({ isHome = false }) => {
   const products = useLoaderData();
 
   function renderData(bestseller) {
-    const dataItems = bestseller.products.map((item, id) => item);
-    const bestSellerItem = isHome ? dataItems : dataItems.slice(8, 17);
+    const dataItems = bestseller.products.filter(
+      (item, id) => item.isBestSeller === true
+    );
+    const bestSellerItem = isHome ? dataItems : dataItems.slice(0, 8);
     return (
       <div className="best-seller-container">
         {!isHome ? (
@@ -63,10 +66,7 @@ const Bestseller = ({ isHome = false }) => {
                       </span>
                       <p className="name">{subName}</p>
                       <div className="price-container">
-                        <p className="flex price">
-                          <FaNairaSign size={15} />
-                          {item.price}
-                        </p>
+                        <p className="flex price">$ {item.price}</p>
                       </div>
                     </div>
                   </Link>
@@ -85,7 +85,12 @@ const Bestseller = ({ isHome = false }) => {
                   to={isHome ? `${item.id}` : `products/${item.id}`}
                 >
                   <div className="best-sales-item">
-                    <img src={item.images[0]} alt="" width={90} height={90} />
+                    <img
+                      src={`/${item.images[0]}`}
+                      alt=""
+                      width={90}
+                      height={90}
+                    />
                     <span className=" flex discount">
                       <FaMinus size={5} />
                       {item.discountPercentage}%
