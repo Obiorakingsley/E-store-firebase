@@ -10,6 +10,8 @@ import { FaChevronRight } from "react-icons/fa6";
 import { Await, Link, useLoaderData, useSearchParams } from "react-router-dom";
 
 import Spinners from "./Spinners.jsx";
+import Newcolection from "./Newcolection.jsx";
+import Bestseller from "./Bestseller.jsx";
 
 const Products = ({ isHome = false }) => {
   const products = useLoaderData();
@@ -122,6 +124,17 @@ const Products = ({ isHome = false }) => {
               </SwiperSlide>
             ))}
           </Swiper>
+        )}
+        {isHome && (
+          <>
+            <div id="newcollection" className="newcolection-section">
+              <Newcolection isHome={true} />
+            </div>
+
+            <div id="bestSeller" className="bestseller-section">
+              <Bestseller isHome={true} />
+            </div>
+          </>
         )}
       </div>
     );

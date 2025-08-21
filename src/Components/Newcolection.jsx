@@ -10,14 +10,14 @@ import { FaNairaSign } from "react-icons/fa6";
 import { Link, useLoaderData, Await } from "react-router-dom";
 import { Line } from "rc-progress";
 import { Suspense } from "react";
-import Spinners from "./Spinners";
+import { HashLink } from "react-router-hash-link";
 
-const Newcolection = () => {
+const Newcolection = ({ isHome }) => {
   const products = useLoaderData();
 
   function renderData(newColection) {
     const dataItems = newColection.products.map((item, id) => item);
-    const items = dataItems.slice(11, 20);
+    const items = isHome ? dataItems : dataItems.slice(11, 20);
     return (
       <div className="new-collection-container">
         <div className="navbar-top">

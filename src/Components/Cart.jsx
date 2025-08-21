@@ -1,12 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { cartContext } from "./Cartcontext";
 import "./Styles/Cart.css";
-import {
-  FaMinus,
-  FaPlus,
-  FaTrashAlt,
-  FaLongArrowAltLeft,
-} from "react-icons/fa";
+import { FaMinus, FaPlus, FaTrashAlt, FaArrowLeft } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 
 const Cart = () => {
@@ -54,7 +49,7 @@ const Cart = () => {
         <>
           <div className="cart-nav">
             <Link to={".."} relative="path">
-              <FaLongArrowAltLeft size={35} />
+              <FaArrowLeft size={25} />
             </Link>
 
             <button

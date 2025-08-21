@@ -34,7 +34,11 @@ const routes = createBrowserRouter(
           loader={loaders}
         />
         <Route path="products" element={<ProductsPage />} loader={loaders} />
-        <Route path="/products/:id" element={<ProductDetailsPage />} />
+        <Route
+          path="/products/:id"
+          element={<ProductDetailsPage />}
+          loader={loaders}
+        />
         <Route
           path="search-product"
           element={<HomeSearchPage />}

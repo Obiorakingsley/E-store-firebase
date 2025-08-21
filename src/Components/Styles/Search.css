@@ -7,6 +7,11 @@
   border-radius: 5px;
   border: 1px solid #4946465b;
   padding: 0.8rem 1rem;
+  position: sticky;
+  top: 0;
+  margin-bottom: 1rem;
+  z-index: 10;
+  background-color: #fff;
 }
 
 .search-navbar input {
@@ -17,10 +22,21 @@
   background-color: transparent;
   color: #000;
   margin: 0 0.5rem;
+  outline: none;
 }
 
 .search-icon {
   cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.grid-search-container {
+  display: grid;
+  justify-content: space-around;
+  gap: 0.3rem;
+  grid-template-columns: repeat(auto-fill, 140px);
 }
 
 @media screen and (min-width: 500px) {

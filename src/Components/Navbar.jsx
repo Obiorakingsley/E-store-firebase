@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Styles/Nav.css";
 import {
   FaChevronDown,
@@ -17,10 +17,15 @@ import { GiLipstick } from "react-icons/gi";
 import { useContext } from "react";
 import { cartContext } from "./Cartcontext";
 
+import { useNavigate } from "react-router-dom";
+
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const [selectMenu, setSelectmenu] = useState(false);
+  const navigate = useNavigate();
   const { cart } = useContext(cartContext);
+
+  const [input, setInput] = useState("");
 
   const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
 
@@ -139,12 +144,26 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-center">
-        <input className="input-search" type="text" placeholder="Search" />
-        <Link to={"/search-product"}>
-          <span className="search-icon search-product">
-            <FaSearch size={20} />
-          </span>
-        </Link>
+        <input
+          value={input}
+          onChange={(e) => {
+            setInput(e.target.value);
+          }}
+          className="input-search"
+          type="text"
+          placeholder="Search"
+        />
+
+        <button
+          onClick={() => {
+            if (!input) return;
+            navigate(`/search-product?query=${encodeURIComponent(input)}`);
+          }}
+          className="search-icon search-product"
+        >
+          <FaSearch size={20} />
+        </button>
+
         <span className="search-icon search-page">
           <Link to={"/search"}>
             <FaSearch size={20} />
