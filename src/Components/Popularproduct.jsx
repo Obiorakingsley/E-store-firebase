@@ -22,11 +22,6 @@ const Popularproduct = () => {
         <div className="product-deals">
           <div className="product-nav">
             <h2>Popular product</h2>
-            <Link to={"/products"}>
-              <p>
-                view all <FaChevronRight />
-              </p>
-            </Link>
           </div>
           <div className="slider">
             <Swiper

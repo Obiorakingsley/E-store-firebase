@@ -9,6 +9,7 @@ import { FaChevronRight } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa";
 import { FaNairaSign } from "react-icons/fa6";
 import { Link, useLoaderData, Await } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import Spinners from "./Spinners";
 
 const Bestseller = ({ isHome = false }) => {
@@ -19,28 +20,70 @@ const Bestseller = ({ isHome = false }) => {
     const bestSellerItem = isHome ? dataItems : dataItems.slice(8, 17);
     return (
       <div className="best-seller-container">
-        <div className="navbar-top">
-          <h2>Top sellers</h2>
-          <Link to={"/products"}>
-            <span className="flex">
-              See All
-              <FaChevronRight size={15} />
-            </span>
-          </Link>
-        </div>
-        <Swiper
-          slidesPerView="auto"
-          spaceBetween={15}
-          freeMode={true}
-          modules={[FreeMode]}
-          className="swiper-product"
-        >
-          {bestSellerItem.map((item, id) => {
-            let subName = item.name;
-            subName = subName.substring(0, 20) + "...";
-            return (
-              <SwiperSlide key={id} className="best-seller-item">
-                <Link to={`products/${item.id}`}>
+        {!isHome ? (
+          <div className="navbar-top">
+            <h2>Top Sales</h2>
+            <HashLink to={"/products#bestseller"}>
+              <span className="flex">
+                See All
+                <FaChevronRight size={15} />
+              </span>
+            </HashLink>
+          </div>
+        ) : (
+          <h2
+            style={{
+              textAlign: "center",
+              backgroundColor: "#f0d9af",
+              padding: ".8rem",
+            }}
+          >
+            Top Sales
+          </h2>
+        )}
+        {!isHome ? (
+          <Swiper
+            slidesPerView="auto"
+            spaceBetween={15}
+            freeMode={true}
+            modules={[FreeMode]}
+            className="swiper-product"
+          >
+            {bestSellerItem.map((item, id) => {
+              let subName = item.name;
+              subName = subName.substring(0, 13) + "...";
+              return (
+                <SwiperSlide key={id} className="best-seller-item">
+                  <Link to={isHome ? `${item.id}` : `products/${item.id}`}>
+                    <div className="best-sales-item">
+                      <img src={item.images[0]} alt="" width={90} height={90} />
+                      <span className=" flex discount">
+                        <FaMinus size={5} />
+                        {item.discountPercentage}%
+                      </span>
+                      <p className="name">{subName}</p>
+                      <div className="price-container">
+                        <p className="flex price">
+                          <FaNairaSign size={15} />
+                          {item.price}
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        ) : (
+          <div className="bestseller-grid-container">
+            {bestSellerItem.map((item, id) => {
+              let subName = item.name;
+              subName = subName.substring(0, 13) + "...";
+              return (
+                <Link
+                  key={item.id}
+                  to={isHome ? `${item.id}` : `products/${item.id}`}
+                >
                   <div className="best-sales-item">
                     <img src={item.images[0]} alt="" width={90} height={90} />
                     <span className=" flex discount">
@@ -53,28 +96,13 @@ const Bestseller = ({ isHome = false }) => {
                         <FaNairaSign size={15} />
                         {item.price}
                       </p>
-
-                      {/* <b>
-                    <span className="flex original-price">
-                      <FaNairaSign size={15} />
-                      {item.originalPrice}
-                    </span>
-                  </b> */}
                     </div>
-                    {/* <span className="stock">{item.stock} items left</span> */}
-                    {/* <Line
-                  percent={item.stock}
-                  strokeWidth={4}
-                  trailWidth={4}
-                  strokeLinecap="round"
-                  strokeColor="orange"
-                /> */}
                   </div>
                 </Link>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
+              );
+            })}
+          </div>
+        )}
       </div>
     );
   }

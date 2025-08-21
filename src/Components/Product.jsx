@@ -32,11 +32,14 @@ const Product = (props) => {
   const found = cart.find((product) => product.id === item.id);
 
   let subName = name;
-  subName = subName.substring(0, 35) + "...";
+  subName = subName.substring(0, 30) + "...";
 
   return (
     <div className="item">
-      <Link to={isHome ? `${item.id}` : `products/${item.id}`}>
+      <Link
+        className="item-link"
+        to={isHome ? `${item.id}` : `products/${item.id}`}
+      >
         <img
           className="image"
           src={`/${images[0]}`}

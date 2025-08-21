@@ -7,7 +7,13 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import Product from "./Product.jsx";
 import { FaChevronRight } from "react-icons/fa6";
-import { Await, Link, useLoaderData, useSearchParams } from "react-router-dom";
+import {
+  Await,
+  Link,
+  useLoaderData,
+  useSearchParams,
+  NavLink,
+} from "react-router-dom";
 
 import Spinners from "./Spinners.jsx";
 import Newcolection from "./Newcolection.jsx";
@@ -45,6 +51,10 @@ const Products = ({ isHome = false }) => {
       : dataItems;
 
     const items = isHome ? itemFilter : itemFilter.slice(0, 8);
+
+    const active = ({ isActive }) => {
+      return isActive ? "active-link" : "";
+    };
 
     return (
       <div className={`products-container ${isHome ? "min-height" : null}`}>
@@ -131,7 +141,7 @@ const Products = ({ isHome = false }) => {
               <Newcolection isHome={true} />
             </div>
 
-            <div id="bestSeller" className="bestseller-section">
+            <div id="bestseller" className="bestseller-section">
               <Bestseller isHome={true} />
             </div>
           </>
