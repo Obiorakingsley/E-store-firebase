@@ -3,7 +3,7 @@ import "./Styles/Hero.css";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-import Flashcountdown from "./Flashcountdown";
+import Flashcountdown from "./Utils/Flashcountdown";
 
 function Hero() {
   return (

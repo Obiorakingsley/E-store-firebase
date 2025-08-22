@@ -10,7 +10,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import { FaChevronRight } from "react-icons/fa";
 import { Suspense } from "react";
-import Spinners from "./Spinners";
+import Spinners from "./Utils/Spinners";
 
 const Popularproduct = () => {
   const products = useLoaderData();

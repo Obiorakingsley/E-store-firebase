@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "./Styles/Productdetails.css";
+import "../Styles/Productdetails.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "./Styles/Reviews.css";
+import "../Styles/Reviews.css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation, FreeMode } from "swiper/modules";
@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 import StarRatings from "react-star-ratings";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { cartContext } from "./Cartcontext";
+import { cartContext } from "../Contexts/Cartcontext";
 import { toast } from "react-toastify";
 import { FaMinus, FaPlus, FaArrowLeft } from "react-icons/fa";
 

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
-import { cartContext } from "./Cartcontext";
-import "./Styles/Cart.css";
+import { cartContext } from "../Contexts/Cartcontext";
+import "../Styles/Cart.css";
 import { FaMinus, FaPlus, FaTrashAlt, FaArrowLeft } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 

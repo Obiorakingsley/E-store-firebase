@@ -1,6 +1,6 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { Await, useLoaderData } from "react-router-dom";
-import Spinners from "./Spinners";
+import Spinners from "./Utils/Spinners";
 import { useLocation, Link } from "react-router-dom";
 import { FaMinus } from "react-icons/fa";
 import "./Styles/Search.css";

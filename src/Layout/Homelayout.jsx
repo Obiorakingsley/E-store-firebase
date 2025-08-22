@@ -4,7 +4,7 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import ScrollIntoView from "../Components/ScrollIntoView";
+import ScrollIntoView from "../Components/Utils/ScrollIntoView";
 
 const Homelayout = () => {
   return (

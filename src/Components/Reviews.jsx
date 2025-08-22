@@ -9,7 +9,7 @@ import "swiper/css/navigation";
 import StarRatings from "react-star-ratings";
 import { useLoaderData, Await } from "react-router-dom";
 import { Suspense } from "react";
-import Spinners from "./Spinners";
+import Spinners from "./Utils/Spinners";
 
 const Reviews = () => {
   const products = useLoaderData();

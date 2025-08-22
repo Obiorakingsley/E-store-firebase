@@ -10,8 +10,8 @@ import { FaMinus } from "react-icons/fa";
 import { FaNairaSign } from "react-icons/fa6";
 import { Link, useLoaderData, Await } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import Spinners from "./Spinners";
-import Product from "./Product";
+import Spinners from "./Utils/Spinners";
+import Product from "./Products/Product";
 
 const Bestseller = ({ isHome = false }) => {
   const products = useLoaderData();

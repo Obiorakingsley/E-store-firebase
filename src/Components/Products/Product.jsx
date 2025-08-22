@@ -1,11 +1,11 @@
 import React from "react";
-import "./Styles/Product.css";
+import "../Styles/Product.css";
 import { FaNairaSign } from "react-icons/fa6";
 import { FaDollarSign, FaMinus, FaPlus } from "react-icons/fa";
 import StarRatings from "react-star-ratings";
 import { Line } from "rc-progress";
 import { useContext } from "react";
-import { cartContext } from "./Cartcontext";
+import { cartContext } from "../Contexts/Cartcontext";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 

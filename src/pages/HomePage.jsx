@@ -1,6 +1,6 @@
 import Hero from "../Components/Hero";
 import Popular from "../Components/Popularproduct";
-import Products from "../Components/Products";
+import Products from "../Components/Products/Products";
 import Flashsales from "../Components/Flashsales";
 import Bestseller from "../Components/Bestseller";
 import Newcolection from "../Components/Newcolection";

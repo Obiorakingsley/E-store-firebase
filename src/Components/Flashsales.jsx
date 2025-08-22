@@ -1,11 +1,11 @@
 import React, { Suspense, useEffect } from "react";
-import Flashcountdown from "./Flashcountdown";
+import Flashcountdown from "./Utils/Flashcountdown";
 import { Line } from "rc-progress";
 import { FaMinus } from "react-icons/fa";
 import { FaNairaSign } from "react-icons/fa6";
 import "./Styles/Flashsales.css";
 import { Await, Link, useLoaderData, useLocation } from "react-router-dom";
-import Spinners from "./Spinners";
+import Spinners from "./Utils/Spinners";
 
 const Flashsales = ({ isHome }) => {
   const products = useLoaderData();

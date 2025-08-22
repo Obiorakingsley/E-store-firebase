@@ -1,6 +1,6 @@
 import React, { Suspense, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import "./Styles/Products.css";
+import "../Styles/Products.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper/modules";
 import "swiper/css";
@@ -15,9 +15,9 @@ import {
   NavLink,
 } from "react-router-dom";
 
-import Spinners from "./Spinners.jsx";
-import Newcolection from "./Newcolection.jsx";
-import Bestseller from "./Bestseller.jsx";
+import Spinners from "../Utils/Spinners.jsx";
+import Newcolection from "../Newcolection.jsx";
+import Bestseller from "../Bestseller.jsx";
 
 const Products = ({ isHome = false }) => {
   const products = useLoaderData();
