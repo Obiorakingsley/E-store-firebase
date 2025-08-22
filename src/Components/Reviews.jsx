@@ -40,48 +40,66 @@ const Reviews = () => {
           modules={[Autoplay, Pagination, Navigation]}
           className="swiper-review"
         >
-          {product.map((item, id) => {
-            let subName = item.name;
-            subName = subName.substring(0, 20) + "...";
-            return (
-              <SwiperSlide key={id} className="reviews-item">
-                <div className="reviews-card">
-                  <div className="rating">
-                    <StarRatings
-                      starRatedColor="gold"
-                      starDimension="18px"
-                      rating={item.rating}
-                      numberOfStars={5}
-                      starSpacing="2px"
-                      name="rating"
-                    />
-                    <span className="ratint-count">{item.rating}</span>
-                  </div>
-                  <div className="user-review">
-                    <div className="user">
-                      <img
-                        src={item.reviews.user.image}
-                        alt=""
-                        width={40}
-                        height={40}
-                      />
-                      <p className="name">{item.reviews.user.name}</p>
+          {product
+            ? product.map((item, id) => {
+                let subName = item.name;
+                subName = subName.substring(0, 20) + "...";
+                return (
+                  <SwiperSlide key={id} className="reviews-item">
+                    <div className="reviews-card">
+                      <div className="rating">
+                        <StarRatings
+                          starRatedColor="gold"
+                          starDimension="18px"
+                          rating={item.rating}
+                          numberOfStars={5}
+                          starSpacing="2px"
+                          name="rating"
+                        />
+                        <span className="rating-count">{item.rating}</span>
+                      </div>
+
+                      {item.reviews
+                        ? item.reviews.map((review, index) => (
+                            <div key={index} className="reviews">
+                              <div className="user-review">
+                                <div className="user">
+                                  <img
+                                    src={review.user.image}
+                                    alt=""
+                                    width={40}
+                                    height={40}
+                                  />
+                                  <p className="name">{review.user.name}</p>
+                                </div>
+                                <p>{review.date}</p>
+                              </div>
+                              <p className="center">{review.title}</p>
+                              <p className="review-text center">
+                                {review.body}
+                              </p>
+                              <div className="reviews-images">
+                                {item.images
+                                  ? item.images.map((img, index) => {
+                                      return (
+                                        <img
+                                          key={index}
+                                          src={img}
+                                          width={70}
+                                          height={70}
+                                        />
+                                      );
+                                    })
+                                  : null}
+                              </div>
+                            </div>
+                          ))
+                        : null}
                     </div>
-                    <p>{item.reviews.date}</p>
-                  </div>
-                  <p className="center">{item.reviews.title}</p>
-                  <p className="review-text center">{item.reviews.body}</p>
-                  <div className="reviews-images">
-                    {item.images.map((img, index) => {
-                      return (
-                        <img key={index} src={img} width={70} height={70} />
-                      );
-                    })}
-                  </div>
-                </div>
-              </SwiperSlide>
-            );
-          })}
+                  </SwiperSlide>
+                );
+              })
+            : null}
         </Swiper>
       </div>
     );

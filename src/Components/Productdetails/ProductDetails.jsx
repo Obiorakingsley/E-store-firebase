@@ -7,7 +7,14 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation, FreeMode } from "swiper/modules";
 import "swiper/css/pagination";
 import StarRatings from "react-star-ratings";
-import { useParams, useLocation, useNavigate } from "react-router-dom";
+import {
+  useParams,
+  useLocation,
+  useNavigate,
+  Link,
+  NavLink,
+  Outlet,
+} from "react-router-dom";
 import { useContext } from "react";
 import { cartContext } from "../Contexts/Cartcontext";
 import { toast } from "react-toastify";
@@ -19,12 +26,6 @@ const ProductDetails = () => {
 
   const { cart, addToCart, increaseItemQuantity, decreaseItemQuantity } =
     useContext(cartContext);
-
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
 
   const currentItem = cart.find((item) => item.id === id);
   const itemQuantity = currentItem
@@ -57,14 +58,9 @@ const ProductDetails = () => {
   return (
     <div className="product-details-container">
       <button
+        className="return-btn"
         onClick={() => {
-          navigate(-1) || navigate("/");
-        }}
-        style={{
-          border: "none",
-          backgroundColor: "transparent",
-          cursor: "pointer",
-          marginLeft: ".8rem",
+          navigate(-1) || navigate("..");
         }}
       >
         <FaArrowLeft size={25} />
@@ -155,7 +151,10 @@ const ProductDetails = () => {
           </div>
           <div style={{ display: "flex", alignItems: "center" }}>
             <b>Tags:</b>&nbsp;
-            {product.tags && product.tags.map((tag) => <p> {tag} &nbsp;</p>)}
+            {product.tags &&
+              product.tags.map((tag, index) => (
+                <p key={index}> {tag} &nbsp;</p>
+              ))}
           </div>
           <h3>Subcategory: {product.subCategory}</h3>
           <div className="add-remove-cart">
@@ -189,6 +188,30 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
+      <div className="details-nav">
+        <nav>
+          <NavLink
+            to="."
+            end
+            className={({ isActive }) => (isActive ? "active" : null)}
+          >
+            Description
+          </NavLink>
+          <NavLink
+            to="info"
+            className={({ isActive }) => (isActive ? "active" : null)}
+          >
+            Additional Information
+          </NavLink>
+          <NavLink
+            to="review"
+            className={({ isActive }) => (isActive ? "active" : null)}
+          >
+            Review
+          </NavLink>
+        </nav>
+      </div>
+      <Outlet context={product} />
     </div>
   );
 };

@@ -55,6 +55,7 @@ const Cart = () => {
               }}
               style={{
                 border: "none",
+
                 backgroundColor: "transparent",
                 cursor: "pointer",
               }}

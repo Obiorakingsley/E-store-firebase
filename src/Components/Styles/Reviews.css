@@ -1,6 +1,6 @@
 .reviews-container {
   padding-top: 3rem;
-  background-color: rgba(204, 204, 204, 0.308);
+  background-color: rgba(235, 232, 232, 0.233);
 }
 
 .reviews-item {
@@ -19,7 +19,6 @@
   margin: 0.2rem auto;
   border-radius: 10px;
   border: 1px solid #a8a5a531;
-  box-shadow: 1px 1px 4px #52515118;
 }
 
 .reviews-card .rating {

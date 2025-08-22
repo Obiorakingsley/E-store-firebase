@@ -20,6 +20,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
+import ProductDescription from "./Components/Productdetails/ProductDescription.jsx";
+import Productinfo from "./Components/Productdetails/Productinfo.jsx";
+import Productreviews from "./Components/Productdetails/Productreviews.jsx";
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
@@ -38,7 +41,11 @@ const routes = createBrowserRouter(
           path="/products/:id"
           element={<ProductDetailsPage />}
           loader={loaders}
-        />
+        >
+          <Route index element={<ProductDescription />} />
+          <Route path="info" element={<Productinfo />} />
+          <Route path="review" element={<Productreviews />} />
+        </Route>
         <Route
           path="search-product"
           element={<HomeSearchPage />}

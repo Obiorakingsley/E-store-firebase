@@ -36,15 +36,17 @@
       "isPreorder": false,
       "rating": 4.2,
       "reviewCount": 215,
-      "reviews": {
-        "id": "rev_3021",
-        "user": { "name": "Alex", "image": "user.webp", "verified": true },
-        "rating": 5,
-        "date": "2024-03-15",
-        "title": "Best headphones under $200!",
-        "body": "The noise cancellation works perfectly on my flights.",
-        "images": ["headphone.jpg", "headphone.jpg", "headphone.jpg"]
-      },
+      "reviews": [
+        {
+          "id": "rev_3021",
+          "user": { "name": "Alex", "image": "user.webp", "verified": true },
+          "rating": 5,
+          "date": "2024-03-15",
+          "title": "Best headphones under $200!",
+          "body": "The noise cancellation works perfectly on my flights.",
+          "images": ["headphone.jpg", "headphone.jpg", "headphone.jpg"]
+        }
+      ],
       "isFeatured": true,
       "isBestSeller": true,
       "isNew": false,
@@ -92,15 +94,17 @@
       "isPreorder": false,
       "rating": 4.8,
       "reviewCount": 892,
-      "reviews": {
-        "id": "rev_3022",
-        "user": { "name": "Sarah", "image": "user2.webp", "verified": true },
-        "rating": 5,
-        "date": "2024-02-20",
-        "title": "Best Android phone ever",
-        "body": "The camera quality is simply unmatched.",
-        "images": ["s23ultra_review1.jpg"]
-      },
+      "reviews": [
+        {
+          "id": "rev_3022",
+          "user": { "name": "Sarah", "image": "user.webp", "verified": true },
+          "rating": 5,
+          "date": "2024-02-20",
+          "title": "Best Android phone ever",
+          "body": "The camera quality is simply unmatched.",
+          "images": ["s23ultra_review1.jpg"]
+        }
+      ],
       "isFeatured": true,
       "isBestSeller": true,
       "isNew": true,
@@ -148,15 +152,21 @@
       "isPreorder": false,
       "rating": 4.7,
       "reviewCount": 543,
-      "reviews": {
-        "id": "rev_3023",
-        "user": { "name": "Michael", "image": "user3.webp", "verified": false },
-        "rating": 4,
-        "date": "2024-01-10",
-        "title": "Great for artists",
-        "body": "The Apple Pencil integration is flawless for digital art.",
-        "images": []
-      },
+      "reviews": [
+        {
+          "id": "rev_3023",
+          "user": {
+            "name": "Michael",
+            "image": "user3.webp",
+            "verified": false
+          },
+          "rating": 4,
+          "date": "2024-01-10",
+          "title": "Great for artists",
+          "body": "The Apple Pencil integration is flawless for digital art.",
+          "images": []
+        }
+      ],
       "isFeatured": false,
       "isBestSeller": true,
       "isNew": false,
@@ -204,15 +214,17 @@
       "isPreorder": false,
       "rating": 4.5,
       "reviewCount": 321,
-      "reviews": {
-        "id": "rev_3024",
-        "user": { "name": "David", "image": "user4.webp", "verified": true },
-        "rating": 5,
-        "date": "2024-03-01",
-        "title": "Saved my back!",
-        "body": "Working from home is so much better with this chair.",
-        "images": ["chair_review1.jpg"]
-      },
+      "reviews": [
+        {
+          "id": "rev_3024",
+          "user": { "name": "David", "image": "user4.webp", "verified": true },
+          "rating": 5,
+          "date": "2024-03-01",
+          "title": "Saved my back!",
+          "body": "Working from home is so much better with this chair.",
+          "images": ["chair_review1.jpg"]
+        }
+      ],
       "isFeatured": true,
       "isBestSeller": false,
       "isNew": true,
@@ -255,15 +267,17 @@
       "isPreorder": false,
       "rating": 4.6,
       "reviewCount": 187,
-      "reviews": {
-        "id": "rev_3025",
-        "user": { "name": "Lisa", "image": "user5.webp", "verified": true },
-        "rating": 4,
-        "date": "2023-12-15",
-        "title": "Worth the investment",
-        "body": "Keeps food fresh longer than our old fridge.",
-        "images": []
-      },
+      "reviews": [
+        {
+          "id": "rev_3025",
+          "user": { "name": "Lisa", "image": "user5.webp", "verified": true },
+          "rating": 4,
+          "date": "2023-12-15",
+          "title": "Worth the investment",
+          "body": "Keeps food fresh longer than our old fridge.",
+          "images": []
+        }
+      ],
       "isFeatured": false,
       "isBestSeller": false,
       "isNew": false,
@@ -311,15 +325,17 @@
       "isPreorder": false,
       "rating": 4.4,
       "reviewCount": 156,
-      "reviews": {
-        "id": "rev_3026",
-        "user": { "name": "James", "image": "user6.webp", "verified": false },
-        "rating": 5,
-        "date": "2024-02-05",
-        "title": "Perfect for my wedding",
-        "body": "Fit like it was tailored just for me.",
-        "images": ["suit_review1.jpg"]
-      },
+      "reviews": [
+        {
+          "id": "rev_3026",
+          "user": { "name": "James", "image": "user6.webp", "verified": false },
+          "rating": 5,
+          "date": "2024-02-05",
+          "title": "Perfect for my wedding",
+          "body": "Fit like it was tailored just for me.",
+          "images": ["suit_review1.jpg"]
+        }
+      ],
       "isFeatured": true,
       "isBestSeller": true,
       "isNew": false,
@@ -362,15 +378,17 @@
       "isPreorder": false,
       "rating": 4.9,
       "reviewCount": 432,
-      "reviews": {
-        "id": "rev_3027",
-        "user": { "name": "Robert", "image": "user7.webp", "verified": true },
-        "rating": 5,
-        "date": "2023-11-20",
-        "title": "Best picture quality I've seen",
-        "body": "The blacks are truly black with this OLED panel.",
-        "images": ["tv_review1.jpg"]
-      },
+      "reviews": [
+        {
+          "id": "rev_3027",
+          "user": { "name": "Robert", "image": "user7.webp", "verified": true },
+          "rating": 5,
+          "date": "2023-11-20",
+          "title": "Best picture quality I've seen",
+          "body": "The blacks are truly black with this OLED panel.",
+          "images": ["tv_review1.jpg"]
+        }
+      ],
       "isFeatured": true,
       "isBestSeller": true,
       "isNew": false,
@@ -407,15 +425,17 @@
       "isPreorder": false,
       "rating": 4.3,
       "reviewCount": 278,
-      "reviews": {
-        "id": "rev_3028",
-        "user": { "name": "Emily", "image": "user8.webp", "verified": true },
-        "rating": 4,
-        "date": "2024-01-30",
-        "title": "Visible results in 2 weeks",
-        "body": "My skin feels plumper and more hydrated.",
-        "images": []
-      },
+      "reviews": [
+        {
+          "id": "rev_3028",
+          "user": { "name": "Emily", "image": "user8.webp", "verified": true },
+          "rating": 4,
+          "date": "2024-01-30",
+          "title": "Visible results in 2 weeks",
+          "body": "My skin feels plumper and more hydrated.",
+          "images": []
+        }
+      ],
       "isFeatured": false,
       "isBestSeller": true,
       "isNew": true,
@@ -463,15 +483,21 @@
       "isPreorder": false,
       "rating": 4.1,
       "reviewCount": 143,
-      "reviews": {
-        "id": "rev_3029",
-        "user": { "name": "Jessica", "image": "user9.webp", "verified": false },
-        "rating": 4,
-        "date": "2023-12-10",
-        "title": "Convenient for my desk",
-        "body": "Charges my phone while I watch videos.",
-        "images": ["charger_review1.jpg"]
-      },
+      "reviews": [
+        {
+          "id": "rev_3029",
+          "user": {
+            "name": "Jessica",
+            "image": "user9.webp",
+            "verified": false
+          },
+          "rating": 4,
+          "date": "2023-12-10",
+          "title": "Convenient for my desk",
+          "body": "Charges my phone while I watch videos.",
+          "images": ["charger_review1.jpg"]
+        }
+      ],
       "isFeatured": false,
       "isBestSeller": false,
       "isNew": false,
@@ -514,15 +540,17 @@
       "isPreorder": false,
       "rating": 4.7,
       "reviewCount": 387,
-      "reviews": {
-        "id": "rev_3030",
-        "user": { "name": "Mark", "image": "user10.webp", "verified": true },
-        "rating": 5,
-        "date": "2024-02-28",
-        "title": "Life-changing appliance",
-        "body": "Keeps my floors clean with minimal effort.",
-        "images": ["vacuum_review1.jpg"]
-      },
+      "reviews": [
+        {
+          "id": "rev_3030",
+          "user": { "name": "Mark", "image": "user10.webp", "verified": true },
+          "rating": 5,
+          "date": "2024-02-28",
+          "title": "Life-changing appliance",
+          "body": "Keeps my floors clean with minimal effort.",
+          "images": ["vacuum_review1.jpg"]
+        }
+      ],
       "isFeatured": true,
       "isBestSeller": true,
       "isNew": false,
@@ -570,15 +598,21 @@
       "isPreorder": false,
       "rating": 4.6,
       "reviewCount": 231,
-      "reviews": {
-        "id": "rev_3031",
-        "user": { "name": "Amanda", "image": "user11.webp", "verified": true },
-        "rating": 5,
-        "date": "2024-01-15",
-        "title": "Perfect for marathon training",
-        "body": "No blisters even after long runs.",
-        "images": ["shoes_review1.jpg"]
-      },
+      "reviews": [
+        {
+          "id": "rev_3031",
+          "user": {
+            "name": "Amanda",
+            "image": "user11.webp",
+            "verified": true
+          },
+          "rating": 5,
+          "date": "2024-01-15",
+          "title": "Perfect for marathon training",
+          "body": "No blisters even after long runs.",
+          "images": ["shoes_review1.jpg"]
+        }
+      ],
       "isFeatured": false,
       "isBestSeller": true,
       "isNew": false,
@@ -621,15 +655,17 @@
       "isPreorder": false,
       "rating": 4.3,
       "reviewCount": 187,
-      "reviews": {
-        "id": "rev_3032",
-        "user": { "name": "Tina", "image": "user12.webp", "verified": true },
-        "rating": 5,
-        "date": "2024-03-10",
-        "title": "Perfect for yoga",
-        "body": "Super comfortable and doesn't ride up during workouts.",
-        "images": ["blacktop_review1.jpg"]
-      },
+      "reviews": [
+        {
+          "id": "rev_3032",
+          "user": { "name": "Tina", "image": "user12.webp", "verified": true },
+          "rating": 5,
+          "date": "2024-03-10",
+          "title": "Perfect for yoga",
+          "body": "Super comfortable and doesn't ride up during workouts.",
+          "images": ["blacktop_review1.jpg"]
+        }
+      ],
       "isFeatured": false,
       "isBestSeller": false,
       "isNew": true,
@@ -672,15 +708,21 @@
       "isPreorder": false,
       "rating": 4.5,
       "reviewCount": 143,
-      "reviews": {
-        "id": "rev_3033",
-        "user": { "name": "Sophia", "image": "user13.webp", "verified": false },
-        "rating": 4,
-        "date": "2024-02-15",
-        "title": "Great for daily use",
-        "body": "Fits all my essentials without being bulky.",
-        "images": []
-      },
+      "reviews": [
+        {
+          "id": "rev_3033",
+          "user": {
+            "name": "Sophia",
+            "image": "user13.webp",
+            "verified": false
+          },
+          "rating": 4,
+          "date": "2024-02-15",
+          "title": "Great for daily use",
+          "body": "Fits all my essentials without being bulky.",
+          "images": []
+        }
+      ],
       "isFeatured": false,
       "isBestSeller": true,
       "isNew": false,
@@ -723,15 +765,21 @@
       "isPreorder": false,
       "rating": 4.4,
       "reviewCount": 321,
-      "reviews": {
-        "id": "rev_3034",
-        "user": { "name": "Daniel", "image": "user14.webp", "verified": true },
-        "rating": 5,
-        "date": "2024-01-20",
-        "title": "Perfect for college",
-        "body": "Handles all my programming assignments with ease.",
-        "images": ["hplaptop_review1.jpg"]
-      },
+      "reviews": [
+        {
+          "id": "rev_3034",
+          "user": {
+            "name": "Daniel",
+            "image": "user14.webp",
+            "verified": true
+          },
+          "rating": 5,
+          "date": "2024-01-20",
+          "title": "Perfect for college",
+          "body": "Handles all my programming assignments with ease.",
+          "images": ["hplaptop_review1.jpg"]
+        }
+      ],
       "isFeatured": true,
       "isBestSeller": true,
       "isNew": false,
@@ -774,15 +822,17 @@
       "isPreorder": false,
       "rating": 4.7,
       "reviewCount": 278,
-      "reviews": {
-        "id": "rev_3035",
-        "user": { "name": "Ryan", "image": "user15.webp", "verified": true },
-        "rating": 4,
-        "date": "2024-02-05",
-        "title": "Beautiful display",
-        "body": "The touchscreen is incredibly responsive and the colors pop.",
-        "images": []
-      },
+      "reviews": [
+        {
+          "id": "rev_3035",
+          "user": { "name": "Ryan", "image": "user15.webp", "verified": true },
+          "rating": 4,
+          "date": "2024-02-05",
+          "title": "Beautiful display",
+          "body": "The touchscreen is incredibly responsive and the colors pop.",
+          "images": []
+        }
+      ],
       "isFeatured": true,
       "isBestSeller": false,
       "isNew": true,
@@ -830,15 +880,21 @@
       "isPreorder": false,
       "rating": 4.2,
       "reviewCount": 432,
-      "reviews": {
-        "id": "rev_3036",
-        "user": { "name": "Kevin", "image": "user16.webp", "verified": false },
-        "rating": 4,
-        "date": "2023-12-18",
-        "title": "Great for travel",
-        "body": "Can fully charge my phone twice on a single charge.",
-        "images": ["powerbank_review1.jpg"]
-      },
+      "reviews": [
+        {
+          "id": "rev_3036",
+          "user": {
+            "name": "Kevin",
+            "image": "user16.webp",
+            "verified": false
+          },
+          "rating": 4,
+          "date": "2023-12-18",
+          "title": "Great for travel",
+          "body": "Can fully charge my phone twice on a single charge.",
+          "images": ["powerbank_review1.jpg"]
+        }
+      ],
       "isFeatured": false,
       "isBestSeller": true,
       "isNew": false,
@@ -881,15 +937,17 @@
       "isPreorder": false,
       "rating": 4.6,
       "reviewCount": 198,
-      "reviews": {
-        "id": "rev_3037",
-        "user": { "name": "Jason", "image": "user17.webp", "verified": true },
-        "rating": 5,
-        "date": "2024-01-25",
-        "title": "Excellent for weightlifting",
-        "body": "Great stability during squats and deadlifts.",
-        "images": ["blackshoes_review1.jpg"]
-      },
+      "reviews": [
+        {
+          "id": "rev_3037",
+          "user": { "name": "Jason", "image": "user17.webp", "verified": true },
+          "rating": 5,
+          "date": "2024-01-25",
+          "title": "Excellent for weightlifting",
+          "body": "Great stability during squats and deadlifts.",
+          "images": ["blackshoes_review1.jpg"]
+        }
+      ],
       "isFeatured": false,
       "isBestSeller": true,
       "isNew": false,
@@ -932,15 +990,21 @@
       "isPreorder": false,
       "rating": 4.4,
       "reviewCount": 143,
-      "reviews": {
-        "id": "rev_3038",
-        "user": { "name": "Olivia", "image": "user18.webp", "verified": false },
-        "rating": 4,
-        "date": "2023-11-30",
-        "title": "Perfect house shoes",
-        "body": "Elevated enough to feel dressed up but still comfortable.",
-        "images": []
-      },
+      "reviews": [
+        {
+          "id": "rev_3038",
+          "user": {
+            "name": "Olivia",
+            "image": "user18.webp",
+            "verified": false
+          },
+          "rating": 4,
+          "date": "2023-11-30",
+          "title": "Perfect house shoes",
+          "body": "Elevated enough to feel dressed up but still comfortable.",
+          "images": []
+        }
+      ],
       "isFeatured": false,
       "isBestSeller": false,
       "isNew": true,
@@ -983,15 +1047,17 @@
       "isPreorder": false,
       "rating": 4.5,
       "reviewCount": 387,
-      "reviews": {
-        "id": "rev_3039",
-        "user": { "name": "Brian", "image": "user19.webp", "verified": true },
-        "rating": 5,
-        "date": "2024-02-14",
-        "title": "Great for office use",
-        "body": "The silent clicks don't disturb my coworkers.",
-        "images": ["blackmouse_review1.jpg"]
-      },
+      "reviews": [
+        {
+          "id": "rev_3039",
+          "user": { "name": "Brian", "image": "user19.webp", "verified": true },
+          "rating": 5,
+          "date": "2024-02-14",
+          "title": "Great for office use",
+          "body": "The silent clicks don't disturb my coworkers.",
+          "images": ["blackmouse_review1.jpg"]
+        }
+      ],
       "isFeatured": false,
       "isBestSeller": true,
       "isNew": false,
@@ -1039,15 +1105,21 @@
       "isPreorder": false,
       "rating": 4.6,
       "reviewCount": 231,
-      "reviews": {
-        "id": "rev_3040",
-        "user": { "name": "William", "image": "user20.webp", "verified": true },
-        "rating": 5,
-        "date": "2023-12-05",
-        "title": "Perfect for interviews",
-        "body": "Looks much more expensive than it costs.",
-        "images": ["suit2_review1.jpg"]
-      },
+      "reviews": [
+        {
+          "id": "rev_3040",
+          "user": {
+            "name": "William",
+            "image": "user20.webp",
+            "verified": true
+          },
+          "rating": 5,
+          "date": "2023-12-05",
+          "title": "Perfect for interviews",
+          "body": "Looks much more expensive than it costs.",
+          "images": ["suit2_review1.jpg"]
+        }
+      ],
       "isFeatured": true,
       "isBestSeller": false,
       "isNew": false,

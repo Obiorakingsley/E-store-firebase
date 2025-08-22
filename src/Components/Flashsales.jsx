@@ -10,12 +10,6 @@ import Spinners from "./Utils/Spinners";
 const Flashsales = ({ isHome }) => {
   const products = useLoaderData();
 
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
   function renderData(data) {
     const dataItems = data.products.filter((item) => item.purchases > 500);
     const items = dataItems;
