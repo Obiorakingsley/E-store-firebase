@@ -1,10 +1,10 @@
-import React, { Suspense, useEffect } from "react";
+import React, { Suspense } from "react";
 import Flashcountdown from "./Utils/Flashcountdown";
-import { Line } from "rc-progress";
+
 import { FaMinus } from "react-icons/fa";
-import { FaNairaSign } from "react-icons/fa6";
+
 import "./Styles/Flashsales.css";
-import { Await, Link, useLoaderData, useLocation } from "react-router-dom";
+import { Await, Link, useLoaderData } from "react-router-dom";
 import Spinners from "./Utils/Spinners";
 
 const Flashsales = ({ isHome }) => {
@@ -65,17 +65,3 @@ const Flashsales = ({ isHome }) => {
 };
 
 export default Flashsales;
-
-/* 
-      <p className="name">{subName}</p>
-
-      
-        <StarRatings
-          starRatedColor="gold"
-          starDimension="18px"
-          rating={rating}
-          numberOfStars={5}
-          starSpacing="2px"
-          name="rating"
-        />
-         */

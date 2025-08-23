@@ -1,20 +1,13 @@
 import React, { useEffect, useState } from "react";
-import "../Styles/Productdetails.css";
+import "./productdetails.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "../Styles/Reviews.css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
-import { Autoplay, Pagination, Navigation, FreeMode } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css/pagination";
 import StarRatings from "react-star-ratings";
-import {
-  useParams,
-  useLocation,
-  useNavigate,
-  Link,
-  NavLink,
-  Outlet,
-} from "react-router-dom";
+import { useParams, useNavigate, NavLink, Outlet } from "react-router-dom";
 import { useContext } from "react";
 import { cartContext } from "../Contexts/Cartcontext";
 import { toast } from "react-toastify";

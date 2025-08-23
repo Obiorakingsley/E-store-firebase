@@ -4,10 +4,13 @@ import "./index.css";
 import App from "./App.jsx";
 
 import { CartContextProvider } from "./Components/Contexts/Cartcontext.jsx";
+import { FlashSaleProvider } from "./Components/Contexts/Flashsalescontext.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <CartContextProvider>
-      <App />
+      <FlashSaleProvider>
+        <App />
+      </FlashSaleProvider>
     </CartContextProvider>
   </StrictMode>
 );

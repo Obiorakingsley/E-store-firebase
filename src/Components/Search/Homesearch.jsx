@@ -1,9 +1,8 @@
-import React, { Suspense, useEffect, useState } from "react";
-import { Await, useLoaderData } from "react-router-dom";
-import Spinners from "./Utils/Spinners";
+import React, { useEffect, useState } from "react";
+
 import { useLocation, Link } from "react-router-dom";
 import { FaMinus } from "react-icons/fa";
-import "./Styles/Search.css";
+import "./Search.css";
 
 const Homesearch = () => {
   const useQuery = new URLSearchParams(useLocation().search);
@@ -33,9 +32,6 @@ const Homesearch = () => {
   return (
     <div style={{ minHeight: "95vh" }} className="grid-search-container">
       {filterdeData.map((item) => {
-        // let itemName = item.name;
-        // const subName = item && itemName.substring(0, 20) + "...";
-
         {
           return (
             <Link key={item.id} to={`/products/${item.id}`}>

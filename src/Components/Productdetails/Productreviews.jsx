@@ -25,12 +25,7 @@ const Productreviews = () => {
               </div>
               <div className="review-user">
                 <div className="flex">
-                  <img
-                    src={`/${review.user.image}`}
-                    alt=""
-                    width={40}
-                    height={40}
-                  />
+                  <img src={"/user2.png"} alt="" width={40} height={40} />
                   <p>{review.user.name}</p>
                 </div>
                 <p>{review.date}</p>

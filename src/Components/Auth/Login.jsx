@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Styles/login.css";
+import "./login.css";
 import { FaFacebook } from "react-icons/fa";
 
 const Login = () => {

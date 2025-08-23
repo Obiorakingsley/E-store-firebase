@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./Styles/Reviews.css";
 import "swiper/css";
 import "swiper/css/free-mode";
-import { Autoplay, Pagination, Navigation, FreeMode } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import StarRatings from "react-star-ratings";
 import { useLoaderData, Await } from "react-router-dom";
 import { Suspense } from "react";
-import Spinners from "./Utils/Spinners";
 
 const Reviews = () => {
   const products = useLoaderData();
@@ -65,7 +63,7 @@ const Reviews = () => {
                               <div className="user-review">
                                 <div className="user">
                                   <img
-                                    src={review.user.image}
+                                    src="/user2.png"
                                     alt=""
                                     width={40}
                                     height={40}

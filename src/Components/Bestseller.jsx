@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./Styles/Bestseller.css";
 import { FreeMode } from "swiper/modules";
@@ -10,8 +9,6 @@ import { FaMinus } from "react-icons/fa";
 import { FaNairaSign } from "react-icons/fa6";
 import { Link, useLoaderData, Await } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import Spinners from "./Utils/Spinners";
-import Product from "./Products/Product";
 
 const Bestseller = ({ isHome = false }) => {
   const products = useLoaderData();

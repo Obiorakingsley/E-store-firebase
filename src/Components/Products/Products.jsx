@@ -1,6 +1,6 @@
 import React, { Suspense, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import "../Styles/Products.css";
+import "./Products.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper/modules";
 import "swiper/css";
@@ -67,10 +67,6 @@ const Products = ({ isHome = false }) => {
 
     const items = isHome ? itemFilter : itemFilter.slice(0, 8);
 
-    const active = ({ isActive }) => {
-      return isActive ? "active-link" : "";
-    };
-
     return (
       <div className={`products-container ${isHome ? "min-height" : null}`}>
         <div className={` ${isHome ? "hidden" : "navbar-top"}`}>
@@ -93,13 +89,16 @@ const Products = ({ isHome = false }) => {
             >
               {navItems.map((item, index) => (
                 <SwiperSlide key={index} className="nav-item">
-                  <button
-                    onClick={() => {
-                      setSearchParams({ type: item.value });
-                    }}
+                  <NavLink
+                    end
+                    relative="path"
+                    className={() =>
+                      type === item.value ? "active-nav-link" : null
+                    }
+                    to={`?type=${item.value}`}
                   >
                     {item.key}
-                  </button>
+                  </NavLink>
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -178,5 +177,3 @@ const Products = ({ isHome = false }) => {
 };
 
 export default Products;
-
-// Auto-calculated: ((originalPrice - price)/originalPrice)

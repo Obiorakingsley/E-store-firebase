@@ -1,5 +1,5 @@
 import React from "react";
-import Homesearch from "../Components/Homesearch";
+import Homesearch from "../Components/Search/Homesearch";
 
 const HomeSearchPage = () => {
   return (

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Styles/Search.css";
+import "./Search.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaArrowLeft, FaSearch, FaMinus } from "react-icons/fa";
 
