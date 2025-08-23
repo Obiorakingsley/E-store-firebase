@@ -85,6 +85,13 @@
   height: 20px;
 }
 
+.logo-icon {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
 .navbar .menu {
   position: relative;
 }

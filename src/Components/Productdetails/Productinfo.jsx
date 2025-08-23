@@ -14,15 +14,22 @@ const Productinfo = () => {
           <p>
             <b>Sizes: </b>
             {product.sizes
-              ? product.sizes.map((size) => <span>&nbsp; {size}</span>)
+              ? product.sizes.map((size, index) => (
+                  <span key={index}>&nbsp; {size}</span>
+                ))
               : null}
           </p>
-          <div style={{ display: "flex", alignItems: "center", gap: ".5rem" }}>
-            <h3>Dimensions: </h3>
-            <p>{product.dimensions.length},</p>
-            <p> {product.dimensions.width},</p>
-            <p> {product.dimensions.height}</p>
-          </div>
+          {product.dimensions ? (
+            <div
+              style={{ display: "flex", alignItems: "center", gap: ".5rem" }}
+            >
+              <h3>Dimensions: </h3>
+
+              <p>{product.dimensions.lenght},</p>
+              <p> {product.dimensions.width},</p>
+              <p> {product.dimensions.height}</p>
+            </div>
+          ) : null}
         </>
       ) : null}
     </div>

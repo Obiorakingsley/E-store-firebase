@@ -8,8 +8,8 @@ const Productreviews = () => {
   return (
     <div>
       {product.reviews
-        ? product.reviews.map((review) => (
-            <div className="product-details-review">
+        ? product.reviews.map((review, index) => (
+            <div key={index} className="product-details-review">
               <div className="rating">
                 <StarRatings
                   starRatedColor="#ff9100ff"

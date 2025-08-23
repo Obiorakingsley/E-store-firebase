@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Homelayout from "./Layout/Homelayout.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import SearchPage from "./pages/SearchPage.jsx";
@@ -18,16 +18,24 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
+  useLocation,
 } from "react-router-dom";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
 import ProductDescription from "./Components/Productdetails/ProductDescription.jsx";
 import Productinfo from "./Components/Productdetails/Productinfo.jsx";
 import Productreviews from "./Components/Productdetails/Productreviews.jsx";
+import Error from "./Components/Error.jsx";
+import Spinners from "./Components/Utils/Spinners.jsx";
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/" element={<Homelayout />}>
+      <Route
+        path="/"
+        element={<Homelayout />}
+        loader={loaders}
+        errorElement={<Error />}
+      >
         <Route index element={<HomePage />} loader={loaders} />
         <Route path="account" element={<AccountPage />} />
         <Route path="cart" element={<CartPage />} loader={loaders} />
@@ -38,7 +46,7 @@ const routes = createBrowserRouter(
         />
         <Route path="products" element={<ProductsPage />} loader={loaders} />
         <Route
-          path="/products/:id"
+          path="products/:id"
           element={<ProductDetailsPage />}
           loader={loaders}
         >

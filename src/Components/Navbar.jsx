@@ -28,6 +28,7 @@ const Navbar = () => {
   const [input, setInput] = useState("");
 
   const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const location = useLocation();
 
   // Main Menu
 
@@ -70,6 +71,14 @@ const Navbar = () => {
   useClickOutside(dropDown, () => {
     setMenu(false);
   });
+
+  function handleClick() {
+    if (location.pathname !== "/") {
+      window.location.href = "/";
+    } else {
+      navigate("/");
+    }
+  }
 
   return (
     <div className="navbar">
@@ -129,7 +138,7 @@ const Navbar = () => {
             </ul>
           </nav>
         </div>
-        <Link to={"/"}>
+        <button className="logo-icon" onClick={handleClick}>
           <h2 className="logo">
             Estore
             <img
@@ -140,7 +149,7 @@ const Navbar = () => {
               height={20}
             />
           </h2>
-        </Link>
+        </button>
       </div>
 
       <div className="navbar-center">
