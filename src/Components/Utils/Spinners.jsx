@@ -9,7 +9,7 @@ const Spinners = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        minHeight: "90vh",
+        minHeight: "100vh",
         borderColor: "#f87b15",
         textAlign: "center",
       }}

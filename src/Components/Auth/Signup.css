@@ -60,7 +60,7 @@
   flex-direction: column;
   width: 100%;
   padding: 0 0.5rem;
-  border-bottom: 2px solid #ff8914;
+  border-bottom: 2px solid #ff891459;
 }
 
 .input input {
@@ -76,6 +76,7 @@
 
 .form button {
   background-color: #ff8914;
+  color: #fff;
   padding: 0.7rem 1rem;
   width: 200px;
   border: none;
@@ -83,6 +84,7 @@
   border-radius: 30px;
   position: absolute;
   bottom: -1.2rem;
+  cursor: pointer;
 }
 
 .alt-signup {
@@ -101,4 +103,10 @@
   display: flex;
   justify-content: center;
   gap: 1.5rem;
+}
+
+.login-redirect {
+  text-decoration: underline;
+  color: #ff8914;
+  text-shadow: 2px 2px 4px #0808083b;
 }

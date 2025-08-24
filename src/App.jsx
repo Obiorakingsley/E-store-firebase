@@ -18,14 +18,12 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
-  useLocation,
 } from "react-router-dom";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
 import ProductDescription from "./Components/Productdetails/ProductDescription.jsx";
 import Productinfo from "./Components/Productdetails/Productinfo.jsx";
 import Productreviews from "./Components/Productdetails/Productreviews.jsx";
 import Error from "./Components/Error.jsx";
-import Spinners from "./Components/Utils/Spinners.jsx";
 
 const routes = createBrowserRouter(
   createRoutesFromElements(

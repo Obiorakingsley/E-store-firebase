@@ -19,7 +19,7 @@ const Error = () => {
       <h4>we're having trouble loading your products right now.</h4>
       <p>This might be due to a temporary Network issue.</p>
       <Link
-        to={"/"}
+        to={".."}
         style={{
           backgroundColor: "indigo",
           color: "#fff",

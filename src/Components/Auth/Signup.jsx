@@ -1,9 +1,49 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { use, useState } from "react";
+import { Link, Form, redirect, useNavigate } from "react-router-dom";
 import "./signup.css";
 import { FaFacebook } from "react-icons/fa";
 
+import { auth } from "../config/firebase";
+import { useAuth } from "../Contexts/AuthContext";
+
 const Signup = () => {
+  const {
+    currentUser,
+    isLoading,
+    setIsLoading,
+    error,
+    setError,
+    signUpWithEmailAndPassword,
+  } = useAuth();
+
+  const navigate = useNavigate();
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    try {
+      const formData = new FormData(e.target);
+      const name = formData.get("name");
+      const email = formData.get("email");
+      const password = formData.get("password");
+
+      if (!email && !password && !name)
+        return setError("Please fill in all fields");
+
+      setIsLoading(true);
+      setError("");
+
+      await signUpWithEmailAndPassword(auth, email, password);
+
+      return navigate("/login");
+    } catch (error) {
+      console.error(error.message);
+      return { error: error.message };
+    } finally {
+      setIsLoading(false);
+    }
+  }
+  console.log(currentUser?.email);
+
   return (
     <div className="signup-form">
       <div className="signup-background">
@@ -12,38 +52,40 @@ const Signup = () => {
         </div>
       </div>
       <div className="signup">
-        <form className="form">
+        <form onSubmit={handleSubmit} method="post" className="form">
           <h1>CREATE ACCOUNT</h1>
           <div className="signup-container">
             <div className="input">
               <label htmlFor="name">Name</label>
-              <input id="name" type="text" />
+              <input id="name" type="text" name="name" />
             </div>
             <div className="input">
               <label htmlFor="email">Email</label>
-              <input id="email" type="email" />
+              <input id="email" type="email" name="email" />
             </div>
             <div className="input">
               <label htmlFor="password">Password</label>
-              <input id="password" type="password" />
+              <input id="password" type="password" name="password" />
             </div>
-            <div className="input">
-              <label htmlFor="confirm password">Confirm Password</label>
-              <input id="confirm password" type="password" />
-            </div>
-
-            <button>Sign Up</button>
+            <p style={{ color: "red" }}>{error}</p>
+            <button
+              disabled={isLoading}
+              style={isLoading ? { backgroundColor: "#a06035d3" } : null}
+            >
+              {isLoading ? "Signing Up..." : "Sign Up"}
+            </button>
           </div>
+
           <p style={{ textAlign: "center", marginBottom: "1.2rem" }}>
             Already have an account? &nbsp;
-            <span style={{ textDecoration: "underline" }}>
-              <Link to={"/login"}>Login</Link>
-            </span>
+            <Link className="login-redirect" to={"/login"}>
+              Login
+            </Link>
           </p>
           <div className="alt-signup">
             <p>Or</p>
             <div className="alt-link">
-              <Link to={"/"}>
+              <Link to={""}>
                 <img src="/google.png" alt="" width={25} height={25} />
               </Link>
 
