@@ -17,9 +17,12 @@ import { GiLipstick } from "react-icons/gi";
 import { useContext } from "react";
 import { cartContext } from "./Contexts/Cartcontext";
 
+import { useAuth } from "./Contexts/AuthContext";
+
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const { currentUser } = useAuth();
   const [menu, setMenu] = useState(false);
   const [selectMenu, setSelectmenu] = useState(false);
   const navigate = useNavigate();
@@ -181,40 +184,57 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-right">
-        <div ref={select} onClick={handleSelectMenu} className="account">
+        <div
+          ref={select}
+          onClick={() => {
+            !currentUser ? handleSelectMenu() : navigate("account");
+          }}
+          className="account"
+        >
           <img src="/user.png" alt="user icon" width={25} height={25} />
-          <div className="select">
-            Account
-            {selectMenu ? (
-              <FaChevronDown size={13} />
-            ) : (
-              <FaChevronUp size={13} />
-            )}
-            <nav
-              onMouseLeave={() => {
-                setSelectmenu(false);
-              }}
-              className={`account-action
+          {currentUser && (
+            <img
+              className="user-checked-icon"
+              src="/checked.png"
+              alt=""
+              width={15}
+              height={15}
+            />
+          )}
+          {!currentUser && (
+            <div className="select">
+              Account
+              {selectMenu ? (
+                <FaChevronDown size={13} />
+              ) : (
+                <FaChevronUp size={13} />
+              )}
+              <nav
+                onMouseLeave={() => {
+                  setSelectmenu(false);
+                }}
+                className={`account-action
                 ${selectMenu ? "display" : ""}`}
-            >
-              <Link to={"/login"}>
-                <button className="account-btn-login">Login</button>
-              </Link>
+              >
+                <Link to={"/login"}>
+                  <button className="account-btn-login">Login</button>
+                </Link>
 
-              <Link to={"/signup"}>
-                <div className="account-btn">
-                  <FaUserPlus />
-                  Sign Up
-                </div>
-              </Link>
-              <Link to={"/account"}>
-                <div className="account-btn">
-                  <FaUser />
-                  My Account
-                </div>
-              </Link>
-            </nav>
-          </div>
+                <Link to={"/signup"}>
+                  <div className="account-btn">
+                    <FaUserPlus />
+                    Sign Up
+                  </div>
+                </Link>
+                <Link to={"/account"}>
+                  <div className="account-btn">
+                    <FaUser />
+                    My Account
+                  </div>
+                </Link>
+              </nav>
+            </div>
+          )}
         </div>
         <div className="cart">
           <Link to={"/cart"}>

@@ -1,7 +1,8 @@
 import React from "react";
+import Account from "../Components/User/Account";
 
-const Account = () => {
-  return <div>Account Page</div>;
+const AccountPage = () => {
+  return <Account />;
 };
 
-export default Account;
+export default AccountPage;
