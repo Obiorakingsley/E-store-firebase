@@ -15,9 +15,10 @@ export const useAuth = () => {
 };
 
 export const AuthContextProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState();
+  const [currentUser, setCurrentUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState("");
+  const [signUpError, setSignUpError] = useState("");
+  const [loginError, setLoginError] = useState("");
 
   useEffect(() => {
     const verify = onAuthStateChanged(auth, (user) => {
@@ -42,9 +43,15 @@ export const AuthContextProvider = ({ children }) => {
   async function signUpWithEmailAndPassword(auth, email, password) {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      console.log(`signedup user: ${email}`);
     } catch (error) {
-      console.error(error);
+      if (error.code == "auth/network-request-failed") {
+        return setSignUpError("Please check your network connection");
+      } else if (error.code == "auth/email-already-in-use") {
+        return setSignUpError("This email is already registered");
+      } else if (error.code == "auth/weak-password") {
+        return setSignUpError("Password should be at least 6 characters");
+      }
+      return setSignUpError("Faild to sign up. Try again");
     }
   }
 
@@ -55,6 +62,12 @@ export const AuthContextProvider = ({ children }) => {
       console.log(`signedIn user: ${email}`);
     } catch (error) {
       console.error(error);
+      if (error.code == "auth/invalid-credential") {
+        return setLoginError("Invalid credential");
+      } else if (error.code == "auth/network-request-failed") {
+        return setLoginError("Please check your network connection");
+      }
+      return setLoginError("Faild to login. Try again");
     }
   }
 
@@ -80,11 +93,13 @@ export const AuthContextProvider = ({ children }) => {
         setCurrentUser,
         logInWithEmailAndPassword,
         logOut,
-        error,
-        setError,
+        signUpError,
+        setSignUpError,
+        setLoginError,
+        loginError,
       }}
     >
-      {children}
+      {!isLoading && children}
     </AuthContext.Provider>
   );
 };

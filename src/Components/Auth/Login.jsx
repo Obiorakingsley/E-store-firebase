@@ -1,11 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
 import { FaFacebook } from "react-icons/fa";
 import { useAuth } from "../Contexts/AuthContext";
+import { auth } from "../config/firebase";
 
 const Login = () => {
-  const { error, setError } = useAuth();
+  const {
+    loginError,
+    signInWithGoogle,
+    logOut,
+    isLoading,
+    setIsLoading,
+    setLoginError,
+    currentUser,
+    logInWithEmailAndPassword,
+  } = useAuth();
+  const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -16,11 +27,31 @@ const Login = () => {
       const email = formData.get("email");
       const password = formData.get("password");
 
-      if (!email && !password) return setError("Please fill in all fields");
+      if (!email && !password)
+        return setLoginError("Please fill in all fields");
+      setIsLoading(true);
+      setLoginError("");
+
+      // Sign in with email and password
+      await logInWithEmailAndPassword(auth, email, password);
+      console.log(currentUser);
+
+      if (!currentUser) {
+        return;
+      } else {
+        navigate("/");
+      }
+
+      //await logOut(auth);
+      //console.log("signed out");
     } catch (error) {
-      console.error(error);
+      return console.error(error);
+    } finally {
+      setIsLoading(false);
     }
   }
+
+  console.log(currentUser);
 
   return (
     <div className="login-form">
@@ -47,8 +78,13 @@ const Login = () => {
               <label htmlFor="password">Password</label>
               <input id="password" name="password" type="password" />
             </div>
-            <p style={{ color: "red" }}>{error}</p>
-            <button>Log in</button>
+            <p style={{ color: "red" }}>{loginError}</p>
+            <button
+              disabled={isLoading}
+              style={isLoading ? { backgroundColor: "#a06035d3" } : null}
+            >
+              Log in
+            </button>
           </div>
 
           <div
@@ -71,9 +107,13 @@ const Login = () => {
           </div>
           <div className="alt-login">
             <div className="alt-link">
-              <Link to={"/"}>
+              <button
+                onClick={() => {
+                  signInWithGoogle;
+                }}
+              >
                 <img src="/google.png" alt="" width={25} height={25} />
-              </Link>
+              </button>
 
               <Link to={"/"}>
                 <FaFacebook color="blue" size={25} />

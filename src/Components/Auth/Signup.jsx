@@ -11,8 +11,8 @@ const Signup = () => {
     currentUser,
     isLoading,
     setIsLoading,
-    error,
-    setError,
+    signUpError,
+    setSignUpError,
     signUpWithEmailAndPassword,
   } = useAuth();
 
@@ -27,17 +27,20 @@ const Signup = () => {
       const password = formData.get("password");
 
       if (!email && !password && !name)
-        return setError("Please fill in all fields");
+        return setSignUpError("Please fill in all fields");
 
       setIsLoading(true);
-      setError("");
+      setSignUpError("");
 
       await signUpWithEmailAndPassword(auth, email, password);
 
-      return navigate("/login");
+      if (!currentUser) {
+        return;
+      } else {
+        navigate("/login");
+      }
     } catch (error) {
-      console.error(error.message);
-      return { error: error.message };
+      return console.error(error);
     } finally {
       setIsLoading(false);
     }
@@ -67,7 +70,7 @@ const Signup = () => {
               <label htmlFor="password">Password</label>
               <input id="password" type="password" name="password" />
             </div>
-            <p style={{ color: "red" }}>{error}</p>
+            <p style={{ color: "red" }}>{signUpError}</p>
             <button
               disabled={isLoading}
               style={isLoading ? { backgroundColor: "#a06035d3" } : null}
