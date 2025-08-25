@@ -3,18 +3,20 @@ import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
 import { FaFacebook } from "react-icons/fa";
 import { useAuth } from "../Contexts/AuthContext";
-import { auth } from "../config/firebase";
+import { auth, googleProvider } from "../config/firebase";
 
 const Login = () => {
   const {
     loginError,
     signInWithGoogle,
+    signInError,
     logOut,
     isLoading,
     setIsLoading,
     setLoginError,
     currentUser,
     logInWithEmailAndPassword,
+    setSignInError,
   } = useAuth();
   const navigate = useNavigate();
 
@@ -22,6 +24,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
+      setSignInError("");
       const formData = new FormData(e.target);
 
       const email = formData.get("email");
@@ -78,8 +81,12 @@ const Login = () => {
               <label htmlFor="password">Password</label>
               <input id="password" name="password" type="password" />
             </div>
-            <p style={{ color: "red" }}>{loginError}</p>
+            <p style={{ color: "red" }}>
+              {loginError}
+              {signInError}
+            </p>
             <button
+              className="login-btn"
               disabled={isLoading}
               style={isLoading ? { backgroundColor: "#a06035d3" } : null}
             >
@@ -105,23 +112,27 @@ const Login = () => {
             </label>
             <Link to={"/forgot-password"}>Forgot password?</Link>
           </div>
+
           <div className="alt-login">
-            <div className="alt-link">
-              <button
-                onClick={() => {
-                  signInWithGoogle;
+            <span>Or</span>
+            <div className="alt-login-btn">
+              <div
+                className="google-login"
+                onClick={async () => {
+                  await signInWithGoogle(auth, googleProvider);
+                  if (!currentUser) {
+                    return;
+                  } else {
+                    navigate("/");
+                  }
                 }}
               >
-                <img src="/google.png" alt="" width={25} height={25} />
-              </button>
-
-              <Link to={"/"}>
-                <FaFacebook color="blue" size={25} />
+                <img src="/google.png" alt="" width={23} height={23} />
+              </div>
+              <Link to={"/signup"} className="signup-redirect">
+                Dont have an account?
               </Link>
             </div>
-            <Link to={"/signup"} className="signup-redirect">
-              Dont have an account?
-            </Link>
           </div>
         </form>
       </div>

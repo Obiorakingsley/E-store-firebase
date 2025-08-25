@@ -40,7 +40,7 @@
   top: 20vh;
 }
 
-.form h1 {
+.signup .form h1 {
   text-align: center;
 }
 
@@ -74,7 +74,7 @@
   color: #080808;
 }
 
-.form button {
+.signup .form .signup-btn {
   background-color: #ff8914;
   color: #fff;
   padding: 0.7rem 1rem;
@@ -87,7 +87,7 @@
   cursor: pointer;
 }
 
-.alt-signup {
+.signup .alt-signup {
   position: absolute;
   bottom: -100px;
   right: 0;
@@ -97,12 +97,16 @@
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 .alt-link {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 0.5rem;
+}
+
+.google-signup {
+  cursor: pointer;
 }
 
 .login-redirect {

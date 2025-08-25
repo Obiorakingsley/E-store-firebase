@@ -3,7 +3,7 @@ import { Link, Form, redirect, useNavigate } from "react-router-dom";
 import "./signup.css";
 import { FaFacebook } from "react-icons/fa";
 
-import { auth } from "../config/firebase";
+import { auth, googleProvider } from "../config/firebase";
 import { useAuth } from "../Contexts/AuthContext";
 
 const Signup = () => {
@@ -14,11 +14,15 @@ const Signup = () => {
     signUpError,
     setSignUpError,
     signUpWithEmailAndPassword,
+    signInWithGoogle,
+    signInError,
+    setSignInError,
   } = useAuth();
 
   const navigate = useNavigate();
 
   async function handleSubmit(e) {
+    setSignInError("");
     e.preventDefault();
     try {
       const formData = new FormData(e.target);
@@ -70,8 +74,12 @@ const Signup = () => {
               <label htmlFor="password">Password</label>
               <input id="password" type="password" name="password" />
             </div>
-            <p style={{ color: "red" }}>{signUpError}</p>
+            <p style={{ color: "red" }}>
+              {signUpError}
+              {signInError}
+            </p>
             <button
+              className="signup-btn"
               disabled={isLoading}
               style={isLoading ? { backgroundColor: "#a06035d3" } : null}
             >
@@ -79,7 +87,13 @@ const Signup = () => {
             </button>
           </div>
 
-          <p style={{ textAlign: "center", marginBottom: "1.2rem" }}>
+          <p
+            style={{
+              textAlign: "center",
+              marginBottom: "1.2rem",
+              color: "green",
+            }}
+          >
             Already have an account? &nbsp;
             <Link className="login-redirect" to={"/login"}>
               Login
@@ -88,13 +102,20 @@ const Signup = () => {
           <div className="alt-signup">
             <p>Or</p>
             <div className="alt-link">
-              <Link to={""}>
-                <img src="/google.png" alt="" width={25} height={25} />
-              </Link>
-
-              <Link to={"/"}>
-                <FaFacebook color="blue" size={25} />
-              </Link>
+              <div
+                onClick={async () => {
+                  await signInWithGoogle(auth, googleProvider);
+                  if (!currentUser) {
+                    return;
+                  } else {
+                    navigate("/");
+                  }
+                }}
+                className="google-signup"
+              >
+                <img src="/google.png" alt="" width={23} height={23} />
+              </div>
+              <p>Sign Up with Google</p>
             </div>
           </div>
         </form>

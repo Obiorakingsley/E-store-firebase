@@ -19,6 +19,7 @@ export const AuthContextProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [signUpError, setSignUpError] = useState("");
   const [loginError, setLoginError] = useState("");
+  const [signInError, setSignInError] = useState();
 
   useEffect(() => {
     const verify = onAuthStateChanged(auth, (user) => {
@@ -30,20 +31,32 @@ export const AuthContextProvider = ({ children }) => {
 
   //Google signUp
   async function signInWithGoogle(auth, googleProvider) {
+    setSignUpError("");
+    setLoginError("");
     try {
       await signInWithPopup(auth, googleProvider);
       console.log("signedup with Google");
     } catch (error) {
       console.error(error);
+      if (error.code == "auth/network-request-failed") {
+        return setSignInError("Please check your network connection");
+      } else if (error.code == "auth/email-already-in-use") {
+        return setSignInError("This email is already registered");
+      } else if (error.code == "auth/weak-password") {
+        return setSignInError("Password should be at least 6 characters");
+      }
+      return setSignInError("Faild to sign up. Try again");
     }
   }
 
   //Email/password signup
   //SignUp user
   async function signUpWithEmailAndPassword(auth, email, password) {
+    setSignInError("");
     try {
       await createUserWithEmailAndPassword(auth, email, password);
     } catch (error) {
+      setSignInError("");
       if (error.code == "auth/network-request-failed") {
         return setSignUpError("Please check your network connection");
       } else if (error.code == "auth/email-already-in-use") {
@@ -61,6 +74,7 @@ export const AuthContextProvider = ({ children }) => {
       await signInWithEmailAndPassword(auth, email, password);
       console.log(`signedIn user: ${email}`);
     } catch (error) {
+      setSignInError("");
       console.error(error);
       if (error.code == "auth/invalid-credential") {
         return setLoginError("Invalid credential");
@@ -73,6 +87,7 @@ export const AuthContextProvider = ({ children }) => {
 
   //Logout
   async function logOut(auth) {
+    setSignInError("");
     try {
       await signOut(auth);
       console.log("User signedOut");
@@ -97,6 +112,8 @@ export const AuthContextProvider = ({ children }) => {
         setSignUpError,
         setLoginError,
         loginError,
+        signInError,
+        setSignInError,
       }}
     >
       {!isLoading && children}

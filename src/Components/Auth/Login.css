@@ -74,7 +74,7 @@
   color: #080808;
 }
 
-.form button {
+.form .login-btn {
   background-color: #ff8914;
   padding: 0.7rem 1rem;
   width: 200px;
@@ -83,27 +83,34 @@
   border-radius: 30px;
   position: absolute;
   bottom: -1.2rem;
+  color: #fff;
+  cursor: pointer;
 }
 
-.alt-login {
+.form .alt-login {
+  width: 100%;
   position: absolute;
-  bottom: -100px;
-  right: 0;
+  bottom: -85px;
   left: 0;
-  margin: 0 auto;
+  right: 0;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  padding: 0.5rem;
-  gap: 1rem;
+  margin: 0 auto;
 }
-.alt-link {
+
+.alt-login-btn {
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.form .google-login {
+  cursor: pointer;
 }
 
 .signup-redirect {
   color: red;
   font-weight: 500;
+  text-decoration: underline;
 }
