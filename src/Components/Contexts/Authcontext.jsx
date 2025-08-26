@@ -6,6 +6,7 @@ import {
   signOut,
   signInWithEmailAndPassword,
   onAuthStateChanged,
+  updateProfile,
 } from "firebase/auth";
 
 const AuthContext = createContext();
@@ -16,10 +17,10 @@ export const useAuth = () => {
 
 export const AuthContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [signUpError, setSignUpError] = useState("");
   const [loginError, setLoginError] = useState("");
-  const [signInError, setSignInError] = useState();
+  const [googleError, setGoogleError] = useState();
 
   useEffect(() => {
     const verify = onAuthStateChanged(auth, (user) => {
@@ -27,72 +28,91 @@ export const AuthContextProvider = ({ children }) => {
       setIsLoading(false);
     });
     return verify;
-  }, [auth]);
+  }, []);
+
+  //Error handling function
+
+  function handleAuthError(error, setError) {
+    console.error(error);
+    switch (error.code) {
+      case "auth/network-request-failed":
+        setError("Please check your network connection");
+        break;
+      case "auth/email-already-in-use":
+        setError("This email is already registered");
+        break;
+      case "auth/weak-password":
+        setError("Password should be at least 6 characters");
+        break;
+      case "auth/invalid-credential":
+        setError("Invalid email or password");
+        break;
+      default:
+        setError("Something went wrong. Try again");
+    }
+  }
 
   //Google signUp
   async function signInWithGoogle(auth, googleProvider) {
     setSignUpError("");
     setLoginError("");
     try {
+      setIsLoading(true);
       await signInWithPopup(auth, googleProvider);
-      console.log("signedup with Google");
     } catch (error) {
-      console.error(error);
-      if (error.code == "auth/network-request-failed") {
-        return setSignInError("Please check your network connection");
-      } else if (error.code == "auth/email-already-in-use") {
-        return setSignInError("This email is already registered");
-      } else if (error.code == "auth/weak-password") {
-        return setSignInError("Password should be at least 6 characters");
-      }
-      return setSignInError("Faild to sign up. Try again");
+      handleAuthError(error, setGoogleError);
+    } finally {
+      setIsLoading(false);
     }
   }
 
   //Email/password signup
-  //SignUp user
-  async function signUpWithEmailAndPassword(auth, email, password) {
-    setSignInError("");
+
+  async function signUpWithEmailAndPassword(auth, name, email, password) {
+    setGoogleError("");
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      const credential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      setIsLoading(true);
+      await updateProfile(credential.user, {
+        displayName: name,
+      });
+
+      return credential;
     } catch (error) {
-      setSignInError("");
-      if (error.code == "auth/network-request-failed") {
-        return setSignUpError("Please check your network connection");
-      } else if (error.code == "auth/email-already-in-use") {
-        return setSignUpError("This email is already registered");
-      } else if (error.code == "auth/weak-password") {
-        return setSignUpError("Password should be at least 6 characters");
-      }
-      return setSignUpError("Faild to sign up. Try again");
+      setGoogleError("");
+      handleAuthError(error, setSignUpError);
+    } finally {
+      setIsLoading(false);
     }
   }
 
   //Email/Password sigIn
   async function logInWithEmailAndPassword(auth, email, password) {
     try {
+      setIsLoading(true);
       await signInWithEmailAndPassword(auth, email, password);
-      console.log(`signedIn user: ${email}`);
     } catch (error) {
-      setSignInError("");
-      console.error(error);
-      if (error.code == "auth/invalid-credential") {
-        return setLoginError("Invalid credential");
-      } else if (error.code == "auth/network-request-failed") {
-        return setLoginError("Please check your network connection");
-      }
-      return setLoginError("Faild to login. Try again");
+      setGoogleError("");
+
+      handleAuthError(error, setLoginError);
+    } finally {
+      setIsLoading(false);
     }
   }
 
   //Logout
   async function logOut(auth) {
-    setSignInError("");
+    setGoogleError("");
     try {
       await signOut(auth);
       console.log("User signedOut");
     } catch (error) {
-      console.error(error);
+      handleAuthError(error, setGoogleError);
     }
   }
 
@@ -111,11 +131,11 @@ export const AuthContextProvider = ({ children }) => {
         setSignUpError,
         setLoginError,
         loginError,
-        signInError,
-        setSignInError,
+        googleError,
+        setGoogleError,
       }}
     >
-      {!isLoading && children}
+      {children}
     </AuthContext.Provider>
   );
 };

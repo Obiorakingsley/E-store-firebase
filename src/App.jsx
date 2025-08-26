@@ -24,6 +24,7 @@ import ProductDescription from "./Components/Productdetails/ProductDescription.j
 import Productinfo from "./Components/Productdetails/Productinfo.jsx";
 import Productreviews from "./Components/Productdetails/Productreviews.jsx";
 import Error from "./Components/Error.jsx";
+import ProtectedRoutes from "./Components/config/ProtectedRoutes.jsx";
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
@@ -36,7 +37,16 @@ const routes = createBrowserRouter(
       >
         <Route index element={<HomePage />} loader={loaders} />
 
-        <Route path="cart" element={<CartPage />} loader={loaders} />
+        <Route
+          path="cart"
+          element={
+            <ProtectedRoutes>
+              <CartPage />
+            </ProtectedRoutes>
+          }
+          loader={loaders}
+        />
+
         <Route
           path="flash-sales"
           element={<FlashsalesPage />}
@@ -58,7 +68,16 @@ const routes = createBrowserRouter(
           loader={loaders}
         />
       </Route>
-      <Route path="account" element={<AccountPage />} />
+
+      <Route
+        path="account"
+        element={
+          <ProtectedRoutes>
+            <AccountPage />
+          </ProtectedRoutes>
+        }
+      />
+
       <Route path="*" element={<NotFoundPage />} />
       <Route path="search" element={<SearchPage loader={loaders} />} />
       <Route path="signup" element={<SignupPage />} />

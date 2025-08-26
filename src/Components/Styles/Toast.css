@@ -1,0 +1,16 @@
+:root {
+  --toastify-color-success: #f58618; /* Green color for success */
+  --toastify-color-progress-success: #f58618; /* Progress bar color */
+}
+
+.Toastify__progress-bar--success {
+  background-color: var(--toastify-color-progress-success) !important;
+}
+
+.Toastify__spinner {
+  border-color: var(--toastify-color-success) !important;
+}
+
+.Toastify__checkmark {
+  color: var(--toastify-color-success) !important;
+}

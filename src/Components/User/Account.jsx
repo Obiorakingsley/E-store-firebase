@@ -1,11 +1,11 @@
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { useAuth } from "../Contexts/AuthContext";
 import "./User.css";
+import { auth } from "../config/firebase";
 import { useNavigate } from "react-router-dom";
 
 const UserProfile = () => {
-  const { currentUser } = useAuth();
-  console.log(currentUser);
+  const { currentUser, logOut } = useAuth();
 
   const navigate = useNavigate();
 
@@ -25,31 +25,44 @@ const UserProfile = () => {
         </div>
         <div className="profile-card">
           <div className="profile">
-            <img src={currentUser?.photoURL} alt="" width={50} height={50} />
-            <p className="user-name">{currentUser?.displayName || "Not set"}</p>
+            <img
+              src={currentUser?.photoURL || "/user2.png"}
+              alt=""
+              width={50}
+              height={50}
+            />
+            <p className="user-name">{currentUser?.displayName || ""}</p>
             <p className="user-email">{currentUser?.email}</p>
+            <p>
+              <strong>User ID:</strong> {currentUser?.uid}
+            </p>
           </div>
           <div className="profile-details">
             <p className="user-name">
-              <b>Full name</b> <br />
+              <b>Name</b> <br />
               {currentUser?.displayName || "Not set"}
             </p>
             <p className="user-name">
               <b>Email</b> <br />
               {currentUser?.email}
             </p>
-            <p>
-              <strong>User ID:</strong> {currentUser.uid}
-            </p>
 
             <p>
               <strong>Joined </strong>
-              {new Date(currentUser.metadata.creationTime).toLocaleDateString()}
+              {new Date(
+                currentUser?.metadata.creationTime
+              ).toLocaleDateString()}
             </p>
           </div>
         </div>
       </div>
-      <button onClick={() => {}} className="logout">
+      <button
+        onClick={async () => {
+          navigate("/");
+          await logOut(auth);
+        }}
+        className="logout"
+      >
         Sign out
       </button>
     </div>

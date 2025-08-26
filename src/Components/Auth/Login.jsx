@@ -1,16 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
-import { FaFacebook } from "react-icons/fa";
+
 import { useAuth } from "../Contexts/AuthContext";
 import { auth, googleProvider } from "../config/firebase";
+import { onAuthStateChanged } from "firebase/auth";
 
 const Login = () => {
   const {
     loginError,
     signInWithGoogle,
     signInError,
-    logOut,
     isLoading,
     setIsLoading,
     setLoginError,
@@ -23,38 +23,23 @@ const Login = () => {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    try {
-      setSignInError("");
-      const formData = new FormData(e.target);
+    const formData = new FormData(e.target);
 
-      const email = formData.get("email");
-      const password = formData.get("password");
+    const email = formData.get("email");
+    const password = formData.get("password");
 
-      if (!email && !password)
-        return setLoginError("Please fill in all fields");
-      setIsLoading(true);
-      setLoginError("");
+    if (!email && !password) return setLoginError("Please fill in all fields");
 
-      // Sign in with email and password
-      await logInWithEmailAndPassword(auth, email, password);
-      console.log(currentUser);
+    setLoginError("");
 
-      if (!currentUser) {
-        return;
-      } else {
-        navigate("/");
-      }
+    // Sign in with email and password
+    await logInWithEmailAndPassword(auth, email, password);
 
-      //await logOut(auth);
-      //console.log("signed out");
-    } catch (error) {
-      return console.error(error);
-    } finally {
-      setIsLoading(false);
-    }
+    const verify = onAuthStateChanged(auth, (user) => {
+      !loginError && user && navigate("/");
+    });
+    return verify;
   }
-
-  console.log(currentUser);
 
   return (
     <div className="login-form">
@@ -68,13 +53,13 @@ const Login = () => {
           <h1>LOGIN</h1>
           <div className="login-container">
             <div className="input">
-              <label htmlFor="name">Email</label>
+              <label htmlFor="email">Email</label>
               <input
-                id="name"
+                id="email"
                 name="email"
                 type="name"
                 autoFocus
-                autoComplete=""
+                autoComplete="current-password"
               />
             </div>
             <div className="input">
@@ -88,9 +73,9 @@ const Login = () => {
             <button
               className="login-btn"
               disabled={isLoading}
-              style={isLoading ? { backgroundColor: "#a06035d3" } : null}
+              style={isLoading ? { backgroundColor: "#6e6e6d79" } : null}
             >
-              Log in
+              {isLoading ? "Logging in" : "Log in"}
             </button>
           </div>
 
@@ -119,12 +104,9 @@ const Login = () => {
               <div
                 className="google-login"
                 onClick={async () => {
+                  setIsLoading(true);
                   await signInWithGoogle(auth, googleProvider);
-                  if (!currentUser) {
-                    return;
-                  } else {
-                    navigate("/");
-                  }
+                  setIsLoading(false);
                 }}
               >
                 <img src="/google.png" alt="" width={23} height={23} />

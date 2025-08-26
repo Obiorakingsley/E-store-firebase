@@ -5,6 +5,7 @@ import Footer from "../Components/Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ScrollIntoView from "../Components/Utils/ScrollIntoView";
+import "../Components/Styles/Toast.css";
 
 const Homelayout = () => {
   return (

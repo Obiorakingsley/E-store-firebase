@@ -71,7 +71,7 @@ const Products = ({ isHome = false }) => {
       <div className={`products-container ${isHome ? "min-height" : null}`}>
         <div className={` ${isHome ? "hidden" : "navbar-top"}`}>
           <h2>Browse by categories</h2>
-          <Link to={"/products"}>
+          <Link to={"/products?type="}>
             <span className="flex">
               More
               <FaChevronRight size={10} />

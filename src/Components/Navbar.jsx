@@ -216,17 +216,17 @@ const Navbar = () => {
                 className={`account-action
                 ${selectMenu ? "display" : ""}`}
               >
-                <Link to={"/login"}>
+                <Link to={"login"}>
                   <button className="account-btn-login">Login</button>
                 </Link>
 
-                <Link to={"/signup"}>
+                <Link to={"signup"}>
                   <div className="account-btn">
                     <FaUserPlus />
                     Sign Up
                   </div>
                 </Link>
-                <Link to={"/account"}>
+                <Link to={"account"}>
                   <div className="account-btn">
                     <FaUser />
                     My Account
