@@ -105,7 +105,6 @@ export const AuthContextProvider = ({ children }) => {
         setCurrentUser,
         isLoading,
         setIsLoading,
-        setCurrentUser,
         logInWithEmailAndPassword,
         logOut,
         signUpError,

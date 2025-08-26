@@ -35,7 +35,7 @@ const routes = createBrowserRouter(
         errorElement={<Error />}
       >
         <Route index element={<HomePage />} loader={loaders} />
-        <Route path="account" element={<AccountPage />} />
+
         <Route path="cart" element={<CartPage />} loader={loaders} />
         <Route
           path="flash-sales"
@@ -58,6 +58,7 @@ const routes = createBrowserRouter(
           loader={loaders}
         />
       </Route>
+      <Route path="account" element={<AccountPage />} />
       <Route path="*" element={<NotFoundPage />} />
       <Route path="search" element={<SearchPage loader={loaders} />} />
       <Route path="signup" element={<SignupPage />} />
