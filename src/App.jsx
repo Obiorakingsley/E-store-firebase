@@ -11,7 +11,7 @@ import ProductsPage from "./pages/ProductsPage.jsx";
 import ProductDetailsPage from "./pages/ProductDetailsPage.jsx";
 import HomeSearchPage from "./pages/HomeSearchPage.jsx";
 
-import loaders from "./Components/Utils/Loader.jsx";
+import loaders from "./Components/config/LoaderData.jsx";
 
 import {
   Route,

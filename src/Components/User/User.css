@@ -36,10 +36,15 @@
 
 .profile img {
   border-radius: 50%;
+  margin-bottom: 0.2rem;
 }
 
 .profile p {
   font-size: 1rem;
+}
+
+.profile .user-id {
+  font-size: 0.8rem;
 }
 
 .profile .user-email {
@@ -66,7 +71,7 @@
   outline: none;
   background-color: transparent;
   border: 1px solid #f58618;
-  color: #000000;
+  color: #ff9900;
 }
 
 /* @media screen and (max-width: 500px) {
