@@ -16,9 +16,7 @@ const Popularproduct = () => {
   const location = useLocation();
   const products = useLoaderData();
   function renderData(items) {
-    const dataItem = items.products
-      ? items.products.filter((item) => item.views > 1300)
-      : null;
+    const dataItem = items ? items.filter((item) => item.views > 1300) : null;
     const popularProduct = dataItem;
     return (
       <>

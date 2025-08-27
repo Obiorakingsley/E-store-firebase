@@ -14,25 +14,9 @@ import {
   useSearchParams,
   NavLink,
 } from "react-router-dom";
-
 import Spinners from "../Utils/Spinners.jsx";
 import Newcolection from "../Newcolection.jsx";
 import Bestseller from "../Bestseller.jsx";
-
-import { defer } from "react-router-dom";
-
-export async function loader() {
-  try {
-    const res = await fetch("./items.json");
-    if (!res.ok) {
-      throw new Error("Network response was not ok");
-    }
-    const data = res.json();
-    return defer({ promise: data });
-  } catch (err) {
-    return new Promise("Error fetching data");
-  }
-}
 
 const Products = ({ isHome = false }) => {
   const products = useLoaderData();
@@ -60,7 +44,7 @@ const Products = ({ isHome = false }) => {
   const type = searchParams.get("type");
 
   function renderData(data) {
-    const dataItems = data.products.map((item) => item);
+    const dataItems = data.map((item) => item);
     let itemFilter = type
       ? dataItems.filter((item) => item.category.includes(type))
       : dataItems;

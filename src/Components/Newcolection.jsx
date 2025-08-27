@@ -16,9 +16,7 @@ const Newcolection = ({ isHome = false }) => {
   const products = useLoaderData();
 
   function renderData(newColection) {
-    const dataItems = newColection.products.filter(
-      (item, id) => item.isNew === true
-    );
+    const dataItems = newColection.filter((item, id) => item.isNew === true);
     const items = isHome ? dataItems : dataItems.slice(0, 5);
     return (
       <div className="new-collection-container">

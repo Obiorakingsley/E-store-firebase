@@ -33,7 +33,7 @@ const UserProfile = () => {
             />
             <p className="user-name">{currentUser?.displayName || ""}</p>
             <p className="user-email">{currentUser?.email}</p>
-            <p>
+            <p className="user-id">
               <strong>User ID:</strong> {currentUser?.uid}
             </p>
           </div>

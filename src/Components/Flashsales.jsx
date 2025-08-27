@@ -11,7 +11,7 @@ const Flashsales = ({ isHome }) => {
   const products = useLoaderData();
 
   function renderData(data) {
-    const dataItems = data.products.filter((item) => item.purchases > 500);
+    const dataItems = data.filter((item) => item.purchases > 500);
     const items = dataItems;
     return (
       <>

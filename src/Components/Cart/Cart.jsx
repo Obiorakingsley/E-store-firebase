@@ -3,8 +3,10 @@ import { cartContext } from "../Contexts/Cartcontext";
 import "./Cart.css";
 import { FaMinus, FaPlus, FaTrashAlt, FaArrowLeft } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useAuth } from "../Contexts/AuthContext";
 
 const Cart = () => {
+  const { currentUser } = useAuth();
   const navigate = useNavigate();
   const {
     cart,
@@ -74,67 +76,68 @@ const Cart = () => {
           </div>
           <div className="cart-container">
             <div className="cart-summary">
-              {cart.map((item) => {
-                return (
-                  <div className="cart-item-card" key={item.id}>
-                    <div className="flex-item">
-                      <img
-                        src={`/${item.images[0]}`}
-                        alt=""
-                        width={100}
-                        height={100}
-                      />
-                      <div className="cart-summary-details">
-                        <p className="cart-item-name">{item.name}</p>
-                        <div className="cart-item-price">
-                          <p className="cart-price">${item.price}</p>
-                          <p className="cart-original-price">
-                            ${item.originalPrice}
-                          </p>
-                          <p className="cart-item-percentage">
-                            <FaMinus size={10} />
-                            {item.discountPercentage}%
+              {cart &&
+                cart.map((item) => {
+                  return (
+                    <div className="cart-item-card" key={item?.id}>
+                      <div className="flex-item">
+                        <img
+                          src={`/${item.images && item.images[0]}`}
+                          alt=""
+                          width={100}
+                          height={100}
+                        />
+                        <div className="cart-summary-details">
+                          <p className="cart-item-name">{item.name}</p>
+                          <div className="cart-item-price">
+                            <p className="cart-price">${item.price}</p>
+                            <p className="cart-original-price">
+                              ${item.originalPrice}
+                            </p>
+                            <p className="cart-item-percentage">
+                              <FaMinus size={10} />
+                              {item.discountPercentage}%
+                            </p>
+                          </div>
+                          <p>
+                            Quantity:<b>{item.quantity}</b>
                           </p>
                         </div>
-                        <p>
-                          Quantity:<b>{item.quantity}</b>
-                        </p>
                       </div>
-                    </div>
-                    <div className="cart-update">
-                      <button
-                        onClick={() => {
-                          removeFromCart(item);
-                        }}
-                        className="delete-item-cart"
-                      >
-                        <FaTrashAlt
-                          className="delete-icon"
-                          size={17}
-                          color="#030303ff"
-                        />
-                      </button>
-                      <div className="update-quantity">
+                      <div className="cart-update">
                         <button
                           onClick={() => {
-                            decreaseItemQuantity(item);
+                            removeFromCart(item);
                           }}
+                          className="delete-item-cart"
                         >
-                          <FaMinus size={10} />
+                          <FaTrashAlt
+                            className="delete-icon"
+                            size={17}
+                            color="#030303ff"
+                          />
                         </button>
-                        <p style={{ fontSize: "1rem" }}>{item.quantity}</p>
-                        <button
-                          onClick={() => {
-                            increaseItemQuantity(item);
-                          }}
-                        >
-                          <FaPlus size={10} />
-                        </button>
+                        <div className="update-quantity">
+                          <button
+                            onClick={() => {
+                              decreaseItemQuantity(item);
+                            }}
+                          >
+                            <FaMinus size={10} />
+                          </button>
+                          <p style={{ fontSize: "1rem" }}>{item.quantity}</p>
+                          <button
+                            onClick={() => {
+                              increaseItemQuantity(item);
+                            }}
+                          >
+                            <FaPlus size={10} />
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
             </div>
             <div className="order-summary">
               <h2>Order Summary</h2>
@@ -169,7 +172,12 @@ const Cart = () => {
                 <h2>Order total</h2>
                 <h3>${totalPrice.toFixed(2)}</h3>
               </div>
-              <button className="checkout-btn">
+              <button
+                onClick={() => {
+                  !currentUser && navigate("/login");
+                }}
+                className="checkout-btn"
+              >
                 Checkout ($ {totalPrice.toFixed(2)})
               </button>
             </div>

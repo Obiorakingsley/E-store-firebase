@@ -12,10 +12,12 @@ import { useContext } from "react";
 import { cartContext } from "../Contexts/Cartcontext";
 import { toast } from "react-toastify";
 import { FaMinus, FaPlus, FaArrowLeft } from "react-icons/fa";
+import { useProducts } from "../config/Firestore";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
+  const productCon = useProducts();
 
   const { cart, addToCart, increaseItemQuantity, decreaseItemQuantity } =
     useContext(cartContext);
@@ -31,12 +33,12 @@ const ProductDetails = () => {
   });
 
   const navigate = useNavigate();
+  console.log(product);
 
   useEffect(() => {
     async function fetchProduct() {
-      const res = await fetch("/items.json");
-      const data = await res.json();
-      const dataItems = data.products.filter((item) => item.id === id);
+      const data = await productCon;
+      const dataItems = data?.filter((item) => item.id === id);
       if (dataItems[0]) setProduct(dataItems[0]);
       if (dataItems[0].colors && dataItems[0].colors.length > 0) {
         setSelectedColor({

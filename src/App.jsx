@@ -37,15 +37,7 @@ const routes = createBrowserRouter(
       >
         <Route index element={<HomePage />} loader={loaders} />
 
-        <Route
-          path="cart"
-          element={
-            <ProtectedRoutes>
-              <CartPage />
-            </ProtectedRoutes>
-          }
-          loader={loaders}
-        />
+        <Route path="cart" element={<CartPage />} loader={loaders} />
 
         <Route
           path="flash-sales"

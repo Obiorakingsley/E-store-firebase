@@ -13,7 +13,7 @@ const Reviews = () => {
   const products = useLoaderData();
 
   function renderData(reviews) {
-    const items = reviews.products.map((item, id) => {
+    const items = reviews.map((item, id) => {
       return item;
     });
 

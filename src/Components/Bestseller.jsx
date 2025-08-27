@@ -14,7 +14,7 @@ const Bestseller = ({ isHome = false }) => {
   const products = useLoaderData();
 
   function renderData(bestseller) {
-    const dataItems = bestseller.products.filter(
+    const dataItems = bestseller.filter(
       (item, id) => item.isBestSeller === true
     );
     const bestSellerItem = isHome ? dataItems : dataItems.slice(0, 8);

@@ -1,16 +1,15 @@
+import React, { useEffect, useState } from "react";
+import { db } from "../config/firebase";
+import { collection, getDocs } from "firebase/firestore";
 import { defer } from "react-router-dom";
 
-async function loaders() {
-  try {
-    const res = await fetch("./items.json");
-    if (!res.ok) {
-      throw new Error("Network response was not ok");
-    }
-    const data = res.json();
-    return defer({ promise: data });
-  } catch (err) {
-    return new Promise("Error fetching data");
-  }
-}
+const loaders = () => {
+  const productsRef = collection(db, "products");
 
+  async function getProducts() {
+    const data = await getDocs(productsRef);
+    return data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+  }
+  return defer({ promise: getProducts() });
+};
 export default loaders;
