@@ -64,3 +64,27 @@
   font-size: 1.2rem;
   font-weight: bold;
 }
+
+.no-order {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.no-order h2 {
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
+  color: rgba(0, 0, 0, 0.349);
+  font-weight: bolder;
+}
+
+.no-order button {
+  padding: 0.7rem 1rem;
+  background-color: #ff8000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}

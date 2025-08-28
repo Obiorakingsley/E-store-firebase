@@ -48,50 +48,59 @@ const OrderTracking = ({ orderId }) => {
   }, [cart]);
   return (
     <div className="order-container">
-      <h1>Order Tracking</h1>
-      <div className="order-tracking">
-        <div className="track">
-          <p className="step">
-            Order placed
-            <FaCircleCheck color="green" />
-          </p>
-          <span>{formattedDate}</span>
-        </div>
-        <div className="track">
-          <p className="step">
-            Order packed
-            <FaCircleCheck color="green" />
-          </p>
-          <span>{formattedDate}</span>
-        </div>
-        <div className="track">
-          <p className="step">
-            Order delivered
-            <FaCircleCheck color="gray" />
-          </p>
-          <span>{formatDeliveryDate}</span>
-        </div>
-      </div>
-
-      <div className="order-products">
-        <h2>Order Items</h2>
-        {order?.map((item) => {
-          return (
-            <div className="order-items">
-              <img src={item?.images[0]} alt="" width={100} height={100} />
-              <div className="order-item-details">
-                <h3>{item.name}</h3>
-                <p>Qty: {item.quantity}</p>
-                <p>${item.price}</p>
-              </div>
+      {order ? (
+        <>
+          <h1>Order Tracking</h1>
+          <div className="order-tracking">
+            <div className="track">
+              <p className="step">
+                Order placed
+                <FaCircleCheck color="green" />
+              </p>
+              <span>{formattedDate}</span>
             </div>
-          );
-        })}
-        <div className="total-orders">
-          <h2>Total</h2>
-          <p className="total">${totalPrice}</p>
+            <div className="track">
+              <p className="step">
+                Order packed
+                <FaCircleCheck color="green" />
+              </p>
+              <span>{formattedDate}</span>
+            </div>
+            <div className="track">
+              <p className="step">
+                Order delivered
+                <FaCircleCheck color="gray" />
+              </p>
+              <span>{formatDeliveryDate}</span>
+            </div>
+          </div>
+
+          <div className="order-products">
+            <h2>Order Items</h2>
+            {order?.map((item) => {
+              return (
+                <div className="order-items">
+                  <img src={item?.images[0]} alt="" width={100} height={100} />
+                  <div className="order-item-details">
+                    <h3>{item.name}</h3>
+                    <p>Qty: {item.quantity}</p>
+                    <p>${item.price}</p>
+                  </div>
+                </div>
+              );
+            })}
+            <div className="total-orders">
+              <h2>Total</h2>
+              <p className="total">${totalPrice}</p>
+            </div>
+          </div>
+        </>
+      ) : (
+        <div className="no-order">
+          <h2>No Orders Found</h2>
+          <button>Continue Shopping</button>
         </div>
-      </div>
+      )}
     </div>
   );
 };
