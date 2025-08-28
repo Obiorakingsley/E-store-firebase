@@ -16,9 +16,7 @@ import { FaTv } from "react-icons/fa6";
 import { GiLipstick } from "react-icons/gi";
 import { useContext } from "react";
 import { cartContext } from "./Contexts/Cartcontext";
-
 import { useAuth } from "./Contexts/AuthContext";
-
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {

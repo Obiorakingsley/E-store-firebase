@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLoaderData, Await, useLocation } from "react-router-dom";
+import { Link, useLoaderData, Await } from "react-router-dom";
 import "./Styles/Popularproduct.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation, FreeMode } from "swiper/modules";
@@ -13,7 +13,6 @@ import { Suspense } from "react";
 import Spinners from "./Utils/Spinners";
 
 const Popularproduct = () => {
-  const location = useLocation();
   const products = useLoaderData();
   function renderData(items) {
     const dataItem = items ? items.filter((item) => item.views > 1300) : null;
@@ -29,11 +28,11 @@ const Popularproduct = () => {
               modules={[Autoplay, Pagination, Navigation, FreeMode]}
               spaceBetween={10}
               centeredSlides={true}
-              //freeMode={true}
+              freeMode={true}
               grabCursor={true}
               //loop={true}
               slidesPerView="auto"
-              //autoplay={{ delay: 5000 }}
+              autoplay={{ delay: 4000 }}
               pagination={{ clickable: true }}
               className="popular-swiper"
             >

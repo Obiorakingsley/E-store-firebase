@@ -4,8 +4,16 @@ import "./Cart.css";
 import { FaMinus, FaPlus, FaTrashAlt, FaArrowLeft } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../Contexts/AuthContext";
+import { toast } from "react-toastify";
+import Products from "../Products/Products";
 
 const Cart = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   const { currentUser } = useAuth();
   const navigate = useNavigate();
   const {
@@ -15,6 +23,12 @@ const Cart = () => {
     decreaseItemQuantity,
     clearCart,
   } = useContext(cartContext);
+
+  function createOrder() {
+    if (cart && currentUser) {
+      return localStorage.setItem("order", JSON.stringify(cart));
+    }
+  }
 
   const totalQuantity = cart
     ? cart.reduce((sum, item) => sum + item.quantity, 0)
@@ -39,12 +53,6 @@ const Cart = () => {
         0
       )
     : null;
-
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
 
   return (
     <>
@@ -174,7 +182,9 @@ const Cart = () => {
               </div>
               <button
                 onClick={() => {
-                  !currentUser && navigate("/login");
+                  !currentUser ? navigate("/login") : navigate("/order");
+                  createOrder();
+                  toast.success("Successfully placed an order");
                 }}
                 className="checkout-btn"
               >
@@ -190,6 +200,7 @@ const Cart = () => {
           <Link to={"/"}>
             <button>Start shoping</button>
           </Link>
+          <Products emptyCart={true} />
         </div>
       )}
     </>

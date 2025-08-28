@@ -18,7 +18,7 @@ import Spinners from "../Utils/Spinners.jsx";
 import Newcolection from "../Newcolection.jsx";
 import Bestseller from "../Bestseller.jsx";
 
-const Products = ({ isHome = false }) => {
+const Products = ({ isHome = false, emptyCart = false }) => {
   const products = useLoaderData();
 
   const { pathname } = useLocation();
@@ -53,41 +53,45 @@ const Products = ({ isHome = false }) => {
 
     return (
       <div className={`products-container ${isHome ? "min-height" : null}`}>
-        <div className={` ${isHome ? "hidden" : "navbar-top"}`}>
-          <h2>Browse by categories</h2>
-          <Link to={"/products?type="}>
-            <span className="flex">
-              More
-              <FaChevronRight size={10} />
-            </span>
-          </Link>
-        </div>
-        <div className="products-navbar">
-          <nav>
-            <Swiper
-              slidesPerView="auto"
-              spaceBetween={15}
-              freeMode={true}
-              modules={[FreeMode]}
-              className="swiper-navbar"
-            >
-              {navItems.map((item, index) => (
-                <SwiperSlide key={index} className="nav-item">
-                  <NavLink
-                    end
-                    relative="path"
-                    className={() =>
-                      type === item.value ? "active-nav-link" : null
-                    }
-                    to={`?type=${item.value}`}
-                  >
-                    {item.key}
-                  </NavLink>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </nav>
-        </div>
+        {!emptyCart && (
+          <div className={` ${isHome ? "hidden" : "navbar-top"}`}>
+            <h2>Browse by categories</h2>
+            <Link to={"/products?type="}>
+              <span className="flex">
+                More
+                <FaChevronRight size={10} />
+              </span>
+            </Link>
+          </div>
+        )}
+        {!emptyCart && (
+          <div className="products-navbar">
+            <nav>
+              <Swiper
+                slidesPerView="auto"
+                spaceBetween={15}
+                freeMode={true}
+                modules={[FreeMode]}
+                className="swiper-navbar"
+              >
+                {navItems.map((item, index) => (
+                  <SwiperSlide key={index} className="nav-item">
+                    <NavLink
+                      end
+                      relative="path"
+                      className={() =>
+                        type === item.value ? "active-nav-link" : null
+                      }
+                      to={`?type=${item.value}`}
+                    >
+                      {item.key}
+                    </NavLink>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </nav>
+          </div>
+        )}
 
         {isHome ? (
           <div className="display-grid">

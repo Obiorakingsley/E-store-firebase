@@ -2,14 +2,12 @@ import React, { useEffect } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./signup.css";
-
 import { auth, googleProvider } from "../config/firebase";
 import { useAuth } from "../Contexts/AuthContext";
 import { onAuthStateChanged } from "firebase/auth";
 
 const Signup = () => {
   const {
-    currentUser,
     isLoading,
 
     signUpError,
@@ -102,6 +100,7 @@ const Signup = () => {
               <div
                 onClick={async () => {
                   await signInWithGoogle(auth, googleProvider);
+                  navigate("/");
                 }}
                 className="google-signup"
               >

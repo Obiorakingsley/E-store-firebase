@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
-
 import { useAuth } from "../Contexts/AuthContext";
 import { auth, googleProvider } from "../config/firebase";
 import { onAuthStateChanged } from "firebase/auth";
@@ -12,11 +11,8 @@ const Login = () => {
     signInWithGoogle,
     signInError,
     isLoading,
-    setIsLoading,
     setLoginError,
-    currentUser,
     logInWithEmailAndPassword,
-    setSignInError,
   } = useAuth();
   const navigate = useNavigate();
 
@@ -104,9 +100,8 @@ const Login = () => {
               <div
                 className="google-login"
                 onClick={async () => {
-                  setIsLoading(true);
                   await signInWithGoogle(auth, googleProvider);
-                  setIsLoading(false);
+                  navigate("/");
                 }}
               >
                 <img src="/google.png" alt="" width={23} height={23} />

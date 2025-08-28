@@ -10,9 +10,7 @@ import FlashsalesPage from "./pages/FlashsalesPage.jsx";
 import ProductsPage from "./pages/ProductsPage.jsx";
 import ProductDetailsPage from "./pages/ProductDetailsPage.jsx";
 import HomeSearchPage from "./pages/HomeSearchPage.jsx";
-
 import loaders from "./Components/config/LoaderData.jsx";
-
 import {
   Route,
   createBrowserRouter,
@@ -25,6 +23,7 @@ import Productinfo from "./Components/Productdetails/Productinfo.jsx";
 import Productreviews from "./Components/Productdetails/Productreviews.jsx";
 import Error from "./Components/Error.jsx";
 import ProtectedRoutes from "./Components/config/ProtectedRoutes.jsx";
+import OrderTracking from "./Components/Cart/Ordertracking.jsx";
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
@@ -38,6 +37,15 @@ const routes = createBrowserRouter(
         <Route index element={<HomePage />} loader={loaders} />
 
         <Route path="cart" element={<CartPage />} loader={loaders} />
+        <Route
+          path="order"
+          element={
+            <ProtectedRoutes>
+              <OrderTracking />
+            </ProtectedRoutes>
+          }
+          loader={loaders}
+        />
 
         <Route
           path="flash-sales"

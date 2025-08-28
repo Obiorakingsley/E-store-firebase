@@ -2,7 +2,8 @@ import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { useAuth } from "../Contexts/AuthContext";
 import "./User.css";
 import { auth } from "../config/firebase";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import { GrOrderedList } from "react-icons/gr";
 
 const UserProfile = () => {
   const { currentUser, logOut } = useAuth();
@@ -53,6 +54,19 @@ const UserProfile = () => {
                 currentUser?.metadata.creationTime
               ).toLocaleDateString()}
             </p>
+            <Link to="/order">
+              <h2
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  paddingTop: ".5rem",
+                  gap: ".2rem",
+                  borderTop: "1px solid #3333337c",
+                }}
+              >
+                <GrOrderedList /> Orders
+              </h2>
+            </Link>
           </div>
         </div>
       </div>
