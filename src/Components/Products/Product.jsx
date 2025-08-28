@@ -37,7 +37,7 @@ const Product = (props) => {
     <div className="item">
       <Link
         className="item-link"
-        to={isHome ? `${item.id}` : `products/${item.id}`}
+        to={isHome ? `${item.id}` : `/products/${item.id}`}
       >
         <img
           className="image"
