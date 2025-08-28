@@ -1,10 +1,10 @@
 # 🛍️ EStore - E-Commerce Platform
 
-![EStore Screenshot](https://via.placeholder.com/800x400.png?text=) 
+![EStore Screenshot](https://via.placeholder.com/800x400.png?text=)
 
 EStore is a fully functional, full-stack e-commerce web application built with modern web technologies. It demonstrates core e-commerce functionalities including user authentication, product browsing, shopping cart management, and a seamless checkout flow, all powered by Firebase.
 
-## 🔗Demo: [Estore.app](https://e-store-792c2.web.app/) 
+## 🔗Demo: [Estore.app](https://e-store-792c2.web.app/)
 
 ---
 
@@ -16,6 +16,7 @@ EStore is a fully functional, full-stack e-commerce web application built with m
 - **🛒 Shopping Cart:** Add/remove items, adjust quantities, and see a persistent cart total.
 - **👤 User Profile:** User-specific order history and data management.
 - **📱 Fully Responsive:** Optimized for desktop, tablet, and mobile devices.
+- **Image Slider:** React Swiper
 
 ---
 
@@ -47,22 +48,24 @@ Follow these steps to set up the project locally on your machine.
 ### Installation
 
 1.  **Clone the repository:**
+
     ```bash
     git clone https://github.com/your-username/estore-ecommerce.git
     cd estore-ecommerce
     ```
 
 2.  **Install dependencies:**
+
     ```bash
     npm install
     ```
 
 3.  **Set up Firebase:**
+
     - Create a new project in the [Firebase Console](https://console.firebase.google.com/).
     - Enable Authentication (using Email/Password).
     - Create a Firestore Database.
     - Add your web app to the project and get your Firebase config object.
-
 
 4.  **Run the development server:**
     ```bash
