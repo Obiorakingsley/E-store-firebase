@@ -2,6 +2,7 @@ import React, { Suspense, useEffect, useState, useContext } from "react";
 import "./OrderTracking.css";
 import { cartContext } from "../Contexts/Cartcontext";
 import { FaCircleCheck } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const OrderTracking = ({ orderId }) => {
   const { cart } = useContext(cartContext);
@@ -48,7 +49,7 @@ const OrderTracking = ({ orderId }) => {
   }, [cart]);
   return (
     <div className="order-container">
-      {order ? (
+      {!order ? (
         <>
           <h1>Order Tracking</h1>
           <div className="order-tracking">
@@ -98,7 +99,9 @@ const OrderTracking = ({ orderId }) => {
       ) : (
         <div className="no-order">
           <h2>No Orders Found</h2>
-          <button>Continue Shopping</button>
+          <Link to="/products">
+            <button>Continue Shopping</button>
+          </Link>
         </div>
       )}
     </div>
