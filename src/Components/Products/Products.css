@@ -16,7 +16,7 @@
   align-items: center;
   gap: 0.3rem;
   row-gap: 0.7rem;
-  grid-template-columns: repeat(auto-fill, 145px);
+  grid-template-columns: repeat(auto-fill, 150px);
   padding: 0.2rem;
   margin: 1.2rem auto;
 }
@@ -98,6 +98,6 @@
   }
 
   .products-container .display-grid {
-    grid-template-columns: repeat(auto-fill, 170px);
+    grid-template-columns: repeat(auto-fill, 150px);
   }
 }
