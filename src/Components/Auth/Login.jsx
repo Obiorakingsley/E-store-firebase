@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./login.css";
+import "./Login.css";
 import { useAuth } from "../Contexts/AuthContext";
 import { auth, googleProvider } from "../config/firebase";
 import { onAuthStateChanged } from "firebase/auth";
