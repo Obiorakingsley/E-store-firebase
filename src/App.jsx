@@ -79,7 +79,7 @@ const routes = createBrowserRouter(
       />
 
       <Route path="*" element={<NotFoundPage />} />
-      <Route path="search" element={<SearchPage loader={loaders} />} />
+      <Route path="search" element={<SearchPage />} loader={loaders} />
       <Route path="signup" element={<SignupPage />} />
       <Route path="login" element={<LoginPage />} />
     </>
