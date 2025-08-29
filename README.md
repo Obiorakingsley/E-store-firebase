@@ -1,8 +1,12 @@
 # 🛍️ EStore - E-Commerce Platform
 
-![EStore Screenshot](https://via.placeholder.com/800x400.png?text=)
+## 📸
 
-EStore is a fully functional, full-stack e-commerce web application built with modern web technologies. It demonstrates core e-commerce functionalities including user authentication, product browsing, shopping cart management, and a seamless checkout flow, all powered by Firebase.
+<img src="./src/assets/images/estore.gif" alt="App Screenshot" width="500" />
+
+---
+
+**EStore is a fully functional, full-stack e-commerce web application built with modern web technologies. It demonstrates core e-commerce functionalities including user authentication, product browsing, shopping cart management, and a seamless checkout flow, all powered by Firebase.**
 
 ## 🔗Demo: [Estore.app](https://e-store-792c2.web.app/)
 
