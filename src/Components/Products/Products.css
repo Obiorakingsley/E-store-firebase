@@ -16,7 +16,7 @@
   align-items: center;
   gap: 0.3rem;
   row-gap: 0.7rem;
-  grid-template-columns: repeat(auto-fill, 180px);
+  grid-template-columns: repeat(auto-fill, 160px);
   padding: 0.2rem;
   margin: 1.2rem auto;
 }

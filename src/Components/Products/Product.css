@@ -6,7 +6,7 @@
   margin: 0 auto;
   border-radius: 10px;
 
-  width: 175px;
+  width: 160px;
   height: 280px;
   position: relative;
   box-shadow: 1px 1px 5px #75747438;
@@ -118,7 +118,7 @@
 @media screen and (max-width: 500px) {
   .item {
     padding: 0.4rem;
-    width: 170px;
+    width: 150px;
     height: 280px;
   }
 }
