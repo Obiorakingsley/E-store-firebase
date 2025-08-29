@@ -188,7 +188,6 @@ const ProductDetails = () => {
               >
                 Add To Cart
               </button>
-              <button className="checkout-item">Buy Now</button>
             </div>
           </div>
         </div>

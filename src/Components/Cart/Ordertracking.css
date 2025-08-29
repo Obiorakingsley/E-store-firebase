@@ -45,6 +45,7 @@
   box-shadow: 2px 2px 4px #0303031a;
   border-radius: 5px;
   padding: 0.5rem 0;
+  gap: 0.4rem;
 }
 
 .order-item-details {
@@ -87,4 +88,25 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
+}
+
+@media screen and (max-width: 400px) {
+  .order-tracking {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+    max-width: 800px;
+
+    border-radius: 5px;
+    padding: 20px 0;
+    box-shadow: 2px 2px 4px #0303031f;
+  }
+
+  .track {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
 }
