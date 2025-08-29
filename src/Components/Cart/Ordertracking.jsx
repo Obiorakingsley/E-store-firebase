@@ -30,26 +30,24 @@ const OrderTracking = () => {
     .format(deliveryDate)
     .replace(" ", ", ");
 
-  const [order, setOrder] = useState(null);
+  const [order, setOrder] = useState([]);
 
   const totalQuantity = order
     ? order.reduce((sum, item) => sum + item.quantity, 0)
     : null;
+  console.log(order);
 
   const totalPrice = order
     ? order.reduce((sum, item) => sum + item.price * item.quantity, 0)
     : null;
 
+  const orders = JSON.parse(localStorage.getItem("order")) || [];
   useEffect(() => {
-    const fetchOrder = async () => {
-      const orders = JSON.parse(localStorage.getItem("order")) || [];
-      setOrder(orders);
-    };
-    fetchOrder();
+    setOrder(orders);
   }, [cart]);
   return (
     <div className="order-container">
-      {order ? (
+      {order.length !== 0 ? (
         <>
           <h1>Order Tracking</h1>
           <div className="order-tracking">
@@ -80,7 +78,7 @@ const OrderTracking = () => {
             <h2>Order Items</h2>
             {order?.map((item) => {
               return (
-                <div className="order-items">
+                <div key={item.id} className="order-items">
                   <img src={item?.images[0]} alt="" width={100} height={100} />
                   <div className="order-item-details">
                     <h3>{item.name}</h3>
