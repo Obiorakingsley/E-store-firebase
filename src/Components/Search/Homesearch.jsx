@@ -11,7 +11,7 @@ const Homesearch = () => {
   const [products, setProducts] = useState([]);
 
   function renderData(data) {
-    const query = useQuery.get("query") || "";
+    const query = useQuery.get("query")?.toLowerCase() || "";
     useEffect(() => {
       async function fetchData() {
         try {

@@ -189,7 +189,7 @@
 
 .product-details-review .review-images {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   padding: 0.5rem;
   border: 1px solid #33333336;
 }

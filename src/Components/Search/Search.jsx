@@ -14,7 +14,7 @@ const Search = () => {
   const productData = useLoaderData();
 
   function renderData(data) {
-    const query = useQuery.get("query") || "";
+    const query = useQuery.get("query")?.toLowerCase() || "";
     useEffect(() => {
       async function fetchData() {
         try {
