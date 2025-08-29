@@ -4,7 +4,7 @@ import { cartContext } from "../Contexts/Cartcontext";
 import { FaCircleCheck } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
-const OrderTracking = ({ orderId }) => {
+const OrderTracking = () => {
   const { cart } = useContext(cartContext);
 
   // Format todays date
@@ -46,10 +46,10 @@ const OrderTracking = ({ orderId }) => {
       setOrder(orders);
     };
     fetchOrder();
-  }, [cart]);
+  }, []);
   return (
     <div className="order-container">
-      {!order ? (
+      {order ? (
         <>
           <h1>Order Tracking</h1>
           <div className="order-tracking">

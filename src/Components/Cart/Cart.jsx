@@ -182,8 +182,10 @@ const Cart = () => {
               </div>
               <button
                 onClick={() => {
-                  !currentUser ? navigate("/login") : navigate("/order");
+                  if (!currentUser) return navigate("/login");
                   createOrder();
+                  clearCart();
+                  navigate("/order");
                   toast.success("Successfully placed an order");
                 }}
                 className="checkout-btn"
