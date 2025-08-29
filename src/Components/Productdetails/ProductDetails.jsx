@@ -1,5 +1,6 @@
 import React, { useEffect, useState, Suspense } from "react";
-import "./productdetails.css";
+import "./Productdetails.css";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "../Styles/Reviews.css";
 import "swiper/css/free-mode";
