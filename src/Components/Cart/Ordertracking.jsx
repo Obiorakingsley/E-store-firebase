@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect, useState, useContext } from "react";
-import "./OrderTracking.css";
+import "./Ordertracking.css";
 import { cartContext } from "../Contexts/Cartcontext";
 import { FaCircleCheck } from "react-icons/fa6";
 import { Link } from "react-router-dom";
