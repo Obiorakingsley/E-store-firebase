@@ -30,7 +30,7 @@ const Popularproduct = () => {
               centeredSlides={true}
               freeMode={true}
               grabCursor={true}
-              //loop={true}
+              loop={true}
               slidesPerView="auto"
               autoplay={{ delay: 4000 }}
               pagination={{ clickable: true }}
