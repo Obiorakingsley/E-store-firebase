@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import "./signup.css";
+import "./Signup.css";
 import { auth, googleProvider } from "../config/firebase";
 import { useAuth } from "../Contexts/AuthContext";
 import { onAuthStateChanged } from "firebase/auth";
