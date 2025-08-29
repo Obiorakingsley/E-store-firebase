@@ -46,7 +46,7 @@ const OrderTracking = () => {
       setOrder(orders);
     };
     fetchOrder();
-  }, []);
+  }, [cart]);
   return (
     <div className="order-container">
       {order ? (
